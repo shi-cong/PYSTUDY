@@ -1,4 +1,6 @@
 # 2017 9 22
+![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506029151077&di=52fb6dba5ed37e405884fea2814c1010&imgtype=0&src=http%3A%2F%2Fpic36.nipic.com%2F20131130%2F4499633_224250411000_2.jpg)
+
 - 朴树贝叶斯分类的原理及其应用场景代码编写
 - tornado框架扩展完善和例子编写
 - 看tornado, django, scapy, openstack, tensorflow源码，将里面自己吸取的东西编写到自己的扩展代码中
@@ -11,5 +13,3 @@
 如果换环境上班的话，还要租房子，这些太麻烦了。
 
 对了，iphone8要出了，由于我的手小，准备入手4.7英寸的了。应该不会让我失望。
-
-![](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506029151077&di=52fb6dba5ed37e405884fea2814c1010&imgtype=0&src=http%3A%2F%2Fpic36.nipic.com%2F20131130%2F4499633_224250411000_2.jpg)
