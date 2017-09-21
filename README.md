@@ -1,5 +1,5 @@
 # 2017 9 22
-![](http://img3.imgtn.bdimg.com/it/u=483500909,1644971206&fm=27&gp=0.jpg)
+![](https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1210194256,491990517&fm=58)
 
 - 朴树贝叶斯分类的原理及其应用场景代码编写
 - tornado框架扩展完善和例子编写
