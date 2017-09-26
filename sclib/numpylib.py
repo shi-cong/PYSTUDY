@@ -10,13 +10,16 @@ import numpy
 2. dtype 数组数据类型，默认为float
 3. order 在内存中排列的方式（以C语言或Fortran语言方式排列），默认为C语言排列
 """
-zeros = numpy.zeros:
+
+array = numpy.array
+
+zeros = numpy.zeros
 """
 创建给定类型的矩阵，并初始化为0
 """
 
 
-zeros_like = numpy.zeros_like:
+zeros_like = numpy.zeros_like
 """
 返回和输入大小相同，类型相同，用0填满的数组
 """
@@ -50,7 +53,7 @@ if __name__ == '__main__':
     # 一维数组，大小为3，默认为0
     print(zeros(3))         # array([0., 0., 0.])
     # 二维数组，大小为3， 默认为0
-    print(zeros((2, 3))     
+    print(zeros((2, 3)))
     """
     array([[0., 0., 0.],
            [0., 0., 0.]])
@@ -61,20 +64,18 @@ if __name__ == '__main__':
     """
     array([2, 3])
     """
-          
+
     print(zeros_like(a))
     """
     array([0, 0])
     """
-          
+
     # 3. ones_like 调用实例
     a = array([2, 3])   # array([2, 3])
     print(ones_like(a))
     """
     array([1, 1])
     """
-    
+
     # 4. empty_like 调用实例
     pass
-          
-    
