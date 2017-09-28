@@ -4,6 +4,9 @@ k近邻算法实现
 优点：精度高，对异常值不敏感，无数据输入假定
 缺点：时间复杂度高，空间复杂度高
 适用数据范围：数值型和标称型
+
+标称型：标称型目标变量的结果只在有限目标集中取值，如真与假(标称型目标变量主要用于分类)
+数值型：数值型目标变量则可以从无限的数值集合中取值，如0.100，42.001等 (数值型目标变量主要用于回归分析)
 '''
 from sclib.numpylib import *
 
@@ -29,8 +32,8 @@ def classify0(in_x, data_set, labels, k):
     :param k: 用于选择最近邻居的数目
     :return: 返回k个最相似数据中出现次数最多的分类
     """
-    data_set_size = data_set.shape[0]
-
+    # data_set_size = data_set.shape[0]
+    data_set_size = len(data_set)
     # 距离计算
     diff_mat = tile(in_x, (data_set_size, 1)) - data_set # 计算
     sq_diff_mat = diff_mat ** 2 # 求数组的平方
