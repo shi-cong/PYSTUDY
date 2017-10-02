@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 import requests
-from collections import OrderDict
+from collections import OrderedDict
 from requests.utils import dict_from_cookiejar
 
 
@@ -27,7 +27,7 @@ class HTTP(object):
             proxies=None):
         if self.session:
             r = self.session.get(url,
-                                 headers=OrderDict(headers),
+                                 headers=OrderedDict(headers),
                                  cookies=cookies,
                                  timeout=timeout,
                                  verify=verify,
@@ -37,7 +37,7 @@ class HTTP(object):
             return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history
         else:
             r = requests.get(url,
-                             headers=OrderDict(headers),
+                             headers=OrderedDict(headers),
                              cookies=cookies,
                              timeout=timeout,
                              verify=verify,
@@ -51,16 +51,16 @@ class HTTP(object):
              headers=None,
              cookies=None,
              timeout=30,
-             data={},
+             form_data={},
              verify=False,
              proxies=None):
         if self.session:
             r = self.session.post(
                 url,
-                headers=OrderDict(headers),
+                headers=OrderedDict(headers),
                 cookies=cookies,
                 timeout=timeout,
-                data=data,
+                data=form_data,
                 verify=verify,
                 proxies=proxies)
             r.raise_for_status()
@@ -69,10 +69,10 @@ class HTTP(object):
         else:
             r = requests.post(
                 url,
-                headers=OrderDict(headers),
+                headers=OrderedDict(headers),
                 cookies=cookies,
                 timeout=timeout,
-                data=data,
+                data=form_data,
                 verify=verify,
                 proxies=proxies)
             r.raise_for_status()
