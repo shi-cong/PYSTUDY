@@ -37,12 +37,12 @@ class MYSQLPool(object):
                 logging.debug(('%r - waitting for other thread to release the'
                                'connection' % current_thread()))
 
-    def execute(self, sql, args):
+    def execute(self, sql, args=None):
         conn = self._get_connection()
+        tmp = ''
         try:
             with conn['connection'].cursor() as cursor:
-                sql = sql.lower().strip()
-                cursor.execute(sql.replace('?', '%s'), args or ())
+                cursor.execute(sql, args or ())
                 tmp = sql[:6]
                 if 'insert' in tmp or 'delete' in tmp or 'update' in tmp:
                     conn['connection'].commit()

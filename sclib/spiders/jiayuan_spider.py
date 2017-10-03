@@ -1,5 +1,10 @@
 from sclib.html_parserlib import XpathParser, ReParser
 from sclib.requestslib import HTTP
+from sclib.jsonlib import loads
+from threading import Thread, active_count
+import time
+from sclib.mysqllib import MYSQLPool
+
 
 class JiaYuanSpider:
     """
@@ -9,6 +14,12 @@ class JiaYuanSpider:
     """
     def __init__(self):
         self.http = HTTP(session=True)
+        self.mysql_pool = MYSQLPool(20,
+            **dict(host='192.168.80.4',
+                 user='jiayuan',
+                 password='123456',
+                 db='jiayuan',
+                 charset='utf8mb4'))
 
     def do_login(self):
         """
@@ -125,6 +136,67 @@ class JiaYuanSpider:
         }
         text, headers, cookies, history = self.http.post(request_url, headers=request_headers, form_data=form_data)
         print(text)
+        rp = ReParser('#{.*}#')
+        content = rp.compute(text)[1:-1]
+        print(content)
+        data = loads(content)
+        if page == 1:
+            self.page_total = data['pageTotal']
+        user_info = data['userInfo']
+
+        '''
+        {
+            "uid": 167911957, 
+            "realUid": 168911957, 
+            "nickname": "踏月", 
+            "sex": "女", 
+            "sexValue": "f", 
+            "randAttr": "formal", 
+            "marriage": "未婚", 
+            "height": "160", 
+            "education": "本科", 
+            "income": null, 
+            "work_location": "宁波", 
+            "work_sublocation": "宁波", 
+            "age": 24, 
+            "image": "http://at4.jyimg.com/f0/1b/eedc8bd6dce5e37e1dffb0e37c79/eedc8bd6d_1_avatar_p.jpg", 
+            "count": "14291", 
+            "online": 0, 
+            "randTag": "<span>160cm</span>", 
+            "randListTag": "<span>160cm</span>", 
+            "userIcon": "<i title=手机认证 class=tel></i>", 
+            "helloUrl": "http://www.jiayuan.com/msg/hello.php?type=20&randomfrom=4&uhash=f0eedc8bd6dce5e37e1dffb0e37c791b", 
+            "sendMsgUrl": "http://www.jiayuan.com/msg/send.php?uhash=f0eedc8bd6dce5e37e1dffb0e37c791b", 
+            "shortnote": "我是一个诚信的人 ，爱好广泛的我，喜欢健身,麦霸。", 
+            "matchCondition": "23-31岁,160-185cm,浙江,宁波"
+        }
+        '''
+        sql = 'insert into userInfo values'
+        args = []
+        uil = len(user_info)  - 1
+        count = 0
+
+        for ui in user_info:
+            if ui['marriage'] == '未婚':
+                ui['marriage'] = 0
+            else:
+                ui['marriage'] = 1
+            if ui['sex'] == '女':
+                ui['sex'] = 0
+            elif ui['sex'] == '男':
+                ui['sex'] = 1
+            else:
+                ui['sex'] = 2
+            
+            sql += "(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            if count != uil:
+                sql += ', '
+            count += 1
+            args += [ui['uid'], ui['nickname'], ui['sex'], ui['marriage'], ui['height'], ui['education'],
+                        ui['work_location'], ui['age'], ui['image'], ui['shortnote'], ui['matchCondition']]
+
+        self.mysql_pool.execute(sql, args)
+
 
 
 def main():
@@ -133,8 +205,16 @@ def main():
     jys.login_jump(lj_url)
     jys.usercp()
     jys.search_v2()
-    for page in range(11):
-        jys.post_search_v2(page+1)
+    jys.post_search_v2()
+    page = 2
+    while page <= jys.page_total:
+        if active_count() <= 10:
+            Thread(target=jys.post_search_v2, args=(page, )).start()
+            # jys.post_search_v2(page)
+            page += 1
+        else:
+            time.sleep(2)
+            continue
 
 
 main()
