@@ -46,6 +46,34 @@ class HTTP(object):
             r.encoding = 'utf-8'
             return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history
 
+    def get_img(self,
+            url,
+            headers=None,
+            cookies=None,
+            timeout=30,
+            verify=False,
+            proxies=None):
+        if self.session:
+            r = self.session.get(url,
+                                 headers=OrderedDict(headers),
+                                 cookies=cookies,
+                                 timeout=timeout,
+                                 verify=verify,
+                                 proxies=proxies)
+            r.raise_for_status()
+            r.encoding = 'utf-8'
+            return r.content
+        else:
+            r = requests.get(url,
+                             headers=OrderedDict(headers),
+                             cookies=cookies,
+                             timeout=timeout,
+                             verify=verify,
+                             proxies=proxies)
+            r.raise_for_status()
+            r.encoding = 'utf-8'
+            return r.content
+
     def post(self,
              url,
              headers=None,

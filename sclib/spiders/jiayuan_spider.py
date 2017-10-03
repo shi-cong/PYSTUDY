@@ -1,9 +1,12 @@
 from sclib.html_parserlib import XpathParser, ReParser
 from sclib.requestslib import HTTP
 from sclib.jsonlib import loads
+from sclib.pillib import get_img_from_bytes
 from threading import Thread, active_count
 import time
 from sclib.mysqllib import MYSQLPool
+from sclib.timelib import get_current_timestamp
+from sclib.oslib import getcwd, SEP
 
 
 class JiaYuanSpider:
@@ -14,12 +17,6 @@ class JiaYuanSpider:
     """
     def __init__(self):
         self.http = HTTP(session=True)
-        self.mysql_pool = MYSQLPool(20,
-            **dict(host='192.168.80.4',
-                 user='jiayuan',
-                 password='123456',
-                 db='jiayuan',
-                 charset='utf8mb4'))
 
     def do_login(self):
         """
@@ -51,8 +48,28 @@ class JiaYuanSpider:
         print('-----------------')
 
         rp = ReParser("\('.*'\)")
-        lj_url = rp.compute(text)[2:-2]
-        return lj_url
+        try:
+            lj_url = rp.compute(text)[2:-2]
+            return lj_url
+        except:
+            pass
+
+    def antispam_v2(self, train=False):
+        url = 'http://login.jiayuan.com/antispam_v2.php?v=2'
+        headers = {
+            'Host': 'login.jiayuan.com',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
+            'Referer': 'http://login.jiayuan.com/?pre_url=%2Fusercp&channel=1&position=21&refrer=http://www.jiayuan.com&host=0',
+            'Accept-Encoding': 'gzip, deflate',
+            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6'
+        }
+        img_data = self.http.get_img(url, headers=headers)
+        img = get_img_from_bytes(img_data)
+        if train:
+            filename = getcwd() + 'jiayuan_checkcode/%s.png' % str(get_current_timestamp())
+            print(filename)
+            img.save(filename)
 
     def login_jump(self, url):
         """
@@ -106,6 +123,12 @@ class JiaYuanSpider:
             'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
         }
         text, headers, cookies, history = self.http.get(search_url, headers=headers)
+        self.mysql_pool = MYSQLPool(20,
+            **dict(host='192.168.80.4',
+                 user='jiayuan',
+                 password='123456',
+                 db='jiayuan',
+                 charset='utf8mb4'))
 
     def post_search_v2(self, page=1):
         request_url = 'http://search.jiayuan.com/v2/search_v2.php'
@@ -144,33 +167,6 @@ class JiaYuanSpider:
             self.page_total = data['pageTotal']
         user_info = data['userInfo']
 
-        '''
-        {
-            "uid": 167911957, 
-            "realUid": 168911957, 
-            "nickname": "踏月", 
-            "sex": "女", 
-            "sexValue": "f", 
-            "randAttr": "formal", 
-            "marriage": "未婚", 
-            "height": "160", 
-            "education": "本科", 
-            "income": null, 
-            "work_location": "宁波", 
-            "work_sublocation": "宁波", 
-            "age": 24, 
-            "image": "http://at4.jyimg.com/f0/1b/eedc8bd6dce5e37e1dffb0e37c79/eedc8bd6d_1_avatar_p.jpg", 
-            "count": "14291", 
-            "online": 0, 
-            "randTag": "<span>160cm</span>", 
-            "randListTag": "<span>160cm</span>", 
-            "userIcon": "<i title=手机认证 class=tel></i>", 
-            "helloUrl": "http://www.jiayuan.com/msg/hello.php?type=20&randomfrom=4&uhash=f0eedc8bd6dce5e37e1dffb0e37c791b", 
-            "sendMsgUrl": "http://www.jiayuan.com/msg/send.php?uhash=f0eedc8bd6dce5e37e1dffb0e37c791b", 
-            "shortnote": "我是一个诚信的人 ，爱好广泛的我，喜欢健身,麦霸。", 
-            "matchCondition": "23-31岁,160-185cm,浙江,宁波"
-        }
-        '''
         sql = 'insert into userInfo values'
         args = []
         uil = len(user_info)  - 1
@@ -216,5 +212,9 @@ def main():
             time.sleep(2)
             continue
 
+def train_checkcode():
+    jys = JiaYuanSpider()
+    for i in range(1000):
+        jys.antispam_v2(True)
 
-main()
+train_checkcode()
