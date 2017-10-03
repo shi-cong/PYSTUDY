@@ -1,7 +1,7 @@
 from sclib.html_parserlib import XpathParser, ReParser
 from sclib.requestslib import HTTP
 from sclib.jsonlib import loads
-from sclib.pillib import get_img_from_bytes
+from sclib.pillib import get_img_from_bytes, open_img, recognition, binarizing, depoint, to_gray
 from threading import Thread, active_count
 import time
 from sclib.mysqllib import MYSQLPool
@@ -14,6 +14,12 @@ class JiaYuanSpider:
     世纪佳缘爬虫
     主要功能为了获取一些女性的数据来测试k-NN算法的精确度
     爬虫逻辑是：post登陆，登陆跳转，访问用户主页，访问搜索页面
+
+    进展：
+    1. 登陆的借口会封IP
+    2. 如果大批量分页搜索，会封掉登陆的借口IP
+    3. 如果大批量的拿验证码图片，会直接拒绝你的IP请求登陆
+    4. 由于需要获取一些验证码，来训练自己字体库，然后识别
     """
     def __init__(self):
         self.http = HTTP(session=True)
@@ -54,7 +60,7 @@ class JiaYuanSpider:
         except:
             pass
 
-    def antispam_v2(self, train=False):
+    def antispam_v2(self, train=False, count=1):
         url = 'http://login.jiayuan.com/antispam_v2.php?v=2'
         headers = {
             'Host': 'login.jiayuan.com',
@@ -64,10 +70,11 @@ class JiaYuanSpider:
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6'
         }
-        img_data = self.http.get_img(url, headers=headers)
+        img_data = self.http.get_img(url, headers=headers, proxies={'http': '60.186.203.21:8118'})
+        print(img_data)
         img = get_img_from_bytes(img_data)
         if train:
-            filename = getcwd() + 'jiayuan_checkcode/%s.png' % str(get_current_timestamp())
+            filename = getcwd() + SEP +  'jiayuan_checkcode/%s.tif' % str(count)
             print(filename)
             img.save(filename)
 
@@ -213,8 +220,32 @@ def main():
             continue
 
 def train_checkcode():
+    """
+    获取验证码训练数据
+    :return:
+    """
     jys = JiaYuanSpider()
     for i in range(1000):
-        jys.antispam_v2(True)
+        try:
+            jys.antispam_v2(True, i)
+        except:
+            continue
+
+
+def seen_img():
+    """
+    验证码识别
+    :return:
+    """
+    filename = getcwd() + SEP + 'jiayuan_checkcode' + SEP + '1507040016.415257.tif'
+    img = open_img(filename)
+    img.show()
+    # img = to_gray(img)
+    # img.show()
+    # img = binarizing(img, 190)
+    # img.show()
+    result = recognition(img)
+    print(result)
 
 train_checkcode()
+# seen_img()
