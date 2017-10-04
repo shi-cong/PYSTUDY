@@ -4,6 +4,7 @@
 from sclib.html_parserlib import XpathParser, ReParser
 from sclib.requestslib import HTTP
 from sclib.randomlib import random_small_number
+from sclib.mysqllib_demos.job51_db import *
 
 
 class Job51Spider:
@@ -122,8 +123,54 @@ class Job51Spider:
         else:
             print('失败', t)
 
+    def my_apply(self, page=1):
+        """
+        我的投递
+        :return:
+        """
+        url = 'http://i.51job.com/userset/my_apply.php'
+        headers = {
+            'Host': 'i.51job.com',
+            'Upgrade-Insecure-Requests': '1',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'Referer': 'http://i.51job.com/userset/my_apply.php?lang=c',
+            'Accept-Encoding': 'gzip, deflate',
+            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+        }
+        qsp = None
+        if page == 1:
+            qsp = {
+                'lang': 'c',
+            }
+        else:
+            qsp = {
+                'lang': 'c',
+                'type': 'sh',
+                'page': page
+            }
+        t, h, c, hi = self.http.get(url, headers=headers, params=qsp, encoding='gbk')
+        if page == 1:
+            print(t)
+            rp = ReParser()
+            tmp = rp.compute(r'共[0-9]+页', t)
+            print(tmp)
+            self.apply_total_pages = int(rp.compute(r'[0-9]+', tmp))
+        sel = XpathParser(t)
+        items = sel.xpath('/html/body/div[2]/div[2]/div[2]/div[1]/div')
+        for i in items:
+            job_name = i.xpath('.//a[@class="zhn"]/text()').extract_first()
+            pay = i.xpath('.//span[@class="xz"]/text()').extract_first()
+            job_url = i.xpath('.//a[@class="zhn"]/@href').extract_first()
+            submit_time = i.xpath('.//div[@class="rq"]/span/text()').extract_first()
+            submit_nums = i.xpath('.//span[@class="c_orange"]/text()').extract_first()
+            company_name = i.xpath('.//a[@class="gs"]/text()').extract_first()
+            company_url = i.xpath('.//a[@class="gs"]/@href').extract_first()
+            print(job_name, pay, submit_time, submit_nums + '人申请', company_name)
+            add_my_apply(job_name, pay, job_url, submit_time, submit_nums, company_name, company_url)
 
-def main(user='admin', password='123456'):
+
+def tjl(user='admin', password='123456'):
     j5s = Job51Spider()
     c = j5s.index()
     reqs = j5s.login(user, password, c)
@@ -140,5 +187,15 @@ def main(user='admin', password='123456'):
             continue
         p += 1
 
+def stat_my_apply(user, password):
+    j5s = Job51Spider()
+    c = j5s.index()
+    reqs = j5s.login(user, password, c)
+    j5s.my_apply()
+    for p in range(2, j5s.apply_total_pages):
+        j5s.my_apply(p)
+        # break
+
 if __name__ == '__main__':
-    main()
+    stat_my_apply('15800223273', 'sc5201314')
+

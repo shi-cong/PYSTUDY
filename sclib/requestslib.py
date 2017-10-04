@@ -32,7 +32,8 @@ class HTTP(object):
             verify=False,
             proxies=None,
             allow_redirects=True,
-            encoding='utf-8'):
+            encoding='utf-8',
+            params=None):
         if self.session:
             r = self.session.get(url,
                                  headers=OrderedDict(headers),
@@ -40,7 +41,8 @@ class HTTP(object):
                                  timeout=timeout,
                                  verify=verify,
                                  proxies=proxies,
-                                 allow_redirects=allow_redirects)
+                                 allow_redirects=allow_redirects,
+                                 params=params)
             r.raise_for_status()
             r.encoding = encoding
             return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history
@@ -51,7 +53,8 @@ class HTTP(object):
                              timeout=timeout,
                              verify=verify,
                              proxies=proxies,
-                             allow_redirects=allow_redirects)
+                             allow_redirects=allow_redirects,
+                             params=params)
             r.raise_for_status()
             r.encoding = encoding
             return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history
@@ -63,7 +66,8 @@ class HTTP(object):
             timeout=30,
             verify=False,
             proxies=None,
-            allow_redirects=True):
+            allow_redirects=True,
+            params=None):
         if self.session:
             r = self.session.get(url,
                                  headers=OrderedDict(headers),
@@ -71,7 +75,8 @@ class HTTP(object):
                                  timeout=timeout,
                                  verify=verify,
                                  proxies=proxies,
-                                 allow_redirects=allow_redirects)
+                                 allow_redirects=allow_redirects,
+                                 params=params)
             r.raise_for_status()
             return r.content
         else:
@@ -81,7 +86,8 @@ class HTTP(object):
                              timeout=timeout,
                              verify=verify,
                              proxies=proxies,
-                             allow_redirects=allow_redirects)
+                             allow_redirects=allow_redirects,
+                             params=params)
             r.raise_for_status()
             return r.content
 
@@ -94,7 +100,8 @@ class HTTP(object):
              verify=False,
              proxies=None,
              allow_redirects=True,
-             encoding='utf-8'):
+             encoding='utf-8',
+             params=None):
         if self.session:
             r = self.session.post(
                 url,
@@ -104,7 +111,8 @@ class HTTP(object):
                 data=form_data,
                 verify=verify,
                 proxies=proxies,
-                allow_redirects=allow_redirects)
+                allow_redirects=allow_redirects,
+                params=params)
             r.raise_for_status()
             r.encoding = encoding
             return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history
@@ -117,7 +125,8 @@ class HTTP(object):
                 data=form_data,
                 verify=verify,
                 proxies=proxies,
-                allow_redirects=allow_redirects)
+                allow_redirects=allow_redirects,
+                params=params)
             r.raise_for_status()
             r.encoding = encoding
             return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history

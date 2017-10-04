@@ -17,13 +17,9 @@ class ReParser(object):
     '''
     正则表达式解析封装
     '''
-    def __init__(self):
-        self.match = None
-
     def compute(self, re_text, text):
-        if not self.match:
-            self.match = re.compile(re_text)
-        m = self.match.search(text)
+        match = re.compile(re_text)
+        m = match.search(text)
         return m.group() if m else None
 
     def replace(self, re_text, replace_str, text):
