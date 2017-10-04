@@ -73,9 +73,9 @@ class Job51Spider:
                              cookies=requestCookie, allow_redirects=False, encoding='gbk')
         xp = XpathParser(text=t)
         if page == 1:
-            rp = ReParser('[0-9]+')
+            rp = ReParser()
             numJobsHtml = xp.xpath('//*[@id="resultList"]/div[1]/div[3]/text()').extract_first()
-            numJobs = int(rp.compute(numJobsHtml))
+            numJobs = int(rp.compute('[0-9]+', numJobsHtml))
             self.numJobs = numJobs
         jobsIdHtml = xp.xpath('//div[@class="el"]/p[@class="t1 "]')[:-1]
         companyHtml = xp.xpath('//div[@class="el"]/span[@class="t2"]')[:-1]

@@ -18,6 +18,15 @@ def open_img(filename):
     """
     return Image.open(filename)
 
+def convert_png(filename):
+    """
+    转换为png图片
+    :param filename: 图片文件名
+    :return:
+    """
+    img = Image.open(filename)
+    img.save('')
+
 def recognition(img):
     """
     识别图片

@@ -52,13 +52,12 @@ class JiaYuanSpider:
         text, headers, cookies, history = self.http.post(url, headers=headers, form_data=form_data)
         print(text)
         print('-----------------')
-
-        rp = ReParser("\('.*'\)")
-        try:
-            lj_url = rp.compute(text)[2:-2]
-            return lj_url
-        except:
-            pass
+        if 'http://login.jiayuan.com/err.php?err_type=-10&pre_url=' in text:
+            print('需要验证码登陆，或者你的IP被封了')
+            raise Exception('需要验证码登陆，或者你的IP被封了')
+        rp = ReParser()
+        lj_url = rp.compute("\('.*'\)", text)[2:-2]
+        return lj_url
 
     def antispam_v2(self, train=False, count=1):
         url = 'http://login.jiayuan.com/antispam_v2.php?v=2'
