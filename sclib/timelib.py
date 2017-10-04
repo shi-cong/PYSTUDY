@@ -22,3 +22,8 @@ def time_to_timestamp(time_str):
 
 def get_current_timestamp():
     return time.time()
+
+
+if __name__ == '__main__':
+    ttt = timestamp_to_time(1507106722)
+    print(ttt)

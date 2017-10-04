@@ -70,7 +70,7 @@ class JiaYuanSpider:
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6'
         }
-        img_data = self.http.get_img(url, headers=headers, proxies={'http': '60.186.203.21:8118'})
+        img_data = self.http.get_img(url, headers=headers)
         print(img_data)
         img = get_img_from_bytes(img_data)
         if train:
