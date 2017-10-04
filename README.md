@@ -23,4 +23,9 @@ SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and pay like '%1.%
 从图中可以看出的是，爬虫在深圳招聘的并不多，由此可以认为，我上次辞职是一次非常大的失误。
 这里就只有一家深圳你我金融看起来还不错的公司，其它都不符合。
 
+*统计爬虫并且在深圳的公司
+```sql
+SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and company_name like '%深圳%'  order by submit_nums desc limit 100;
+```
+˙˙
 ## k-NN近邻分类算法
