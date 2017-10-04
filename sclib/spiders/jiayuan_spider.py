@@ -247,5 +247,6 @@ def seen_img():
     result = recognition(img)
     print(result)
 
-train_checkcode()
+main()
+# train_checkcode()
 # seen_img()
