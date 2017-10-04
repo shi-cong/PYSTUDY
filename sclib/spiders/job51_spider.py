@@ -120,10 +120,10 @@ class Job51Spider:
             print('失败', t)
 
 
-def main():
+def main(user='admin', password='123456'):
     j5s = Job51Spider()
     c = j5s.index()
-    reqs = j5s.login('15800223273', 'sc5201314', c)
+    reqs = j5s.login(user, password, c)
     j5s.search('python', reqs)
 
     p = 1
@@ -137,5 +137,4 @@ def main():
             continue
         p += 1
 
-# logging.basicConfig(level=logging.DEBUG)
 main()
