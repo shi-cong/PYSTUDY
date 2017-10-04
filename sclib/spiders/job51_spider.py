@@ -140,4 +140,5 @@ def main(user='admin', password='123456'):
             continue
         p += 1
 
-main()
+if __name__ == '__main__':
+    main()

@@ -249,6 +249,8 @@ def seen_img():
     result = recognition(img)
     print(result)
 
-main()
-# train_checkcode()
-# seen_img()
+
+if __name__ == '__main__':
+    main()
+    # train_checkcode()
+    # seen_img()
