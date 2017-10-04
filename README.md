@@ -14,4 +14,8 @@ http到https，https又到http。之前投递是批量投递，这次是一个�
 账户可能有安全级别，解封条件大概是2天左右，验证码也防IP，解封条件1天左右。
 目前我要的数据都已经拿到了，他们平台的验证码，还是比较容易破解的。
 
+*统计爬虫并且工资在1万左右的人数最多的前100个*
+```sql
+SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and pay like '%1.%' order by submit_nums desc limit 100;
+```
 ## k-NN近邻分类算法
