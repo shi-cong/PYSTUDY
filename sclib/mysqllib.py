@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+"""
+mysql模块
+"""
 import logging
 import traceback
 from threading import Lock, current_thread

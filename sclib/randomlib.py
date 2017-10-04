@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+"""
+random随机数封装
+"""
 
 import random
 import string

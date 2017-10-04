@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+"""
+excel操作模块
+"""
+
 import xlwt
 
 

@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+"""
+时间操作模块
+"""
 import time
 
 

@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+"""
+yaml操作模块
+"""
 import yaml
 
 

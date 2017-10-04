@@ -1,3 +1,6 @@
+"""
+boss直聘爬虫
+"""
 from sclib.html_parserlib import XpathParser, ReParser
 
 from sclib.requestslib import HTTP

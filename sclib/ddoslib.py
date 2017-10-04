@@ -1,3 +1,8 @@
+"""
+ddos攻击模块
+"""
+
+
 import socket, time
 from threading import Thread, active_count
 

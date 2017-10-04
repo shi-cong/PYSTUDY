@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+"""
+html解析模块
+"""
 from scrapy.selector import Selector
 import re
 

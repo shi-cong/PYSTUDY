@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+"""
+mongo模块
+"""
 import pymongo
 import sys
 

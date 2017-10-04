@@ -1,3 +1,6 @@
+"""
+前程无忧爬虫
+"""
 from sclib.html_parserlib import XpathParser, ReParser
 from sclib.requestslib import HTTP
 from sclib.randomlib import random_small_number

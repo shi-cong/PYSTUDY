@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*-
-
+"""
+加密算法模块
+"""
 
 def caesar_cipher(message, key):
     """

@@ -1,5 +1,6 @@
-# -*- encoding: gbk -*-
-
+"""
+requestsÄ£¿é
+"""
 import requests
 from collections import OrderedDict
 from requests.utils import dict_from_cookiejar

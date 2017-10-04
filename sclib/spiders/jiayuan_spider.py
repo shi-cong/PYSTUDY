@@ -1,3 +1,6 @@
+"""
+世纪佳缘爬虫
+"""
 from sclib.html_parserlib import XpathParser, ReParser
 from sclib.requestslib import HTTP
 from sclib.jsonlib import loads
@@ -29,17 +32,17 @@ class JiaYuanSpider:
         post登陆
         :return: 登陆跳转的url
         """
-        url = 'https://passport.jiayuan.com/dologin.php?host=www.jiayuan.com&new_header=1&channel=index'
+        url = 'https://passport.jiayuan.md.com/dologin.php?host=www.jiayuan.md.com&new_header=1&channel=index'
         headers = {
-            'Host': 'passport.jiayuan.com',
+            'Host': 'passport.jiayuan.md.com',
             'Content-Length': '60',
             'Cache-Control': 'max-age=0',
-            'Origin': 'http://www.jiayuan.com',
+            'Origin': 'http://www.jiayuan.md.com',
             'Upgrade-Insecure-Requests': '1',
             'Content-Type': 'application/x-www-form-urlencoded',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-            'Referer': 'http://www.jiayuan.com/',
+            'Referer': 'http://www.jiayuan.md.com/',
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
         }
@@ -52,7 +55,7 @@ class JiaYuanSpider:
         text, headers, cookies, history = self.http.post(url, headers=headers, form_data=form_data)
         print(text)
         print('-----------------')
-        if 'http://login.jiayuan.com/err.php?err_type=-10&pre_url=' in text:
+        if 'http://login.jiayuan.md.com/err.php?err_type=-10&pre_url=' in text:
             print('需要验证码登陆，或者你的IP被封了')
             raise Exception('需要验证码登陆，或者你的IP被封了')
         rp = ReParser()
@@ -60,12 +63,12 @@ class JiaYuanSpider:
         return lj_url
 
     def antispam_v2(self, train=False, count=1):
-        url = 'http://login.jiayuan.com/antispam_v2.php?v=2'
+        url = 'http://login.jiayuan.md.com/antispam_v2.php?v=2'
         headers = {
-            'Host': 'login.jiayuan.com',
+            'Host': 'login.jiayuan.md.com',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
             'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
-            'Referer': 'http://login.jiayuan.com/?pre_url=%2Fusercp&channel=1&position=21&refrer=http://www.jiayuan.com&host=0',
+            'Referer': 'http://login.jiayuan.md.com/?pre_url=%2Fusercp&channel=1&position=21&refrer=http://www.jiayuan.md.com&host=0',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6'
         }
@@ -87,7 +90,7 @@ class JiaYuanSpider:
             'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
             'Accept-Encoding':'gzip, deflate',
             'Accept-Language':'zh-CN,zh;q=0.8,en;q=0.6',
-            'Host':'www.jiayuan.com',
+            'Host':'www.jiayuan.md.com',
             'Upgrade-Insecure-Requests':'1',
             'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
         }
@@ -100,9 +103,9 @@ class JiaYuanSpider:
         访问用户主页
         :return:
         """
-        usercp_url = 'http://usercp.jiayuan.com/?from=login'
+        usercp_url = 'http://usercp.jiayuan.md.com/?from=login'
         headers = {
-            'Host': 'www.jiayuan.com',
+            'Host': 'www.jiayuan.md.com',
             'Upgrade-Insecure-Requests': '1',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -118,36 +121,36 @@ class JiaYuanSpider:
         访问搜索主页更新session
         :return:
         """
-        search_url = 'http://search.jiayuan.com/v2/'
+        search_url = 'http://search.jiayuan.md.com/v2/'
         headers = {
-            'Host': 'search.jiayuan.com',
+            'Host': 'search.jiayuan.md.com',
             'Upgrade-Insecure-Requests': '1',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-            'Referer': 'http://usercp.jiayuan.com/?from=login',
+            'Referer': 'http://usercp.jiayuan.md.com/?from=login',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
         }
         text, headers, cookies, history = self.http.get(search_url, headers=headers)
         self.mysql_pool = MYSQLPool(20,
             **dict(host='192.168.80.4',
-                 user='jiayuan',
+                 user='jiayuan.md',
                  password='123456',
-                 db='jiayuan',
+                 db='jiayuan.md',
                  charset='utf8mb4'))
 
     def post_search_v2(self, page=1):
-        request_url = 'http://search.jiayuan.com/v2/search_v2.php'
+        request_url = 'http://search.jiayuan.md.com/v2/search_v2.php'
         request_headers = {
-            'Host': 'search.jiayuan.com',
+            'Host': 'search.jiayuan.md.com',
             'Connection': 'keep-alive',
             'Content-Length': '129',
             'Accept': '*/*',
-            'Origin': 'http://search.jiayuan.com',
+            'Origin': 'http://search.jiayuan.md.com',
             'X-Requested-With': 'XMLHttpRequest',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            'Referer': 'http://search.jiayuan.com/v2/',
+            'Referer': 'http://search.jiayuan.md.com/v2/',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
         }

@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+"""
+pika深度封装模块
+"""
 import pika
 import traceback
 from threading import Thread
