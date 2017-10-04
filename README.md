@@ -23,9 +23,13 @@ SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and pay like '%1.%
 从图中可以看出的是，爬虫在深圳招聘的并不多，由此可以认为，我上次辞职是一次非常大的失误。
 这里就只有一家深圳你我金融看起来还不错的公司，其它都不符合。
 
-*统计爬虫并且在深圳的公司
+*统计爬虫并且在深圳的公司*
 ```sql
 SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and company_name like '%深圳%'  order by submit_nums desc limit 100;
 ```
-˙˙
+![](https://github.com/shi-cong/review/blob/master/data/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-05%20%E4%B8%8A%E5%8D%886.29.46.png)
+这个看起来更悲伤了，居然只有这么几个，总之在深圳现在招聘的都是高手中的高手，我这种
+也算高手了啊，但是咱的学历低，一块砖头，人家都是一包水泥本科以上啊，但是我技术好啊，
+技术好也要让别人看到，辞职有一个星期左右了吧，还家里蹲有点说不过去吧。
+
 ## k-NN近邻分类算法
