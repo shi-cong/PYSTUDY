@@ -11,6 +11,7 @@ http到https，https又到http。之前投递是批量投递，这次是一个�
 然后每天给我问好，主人已经帮你搞定了。你好好休息，哈哈。
 
 ### (1)、获取所有有关python的职位信息
+![](https://github.com/shi-cong/review/blob/master/data/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-05%20%E4%B8%8B%E5%8D%885.29.09.png)
 
 ### (2)、统计爬虫并且工资在1万左右的人数最多的前100个
 ```sql
