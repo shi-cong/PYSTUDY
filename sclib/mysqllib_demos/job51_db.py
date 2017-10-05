@@ -13,3 +13,8 @@ def add_my_apply(*params):
     sql = 'insert into my_apply(job_name, pay, job_url, submit_time, submit_nums, company_name, company_url) ' \
           'values(%s, %s, %s, %s, %s, %s, %s)'
     mysql_pool.execute(sql, params)
+
+def add_job(*params):
+    sql = 'insert into job(job_id, job_name, company, addr, money, pub_time) ' \
+          'values(%s, %s, %s, %s, %s, %s)'
+    mysql_pool.execute(sql, params)

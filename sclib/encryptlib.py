@@ -1,6 +1,18 @@
 """
 加密算法模块
 """
+# 维基百科：https://zh.wikipedia.org/wiki/Bcrypt
+# pypi：https://pypi.python.org/pypi/bcrypt/3.1.0
+
+import bcrypt
+
+def check_hashpw(password, salt):
+    password = password.encode()
+    hashed = bcrypt.hashpw(password, bcrypt.gensalt(salt))
+    if bcrypt.checkpw(password, hashed):
+        return True
+    else:
+        return False
 
 def caesar_cipher(message, key):
     """
@@ -61,3 +73,9 @@ def transposition_cipher(key, message):
             pointer += key
 
     return ''.join(ciphertext)
+
+
+if __name__ == '__main__':
+    passwd = '123456'
+    b = check_hashpw(passwd, 14)
+    print(b)

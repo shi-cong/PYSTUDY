@@ -10,7 +10,9 @@ http到https，https又到http。之前投递是批量投递，这次是一个�
 有多少胜算。我现在都有想考虑为自己弄一个ios app了，就是app上控制这个爬虫帮我投，
 然后每天给我问好，主人已经帮你搞定了。你好好休息，哈哈。
 
-### (1)、统计爬虫并且工资在1万左右的人数最多的前100个
+### (1)、获取所有有关python的职位信息
+
+### (2)、统计爬虫并且工资在1万左右的人数最多的前100个
 ```sql
 SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and pay like '%1.%' order by submit_nums desc limit 100;
 ```
@@ -18,7 +20,7 @@ SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and pay like '%1.%
 从图中可以看出的是，爬虫在深圳招聘的并不多，由此可以认为，我上次辞职是一次非常大的失误。
 这里就只有一家深圳你我金融看起来还不错的公司，其它都不符合。
 
-### (2)、统计爬虫并且在深圳的公司
+### (3)、统计爬虫并且在深圳的公司
 ```sql
 SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and company_name like '%深圳%'  order by submit_nums desc limit 100;
 ```
