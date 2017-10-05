@@ -13,7 +13,7 @@ print(p, o)
 for parent,dirnames,filenames in walk(p):
     if '__py' in parent:
         continue
-    prefix = 'shicong' + j2(parent.split('shicong')[1].split('/'), '.')
+    prefix = 'shicong'
     print(prefix)
 
     count = 0
@@ -25,7 +25,7 @@ for parent,dirnames,filenames in walk(p):
             tmp = j2([prefix, split_ext(f)[0]], '.')
             print(tmp)
             system('pydoc3 -w %s' % tmp)
-        mv('*.html', 'docs/')
+        system('mv *.html  ../docs/')
 
         count += 1
     count = 0

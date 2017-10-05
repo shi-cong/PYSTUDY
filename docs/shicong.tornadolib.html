@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module shicong.tornadolib</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="shicong.html"><font color="#ffffff">shicong</font></a>.tornadolib</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/shicong/PycharmProjects/shicong/shicong/tornadolib.py">/Users/shicong/PycharmProjects/shicong/shicong/tornadolib.py</a></font></td></tr></table>
+    <p><tt>tornado模块<br>
+https://github.com/tornadoweb/tornado</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="tornado.html">tornado</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="shicong.tornadolib.html#Application">Application</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="tornado.web.html#RequestHandler">tornado.web.RequestHandler</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="shicong.tornadolib.html#BaseHandler">BaseHandler</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Application">class <strong>Application</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Application-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Application-add_view"><strong>add_view</strong></a>(self, view_name, handler)</dt></dl>
+
+<dl><dt><a name="Application-close"><strong>close</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Application-start"><strong>start</strong></a>(self, port)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BaseHandler">class <strong>BaseHandler</strong></a>(<a href="tornado.web.html#RequestHandler">tornado.web.RequestHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Base&nbsp;class&nbsp;for&nbsp;HTTP&nbsp;request&nbsp;handlers.<br>
+&nbsp;<br>
+Subclasses&nbsp;must&nbsp;define&nbsp;at&nbsp;least&nbsp;one&nbsp;of&nbsp;the&nbsp;methods&nbsp;defined&nbsp;in&nbsp;the<br>
+"Entry&nbsp;points"&nbsp;section&nbsp;below.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="shicong.tornadolib.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="tornado.web.html#RequestHandler">tornado.web.RequestHandler</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods inherited from <a href="tornado.web.html#RequestHandler">tornado.web.RequestHandler</a>:<br>
+<dl><dt><a name="BaseHandler-__init__"><strong>__init__</strong></a>(self, application, request, **kwargs)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-add_header"><strong>add_header</strong></a>(self, name, value)</dt><dd><tt>Adds&nbsp;the&nbsp;given&nbsp;response&nbsp;header&nbsp;and&nbsp;value.<br>
+&nbsp;<br>
+Unlike&nbsp;`set_header`,&nbsp;`add_header`&nbsp;may&nbsp;be&nbsp;called&nbsp;multiple&nbsp;times<br>
+to&nbsp;return&nbsp;multiple&nbsp;values&nbsp;for&nbsp;the&nbsp;same&nbsp;header.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-check_etag_header"><strong>check_etag_header</strong></a>(self)</dt><dd><tt>Checks&nbsp;the&nbsp;``Etag``&nbsp;header&nbsp;against&nbsp;requests's&nbsp;``If-None-Match``.<br>
+&nbsp;<br>
+Returns&nbsp;``True``&nbsp;if&nbsp;the&nbsp;request's&nbsp;Etag&nbsp;matches&nbsp;and&nbsp;a&nbsp;304&nbsp;should&nbsp;be<br>
+returned.&nbsp;For&nbsp;example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;self.<a href="#BaseHandler-set_etag_header">set_etag_header</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.<a href="#BaseHandler-check_etag_header">check_etag_header</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<a href="#BaseHandler-set_status">set_status</a>(304)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;called&nbsp;automatically&nbsp;when&nbsp;the&nbsp;request&nbsp;is&nbsp;finished,<br>
+but&nbsp;may&nbsp;be&nbsp;called&nbsp;earlier&nbsp;for&nbsp;applications&nbsp;that&nbsp;override<br>
+`compute_etag`&nbsp;and&nbsp;want&nbsp;to&nbsp;do&nbsp;an&nbsp;early&nbsp;check&nbsp;for&nbsp;``If-None-Match``<br>
+before&nbsp;completing&nbsp;the&nbsp;request.&nbsp;&nbsp;The&nbsp;``Etag``&nbsp;header&nbsp;should&nbsp;be&nbsp;set<br>
+(perhaps&nbsp;with&nbsp;`set_etag_header`)&nbsp;before&nbsp;calling&nbsp;this&nbsp;method.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-check_xsrf_cookie"><strong>check_xsrf_cookie</strong></a>(self)</dt><dd><tt>Verifies&nbsp;that&nbsp;the&nbsp;``_xsrf``&nbsp;cookie&nbsp;matches&nbsp;the&nbsp;``_xsrf``&nbsp;argument.<br>
+&nbsp;<br>
+To&nbsp;prevent&nbsp;cross-site&nbsp;request&nbsp;forgery,&nbsp;we&nbsp;set&nbsp;an&nbsp;``_xsrf``<br>
+cookie&nbsp;and&nbsp;include&nbsp;the&nbsp;same&nbsp;value&nbsp;as&nbsp;a&nbsp;non-cookie<br>
+field&nbsp;with&nbsp;all&nbsp;``POST``&nbsp;requests.&nbsp;If&nbsp;the&nbsp;two&nbsp;do&nbsp;not&nbsp;match,&nbsp;we<br>
+reject&nbsp;the&nbsp;form&nbsp;submission&nbsp;as&nbsp;a&nbsp;potential&nbsp;forgery.<br>
+&nbsp;<br>
+The&nbsp;``_xsrf``&nbsp;value&nbsp;may&nbsp;be&nbsp;set&nbsp;as&nbsp;either&nbsp;a&nbsp;form&nbsp;field&nbsp;named&nbsp;``_xsrf``<br>
+or&nbsp;in&nbsp;a&nbsp;custom&nbsp;HTTP&nbsp;header&nbsp;named&nbsp;``X-XSRFToken``&nbsp;or&nbsp;``X-CSRFToken``<br>
+(the&nbsp;latter&nbsp;is&nbsp;accepted&nbsp;for&nbsp;compatibility&nbsp;with&nbsp;Django).<br>
+&nbsp;<br>
+See&nbsp;<a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">http://en.wikipedia.org/wiki/Cross-site_request_forgery</a><br>
+&nbsp;<br>
+Prior&nbsp;to&nbsp;release&nbsp;1.1.1,&nbsp;this&nbsp;check&nbsp;was&nbsp;ignored&nbsp;if&nbsp;the&nbsp;HTTP&nbsp;header<br>
+``X-Requested-With:&nbsp;XMLHTTPRequest``&nbsp;was&nbsp;present.&nbsp;&nbsp;This&nbsp;exception<br>
+has&nbsp;been&nbsp;shown&nbsp;to&nbsp;be&nbsp;insecure&nbsp;and&nbsp;has&nbsp;been&nbsp;removed.&nbsp;&nbsp;For&nbsp;more<br>
+information&nbsp;please&nbsp;see<br>
+<a href="http://www.djangoproject.com/weblog/2011/feb/08/security/">http://www.djangoproject.com/weblog/2011/feb/08/security/</a><br>
+<a href="http://weblog.rubyonrails.org/2011/2/8/csrf-protection-bypass-in-ruby-on-rails">http://weblog.rubyonrails.org/2011/2/8/csrf-protection-bypass-in-ruby-on-rails</a><br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;3.2.2<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;support&nbsp;for&nbsp;cookie&nbsp;version&nbsp;2.&nbsp;&nbsp;Both&nbsp;versions&nbsp;1&nbsp;and&nbsp;2&nbsp;are<br>
+&nbsp;&nbsp;&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-clear"><strong>clear</strong></a>(self)</dt><dd><tt>Resets&nbsp;all&nbsp;headers&nbsp;and&nbsp;content&nbsp;for&nbsp;this&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-clear_all_cookies"><strong>clear_all_cookies</strong></a>(self, path='/', domain=None)</dt><dd><tt>Deletes&nbsp;all&nbsp;the&nbsp;cookies&nbsp;the&nbsp;user&nbsp;sent&nbsp;with&nbsp;this&nbsp;request.<br>
+&nbsp;<br>
+See&nbsp;`clear_cookie`&nbsp;for&nbsp;more&nbsp;information&nbsp;on&nbsp;the&nbsp;path&nbsp;and&nbsp;domain<br>
+parameters.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;3.2<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;the&nbsp;``path``&nbsp;and&nbsp;``domain``&nbsp;parameters.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-clear_cookie"><strong>clear_cookie</strong></a>(self, name, path='/', domain=None)</dt><dd><tt>Deletes&nbsp;the&nbsp;cookie&nbsp;with&nbsp;the&nbsp;given&nbsp;name.<br>
+&nbsp;<br>
+Due&nbsp;to&nbsp;limitations&nbsp;of&nbsp;the&nbsp;cookie&nbsp;protocol,&nbsp;you&nbsp;must&nbsp;pass&nbsp;the&nbsp;same<br>
+path&nbsp;and&nbsp;domain&nbsp;to&nbsp;clear&nbsp;a&nbsp;cookie&nbsp;as&nbsp;were&nbsp;used&nbsp;when&nbsp;that&nbsp;cookie<br>
+was&nbsp;set&nbsp;(but&nbsp;there&nbsp;is&nbsp;no&nbsp;way&nbsp;to&nbsp;find&nbsp;out&nbsp;on&nbsp;the&nbsp;server&nbsp;side<br>
+which&nbsp;values&nbsp;were&nbsp;used&nbsp;for&nbsp;a&nbsp;given&nbsp;cookie).</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-clear_header"><strong>clear_header</strong></a>(self, name)</dt><dd><tt>Clears&nbsp;an&nbsp;outgoing&nbsp;header,&nbsp;undoing&nbsp;a&nbsp;previous&nbsp;`set_header`&nbsp;call.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;this&nbsp;method&nbsp;does&nbsp;not&nbsp;apply&nbsp;to&nbsp;multi-valued&nbsp;headers<br>
+set&nbsp;by&nbsp;`add_header`.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-compute_etag"><strong>compute_etag</strong></a>(self)</dt><dd><tt>Computes&nbsp;the&nbsp;etag&nbsp;header&nbsp;to&nbsp;be&nbsp;used&nbsp;for&nbsp;this&nbsp;request.<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;uses&nbsp;a&nbsp;hash&nbsp;of&nbsp;the&nbsp;content&nbsp;written&nbsp;so&nbsp;far.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden&nbsp;to&nbsp;provide&nbsp;custom&nbsp;etag&nbsp;implementations,<br>
+or&nbsp;may&nbsp;return&nbsp;None&nbsp;to&nbsp;disable&nbsp;tornado's&nbsp;default&nbsp;etag&nbsp;support.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-create_signed_value"><strong>create_signed_value</strong></a>(self, name, value, version=None)</dt><dd><tt>Signs&nbsp;and&nbsp;timestamps&nbsp;a&nbsp;string&nbsp;so&nbsp;it&nbsp;cannot&nbsp;be&nbsp;forged.<br>
+&nbsp;<br>
+Normally&nbsp;used&nbsp;via&nbsp;set_secure_cookie,&nbsp;but&nbsp;provided&nbsp;as&nbsp;a&nbsp;separate<br>
+method&nbsp;for&nbsp;non-cookie&nbsp;uses.&nbsp;&nbsp;To&nbsp;decode&nbsp;a&nbsp;value&nbsp;not&nbsp;stored<br>
+as&nbsp;a&nbsp;cookie&nbsp;use&nbsp;the&nbsp;optional&nbsp;value&nbsp;argument&nbsp;to&nbsp;get_secure_cookie.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;3.2.1<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;the&nbsp;``version``&nbsp;argument.&nbsp;&nbsp;Introduced&nbsp;cookie&nbsp;version&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;and&nbsp;made&nbsp;it&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-create_template_loader"><strong>create_template_loader</strong></a>(self, template_path)</dt><dd><tt>Returns&nbsp;a&nbsp;new&nbsp;template&nbsp;loader&nbsp;for&nbsp;the&nbsp;given&nbsp;path.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden&nbsp;by&nbsp;subclasses.&nbsp;&nbsp;By&nbsp;default&nbsp;returns&nbsp;a<br>
+directory-based&nbsp;loader&nbsp;on&nbsp;the&nbsp;given&nbsp;path,&nbsp;using&nbsp;the<br>
+``autoescape``&nbsp;and&nbsp;``template_whitespace``&nbsp;application<br>
+settings.&nbsp;&nbsp;If&nbsp;a&nbsp;``template_loader``&nbsp;application&nbsp;setting&nbsp;is<br>
+supplied,&nbsp;uses&nbsp;that&nbsp;instead.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-data_received"><strong>data_received</strong></a>(self, chunk)</dt><dd><tt>Implement&nbsp;this&nbsp;method&nbsp;to&nbsp;handle&nbsp;streamed&nbsp;request&nbsp;data.<br>
+&nbsp;<br>
+Requires&nbsp;the&nbsp;`.stream_request_body`&nbsp;decorator.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-decode_argument"><strong>decode_argument</strong></a>(self, value, name=None)</dt><dd><tt>Decodes&nbsp;an&nbsp;argument&nbsp;from&nbsp;the&nbsp;request.<br>
+&nbsp;<br>
+The&nbsp;argument&nbsp;has&nbsp;been&nbsp;percent-decoded&nbsp;and&nbsp;is&nbsp;now&nbsp;a&nbsp;byte&nbsp;string.<br>
+By&nbsp;default,&nbsp;this&nbsp;method&nbsp;decodes&nbsp;the&nbsp;argument&nbsp;as&nbsp;utf-8&nbsp;and&nbsp;returns<br>
+a&nbsp;unicode&nbsp;string,&nbsp;but&nbsp;this&nbsp;may&nbsp;be&nbsp;overridden&nbsp;in&nbsp;subclasses.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;used&nbsp;as&nbsp;a&nbsp;filter&nbsp;for&nbsp;both&nbsp;`<a href="#BaseHandler-get_argument">get_argument</a>()`&nbsp;and&nbsp;for<br>
+values&nbsp;extracted&nbsp;from&nbsp;the&nbsp;url&nbsp;and&nbsp;passed&nbsp;to&nbsp;`<a href="#BaseHandler-get">get</a>()`/`<a href="#BaseHandler-post">post</a>()`/etc.<br>
+&nbsp;<br>
+The&nbsp;name&nbsp;of&nbsp;the&nbsp;argument&nbsp;is&nbsp;provided&nbsp;if&nbsp;known,&nbsp;but&nbsp;may&nbsp;be&nbsp;None<br>
+(e.g.&nbsp;for&nbsp;unnamed&nbsp;groups&nbsp;in&nbsp;the&nbsp;url&nbsp;regex).</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-delete"><strong>delete</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="BaseHandler-finish"><strong>finish</strong></a>(self, chunk=None)</dt><dd><tt>Finishes&nbsp;this&nbsp;response,&nbsp;ending&nbsp;the&nbsp;HTTP&nbsp;request.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-flush"><strong>flush</strong></a>(self, include_footers=False, callback=None)</dt><dd><tt>Flushes&nbsp;the&nbsp;current&nbsp;output&nbsp;buffer&nbsp;to&nbsp;the&nbsp;network.<br>
+&nbsp;<br>
+The&nbsp;``callback``&nbsp;argument,&nbsp;if&nbsp;given,&nbsp;can&nbsp;be&nbsp;used&nbsp;for&nbsp;flow&nbsp;control:<br>
+it&nbsp;will&nbsp;be&nbsp;run&nbsp;when&nbsp;all&nbsp;flushed&nbsp;data&nbsp;has&nbsp;been&nbsp;written&nbsp;to&nbsp;the&nbsp;socket.<br>
+Note&nbsp;that&nbsp;only&nbsp;one&nbsp;flush&nbsp;callback&nbsp;can&nbsp;be&nbsp;outstanding&nbsp;at&nbsp;a&nbsp;time;<br>
+if&nbsp;another&nbsp;flush&nbsp;occurs&nbsp;before&nbsp;the&nbsp;previous&nbsp;flush's&nbsp;callback<br>
+has&nbsp;been&nbsp;run,&nbsp;the&nbsp;previous&nbsp;callback&nbsp;will&nbsp;be&nbsp;discarded.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;4.0<br>
+&nbsp;&nbsp;&nbsp;Now&nbsp;returns&nbsp;a&nbsp;`.Future`&nbsp;if&nbsp;no&nbsp;callback&nbsp;is&nbsp;given.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get"><strong>get</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="BaseHandler-get_argument"><strong>get_argument</strong></a>(self, name, default=&lt;object object at 0x100739420&gt;, strip=True)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;argument&nbsp;with&nbsp;the&nbsp;given&nbsp;name.<br>
+&nbsp;<br>
+If&nbsp;default&nbsp;is&nbsp;not&nbsp;provided,&nbsp;the&nbsp;argument&nbsp;is&nbsp;considered&nbsp;to&nbsp;be<br>
+required,&nbsp;and&nbsp;we&nbsp;raise&nbsp;a&nbsp;`MissingArgumentError`&nbsp;if&nbsp;it&nbsp;is&nbsp;missing.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;appears&nbsp;in&nbsp;the&nbsp;url&nbsp;more&nbsp;than&nbsp;once,&nbsp;we&nbsp;return&nbsp;the<br>
+last&nbsp;value.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;value&nbsp;is&nbsp;always&nbsp;unicode.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_arguments"><strong>get_arguments</strong></a>(self, name, strip=True)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;arguments&nbsp;with&nbsp;the&nbsp;given&nbsp;name.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;is&nbsp;not&nbsp;present,&nbsp;returns&nbsp;an&nbsp;empty&nbsp;list.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;values&nbsp;are&nbsp;always&nbsp;unicode.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_body_argument"><strong>get_body_argument</strong></a>(self, name, default=&lt;object object at 0x100739420&gt;, strip=True)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;argument&nbsp;with&nbsp;the&nbsp;given&nbsp;name<br>
+from&nbsp;the&nbsp;request&nbsp;body.<br>
+&nbsp;<br>
+If&nbsp;default&nbsp;is&nbsp;not&nbsp;provided,&nbsp;the&nbsp;argument&nbsp;is&nbsp;considered&nbsp;to&nbsp;be<br>
+required,&nbsp;and&nbsp;we&nbsp;raise&nbsp;a&nbsp;`MissingArgumentError`&nbsp;if&nbsp;it&nbsp;is&nbsp;missing.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;appears&nbsp;in&nbsp;the&nbsp;url&nbsp;more&nbsp;than&nbsp;once,&nbsp;we&nbsp;return&nbsp;the<br>
+last&nbsp;value.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;value&nbsp;is&nbsp;always&nbsp;unicode.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;3.2</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_body_arguments"><strong>get_body_arguments</strong></a>(self, name, strip=True)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;body&nbsp;arguments&nbsp;with&nbsp;the&nbsp;given&nbsp;name.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;is&nbsp;not&nbsp;present,&nbsp;returns&nbsp;an&nbsp;empty&nbsp;list.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;values&nbsp;are&nbsp;always&nbsp;unicode.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;3.2</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_browser_locale"><strong>get_browser_locale</strong></a>(self, default='en_US')</dt><dd><tt>Determines&nbsp;the&nbsp;user's&nbsp;locale&nbsp;from&nbsp;``Accept-Language``&nbsp;header.<br>
+&nbsp;<br>
+See&nbsp;<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4</a></tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_cookie"><strong>get_cookie</strong></a>(self, name, default=None)</dt><dd><tt>Gets&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;cookie&nbsp;with&nbsp;the&nbsp;given&nbsp;name,&nbsp;else&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_current_user"><strong>get_current_user</strong></a>(self)</dt><dd><tt>Override&nbsp;to&nbsp;determine&nbsp;the&nbsp;current&nbsp;user&nbsp;from,&nbsp;e.g.,&nbsp;a&nbsp;cookie.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;may&nbsp;not&nbsp;be&nbsp;a&nbsp;coroutine.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_login_url"><strong>get_login_url</strong></a>(self)</dt><dd><tt>Override&nbsp;to&nbsp;customize&nbsp;the&nbsp;login&nbsp;URL&nbsp;based&nbsp;on&nbsp;the&nbsp;request.<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;we&nbsp;use&nbsp;the&nbsp;``login_url``&nbsp;application&nbsp;setting.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_query_argument"><strong>get_query_argument</strong></a>(self, name, default=&lt;object object at 0x100739420&gt;, strip=True)</dt><dd><tt>Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;argument&nbsp;with&nbsp;the&nbsp;given&nbsp;name<br>
+from&nbsp;the&nbsp;request&nbsp;query&nbsp;string.<br>
+&nbsp;<br>
+If&nbsp;default&nbsp;is&nbsp;not&nbsp;provided,&nbsp;the&nbsp;argument&nbsp;is&nbsp;considered&nbsp;to&nbsp;be<br>
+required,&nbsp;and&nbsp;we&nbsp;raise&nbsp;a&nbsp;`MissingArgumentError`&nbsp;if&nbsp;it&nbsp;is&nbsp;missing.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;appears&nbsp;in&nbsp;the&nbsp;url&nbsp;more&nbsp;than&nbsp;once,&nbsp;we&nbsp;return&nbsp;the<br>
+last&nbsp;value.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;value&nbsp;is&nbsp;always&nbsp;unicode.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;3.2</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_query_arguments"><strong>get_query_arguments</strong></a>(self, name, strip=True)</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;query&nbsp;arguments&nbsp;with&nbsp;the&nbsp;given&nbsp;name.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;argument&nbsp;is&nbsp;not&nbsp;present,&nbsp;returns&nbsp;an&nbsp;empty&nbsp;list.<br>
+&nbsp;<br>
+The&nbsp;returned&nbsp;values&nbsp;are&nbsp;always&nbsp;unicode.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;3.2</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_secure_cookie"><strong>get_secure_cookie</strong></a>(self, name, value=None, max_age_days=31, min_version=None)</dt><dd><tt>Returns&nbsp;the&nbsp;given&nbsp;signed&nbsp;cookie&nbsp;if&nbsp;it&nbsp;validates,&nbsp;or&nbsp;None.<br>
+&nbsp;<br>
+The&nbsp;decoded&nbsp;cookie&nbsp;value&nbsp;is&nbsp;returned&nbsp;as&nbsp;a&nbsp;byte&nbsp;string&nbsp;(unlike<br>
+`get_cookie`).<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;3.2.1<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;the&nbsp;``min_version``&nbsp;argument.&nbsp;&nbsp;Introduced&nbsp;cookie&nbsp;version&nbsp;2;<br>
+&nbsp;&nbsp;&nbsp;both&nbsp;versions&nbsp;1&nbsp;and&nbsp;2&nbsp;are&nbsp;accepted&nbsp;by&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_secure_cookie_key_version"><strong>get_secure_cookie_key_version</strong></a>(self, name, value=None)</dt><dd><tt>Returns&nbsp;the&nbsp;signing&nbsp;key&nbsp;version&nbsp;of&nbsp;the&nbsp;secure&nbsp;cookie.<br>
+&nbsp;<br>
+The&nbsp;version&nbsp;is&nbsp;returned&nbsp;as&nbsp;int.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_status"><strong>get_status</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;status&nbsp;code&nbsp;for&nbsp;our&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_template_namespace"><strong>get_template_namespace</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;to&nbsp;be&nbsp;used&nbsp;as&nbsp;the&nbsp;default&nbsp;template&nbsp;namespace.<br>
+&nbsp;<br>
+May&nbsp;be&nbsp;overridden&nbsp;by&nbsp;subclasses&nbsp;to&nbsp;add&nbsp;or&nbsp;modify&nbsp;values.<br>
+&nbsp;<br>
+The&nbsp;results&nbsp;of&nbsp;this&nbsp;method&nbsp;will&nbsp;be&nbsp;combined&nbsp;with&nbsp;additional<br>
+defaults&nbsp;in&nbsp;the&nbsp;`tornado.template`&nbsp;module&nbsp;and&nbsp;keyword&nbsp;arguments<br>
+to&nbsp;`render`&nbsp;or&nbsp;`render_string`.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_template_path"><strong>get_template_path</strong></a>(self)</dt><dd><tt>Override&nbsp;to&nbsp;customize&nbsp;template&nbsp;path&nbsp;for&nbsp;each&nbsp;handler.<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;we&nbsp;use&nbsp;the&nbsp;``template_path``&nbsp;application&nbsp;setting.<br>
+Return&nbsp;None&nbsp;to&nbsp;load&nbsp;templates&nbsp;relative&nbsp;to&nbsp;the&nbsp;calling&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get_user_locale"><strong>get_user_locale</strong></a>(self)</dt><dd><tt>Override&nbsp;to&nbsp;determine&nbsp;the&nbsp;locale&nbsp;from&nbsp;the&nbsp;authenticated&nbsp;user.<br>
+&nbsp;<br>
+If&nbsp;None&nbsp;is&nbsp;returned,&nbsp;we&nbsp;fall&nbsp;back&nbsp;to&nbsp;`<a href="#BaseHandler-get_browser_locale">get_browser_locale</a>()`.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;should&nbsp;return&nbsp;a&nbsp;`tornado.locale.Locale`&nbsp;<a href="builtins.html#object">object</a>,<br>
+most&nbsp;likely&nbsp;obtained&nbsp;via&nbsp;a&nbsp;call&nbsp;like&nbsp;``tornado.locale.<a href="#BaseHandler-get">get</a>("en")``</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-head"><strong>head</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="BaseHandler-initialize"><strong>initialize</strong></a>(self)</dt><dd><tt>Hook&nbsp;for&nbsp;subclass&nbsp;initialization.&nbsp;Called&nbsp;for&nbsp;each&nbsp;request.<br>
+&nbsp;<br>
+A&nbsp;dictionary&nbsp;passed&nbsp;as&nbsp;the&nbsp;third&nbsp;argument&nbsp;of&nbsp;a&nbsp;url&nbsp;spec&nbsp;will&nbsp;be<br>
+supplied&nbsp;as&nbsp;keyword&nbsp;arguments&nbsp;to&nbsp;<a href="#BaseHandler-initialize">initialize</a>().<br>
+&nbsp;<br>
+Example::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;ProfileHandler(<a href="tornado.web.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#BaseHandler-initialize">initialize</a>(self,&nbsp;database):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>database</strong>&nbsp;=&nbsp;database<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#BaseHandler-get">get</a>(self,&nbsp;username):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;app&nbsp;=&nbsp;<a href="#Application">Application</a>([<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(r'/user/(.*)',&nbsp;ProfileHandler,&nbsp;dict(database=database)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;])</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-log_exception"><strong>log_exception</strong></a>(self, typ, value, tb)</dt><dd><tt>Override&nbsp;to&nbsp;customize&nbsp;logging&nbsp;of&nbsp;uncaught&nbsp;exceptions.<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;logs&nbsp;instances&nbsp;of&nbsp;`HTTPError`&nbsp;as&nbsp;warnings&nbsp;without<br>
+stack&nbsp;traces&nbsp;(on&nbsp;the&nbsp;``tornado.general``&nbsp;logger),&nbsp;and&nbsp;all<br>
+other&nbsp;exceptions&nbsp;as&nbsp;errors&nbsp;with&nbsp;stack&nbsp;traces&nbsp;(on&nbsp;the<br>
+``tornado.application``&nbsp;logger).<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;3.1</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-on_connection_close"><strong>on_connection_close</strong></a>(self)</dt><dd><tt>Called&nbsp;in&nbsp;async&nbsp;handlers&nbsp;if&nbsp;the&nbsp;client&nbsp;closed&nbsp;the&nbsp;connection.<br>
+&nbsp;<br>
+Override&nbsp;this&nbsp;to&nbsp;clean&nbsp;up&nbsp;resources&nbsp;associated&nbsp;with<br>
+long-lived&nbsp;connections.&nbsp;&nbsp;Note&nbsp;that&nbsp;this&nbsp;method&nbsp;is&nbsp;called&nbsp;only&nbsp;if<br>
+the&nbsp;connection&nbsp;was&nbsp;closed&nbsp;during&nbsp;asynchronous&nbsp;processing;&nbsp;if&nbsp;you<br>
+need&nbsp;to&nbsp;do&nbsp;cleanup&nbsp;after&nbsp;every&nbsp;request&nbsp;override&nbsp;`on_finish`<br>
+instead.<br>
+&nbsp;<br>
+Proxies&nbsp;may&nbsp;keep&nbsp;a&nbsp;connection&nbsp;open&nbsp;for&nbsp;a&nbsp;time&nbsp;(perhaps<br>
+indefinitely)&nbsp;after&nbsp;the&nbsp;client&nbsp;has&nbsp;gone&nbsp;away,&nbsp;so&nbsp;this&nbsp;method<br>
+may&nbsp;not&nbsp;be&nbsp;called&nbsp;promptly&nbsp;after&nbsp;the&nbsp;end&nbsp;user&nbsp;closes&nbsp;their<br>
+connection.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-on_finish"><strong>on_finish</strong></a>(self)</dt><dd><tt>Called&nbsp;after&nbsp;the&nbsp;end&nbsp;of&nbsp;a&nbsp;request.<br>
+&nbsp;<br>
+Override&nbsp;this&nbsp;method&nbsp;to&nbsp;perform&nbsp;cleanup,&nbsp;logging,&nbsp;etc.<br>
+This&nbsp;method&nbsp;is&nbsp;a&nbsp;counterpart&nbsp;to&nbsp;`prepare`.&nbsp;&nbsp;``on_finish``&nbsp;may<br>
+not&nbsp;produce&nbsp;any&nbsp;output,&nbsp;as&nbsp;it&nbsp;is&nbsp;called&nbsp;after&nbsp;the&nbsp;response<br>
+has&nbsp;been&nbsp;sent&nbsp;to&nbsp;the&nbsp;client.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-options"><strong>options</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="BaseHandler-patch"><strong>patch</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="BaseHandler-post"><strong>post</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="BaseHandler-prepare"><strong>prepare</strong></a>(self)</dt><dd><tt>Called&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;a&nbsp;request&nbsp;before&nbsp;&nbsp;`get`/`post`/etc.<br>
+&nbsp;<br>
+Override&nbsp;this&nbsp;method&nbsp;to&nbsp;perform&nbsp;common&nbsp;initialization&nbsp;regardless<br>
+of&nbsp;the&nbsp;request&nbsp;method.<br>
+&nbsp;<br>
+Asynchronous&nbsp;support:&nbsp;Decorate&nbsp;this&nbsp;method&nbsp;with&nbsp;`.gen.coroutine`<br>
+or&nbsp;`.return_future`&nbsp;to&nbsp;make&nbsp;it&nbsp;asynchronous&nbsp;(the<br>
+`asynchronous`&nbsp;decorator&nbsp;cannot&nbsp;be&nbsp;used&nbsp;on&nbsp;`prepare`).<br>
+If&nbsp;this&nbsp;method&nbsp;returns&nbsp;a&nbsp;`.Future`&nbsp;execution&nbsp;will&nbsp;not&nbsp;proceed<br>
+until&nbsp;the&nbsp;`.Future`&nbsp;is&nbsp;done.<br>
+&nbsp;<br>
+..&nbsp;versionadded::&nbsp;3.1<br>
+&nbsp;&nbsp;&nbsp;Asynchronous&nbsp;support.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-put"><strong>put</strong></a>(self, *args, **kwargs)</dt></dl>
+
+<dl><dt><a name="BaseHandler-redirect"><strong>redirect</strong></a>(self, url, permanent=False, status=None)</dt><dd><tt>Sends&nbsp;a&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;(optionally&nbsp;relative)&nbsp;URL.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;``status``&nbsp;argument&nbsp;is&nbsp;specified,&nbsp;that&nbsp;value&nbsp;is&nbsp;used&nbsp;as&nbsp;the<br>
+HTTP&nbsp;status&nbsp;code;&nbsp;otherwise&nbsp;either&nbsp;301&nbsp;(permanent)&nbsp;or&nbsp;302<br>
+(temporary)&nbsp;is&nbsp;chosen&nbsp;based&nbsp;on&nbsp;the&nbsp;``permanent``&nbsp;argument.<br>
+The&nbsp;default&nbsp;is&nbsp;302&nbsp;(temporary).</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-render"><strong>render</strong></a>(self, template_name, **kwargs)</dt><dd><tt>Renders&nbsp;the&nbsp;template&nbsp;with&nbsp;the&nbsp;given&nbsp;arguments&nbsp;as&nbsp;the&nbsp;response.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-render_embed_css"><strong>render_embed_css</strong></a>(self, css_embed)</dt><dd><tt>Default&nbsp;method&nbsp;used&nbsp;to&nbsp;render&nbsp;the&nbsp;final&nbsp;embedded&nbsp;css&nbsp;for&nbsp;the<br>
+rendered&nbsp;webpage.<br>
+&nbsp;<br>
+Override&nbsp;this&nbsp;method&nbsp;in&nbsp;a&nbsp;sub-classed&nbsp;controller&nbsp;to&nbsp;change&nbsp;the&nbsp;output.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-render_embed_js"><strong>render_embed_js</strong></a>(self, js_embed)</dt><dd><tt>Default&nbsp;method&nbsp;used&nbsp;to&nbsp;render&nbsp;the&nbsp;final&nbsp;embedded&nbsp;js&nbsp;for&nbsp;the<br>
+rendered&nbsp;webpage.<br>
+&nbsp;<br>
+Override&nbsp;this&nbsp;method&nbsp;in&nbsp;a&nbsp;sub-classed&nbsp;controller&nbsp;to&nbsp;change&nbsp;the&nbsp;output.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-render_linked_css"><strong>render_linked_css</strong></a>(self, css_files)</dt><dd><tt>Default&nbsp;method&nbsp;used&nbsp;to&nbsp;render&nbsp;the&nbsp;final&nbsp;css&nbsp;links&nbsp;for&nbsp;the<br>
+rendered&nbsp;webpage.<br>
+&nbsp;<br>
+Override&nbsp;this&nbsp;method&nbsp;in&nbsp;a&nbsp;sub-classed&nbsp;controller&nbsp;to&nbsp;change&nbsp;the&nbsp;output.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-render_linked_js"><strong>render_linked_js</strong></a>(self, js_files)</dt><dd><tt>Default&nbsp;method&nbsp;used&nbsp;to&nbsp;render&nbsp;the&nbsp;final&nbsp;js&nbsp;links&nbsp;for&nbsp;the<br>
+rendered&nbsp;webpage.<br>
+&nbsp;<br>
+Override&nbsp;this&nbsp;method&nbsp;in&nbsp;a&nbsp;sub-classed&nbsp;controller&nbsp;to&nbsp;change&nbsp;the&nbsp;output.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-render_string"><strong>render_string</strong></a>(self, template_name, **kwargs)</dt><dd><tt>Generate&nbsp;the&nbsp;given&nbsp;template&nbsp;with&nbsp;the&nbsp;given&nbsp;arguments.<br>
+&nbsp;<br>
+We&nbsp;return&nbsp;the&nbsp;generated&nbsp;byte&nbsp;string&nbsp;(in&nbsp;utf8).&nbsp;To&nbsp;generate&nbsp;and<br>
+write&nbsp;a&nbsp;template&nbsp;as&nbsp;a&nbsp;response,&nbsp;use&nbsp;<a href="#BaseHandler-render">render</a>()&nbsp;above.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-require_setting"><strong>require_setting</strong></a>(self, name, feature='this feature')</dt><dd><tt>Raises&nbsp;an&nbsp;exception&nbsp;if&nbsp;the&nbsp;given&nbsp;app&nbsp;setting&nbsp;is&nbsp;not&nbsp;defined.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-reverse_url"><strong>reverse_url</strong></a>(self, name, *args)</dt><dd><tt>Alias&nbsp;for&nbsp;`<a href="#Application">Application</a>.reverse_url`.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-send_error"><strong>send_error</strong></a>(self, status_code=500, **kwargs)</dt><dd><tt>Sends&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code&nbsp;to&nbsp;the&nbsp;browser.<br>
+&nbsp;<br>
+If&nbsp;`<a href="#BaseHandler-flush">flush</a>()`&nbsp;has&nbsp;already&nbsp;been&nbsp;called,&nbsp;it&nbsp;is&nbsp;not&nbsp;possible&nbsp;to&nbsp;send<br>
+an&nbsp;error,&nbsp;so&nbsp;this&nbsp;method&nbsp;will&nbsp;simply&nbsp;terminate&nbsp;the&nbsp;response.<br>
+If&nbsp;output&nbsp;has&nbsp;been&nbsp;written&nbsp;but&nbsp;not&nbsp;yet&nbsp;flushed,&nbsp;it&nbsp;will&nbsp;be&nbsp;discarded<br>
+and&nbsp;replaced&nbsp;with&nbsp;the&nbsp;error&nbsp;page.<br>
+&nbsp;<br>
+Override&nbsp;`<a href="#BaseHandler-write_error">write_error</a>()`&nbsp;to&nbsp;customize&nbsp;the&nbsp;error&nbsp;page&nbsp;that&nbsp;is&nbsp;returned.<br>
+Additional&nbsp;keyword&nbsp;arguments&nbsp;are&nbsp;passed&nbsp;through&nbsp;to&nbsp;`write_error`.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-set_cookie"><strong>set_cookie</strong></a>(self, name, value, domain=None, expires=None, path='/', expires_days=None, **kwargs)</dt><dd><tt>Sets&nbsp;the&nbsp;given&nbsp;cookie&nbsp;name/value&nbsp;with&nbsp;the&nbsp;given&nbsp;options.<br>
+&nbsp;<br>
+Additional&nbsp;keyword&nbsp;arguments&nbsp;are&nbsp;set&nbsp;on&nbsp;the&nbsp;Cookie.Morsel<br>
+directly.<br>
+See&nbsp;https://docs.python.org/2/library/cookie.html#Cookie.Morsel<br>
+for&nbsp;available&nbsp;attributes.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-set_default_headers"><strong>set_default_headers</strong></a>(self)</dt><dd><tt>Override&nbsp;this&nbsp;to&nbsp;set&nbsp;HTTP&nbsp;headers&nbsp;at&nbsp;the&nbsp;beginning&nbsp;of&nbsp;the&nbsp;request.<br>
+&nbsp;<br>
+For&nbsp;example,&nbsp;this&nbsp;is&nbsp;the&nbsp;place&nbsp;to&nbsp;set&nbsp;a&nbsp;custom&nbsp;``Server``&nbsp;header.<br>
+Note&nbsp;that&nbsp;setting&nbsp;such&nbsp;headers&nbsp;in&nbsp;the&nbsp;normal&nbsp;flow&nbsp;of&nbsp;request<br>
+processing&nbsp;may&nbsp;not&nbsp;do&nbsp;what&nbsp;you&nbsp;want,&nbsp;since&nbsp;headers&nbsp;may&nbsp;be&nbsp;reset<br>
+during&nbsp;error&nbsp;handling.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-set_etag_header"><strong>set_etag_header</strong></a>(self)</dt><dd><tt>Sets&nbsp;the&nbsp;response's&nbsp;Etag&nbsp;header&nbsp;using&nbsp;``self.<a href="#BaseHandler-compute_etag">compute_etag</a>()``.<br>
+&nbsp;<br>
+Note:&nbsp;no&nbsp;header&nbsp;will&nbsp;be&nbsp;set&nbsp;if&nbsp;``<a href="#BaseHandler-compute_etag">compute_etag</a>()``&nbsp;returns&nbsp;``None``.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;is&nbsp;called&nbsp;automatically&nbsp;when&nbsp;the&nbsp;request&nbsp;is&nbsp;finished.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-set_header"><strong>set_header</strong></a>(self, name, value)</dt><dd><tt>Sets&nbsp;the&nbsp;given&nbsp;response&nbsp;header&nbsp;name&nbsp;and&nbsp;value.<br>
+&nbsp;<br>
+If&nbsp;a&nbsp;datetime&nbsp;is&nbsp;given,&nbsp;we&nbsp;automatically&nbsp;format&nbsp;it&nbsp;according&nbsp;to&nbsp;the<br>
+HTTP&nbsp;specification.&nbsp;If&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;a&nbsp;string,&nbsp;we&nbsp;convert&nbsp;it&nbsp;to<br>
+a&nbsp;string.&nbsp;All&nbsp;header&nbsp;values&nbsp;are&nbsp;then&nbsp;encoded&nbsp;as&nbsp;UTF-8.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-set_secure_cookie"><strong>set_secure_cookie</strong></a>(self, name, value, expires_days=30, version=None, **kwargs)</dt><dd><tt>Signs&nbsp;and&nbsp;timestamps&nbsp;a&nbsp;cookie&nbsp;so&nbsp;it&nbsp;cannot&nbsp;be&nbsp;forged.<br>
+&nbsp;<br>
+You&nbsp;must&nbsp;specify&nbsp;the&nbsp;``cookie_secret``&nbsp;setting&nbsp;in&nbsp;your&nbsp;<a href="#Application">Application</a><br>
+to&nbsp;use&nbsp;this&nbsp;method.&nbsp;It&nbsp;should&nbsp;be&nbsp;a&nbsp;long,&nbsp;random&nbsp;sequence&nbsp;of&nbsp;bytes<br>
+to&nbsp;be&nbsp;used&nbsp;as&nbsp;the&nbsp;HMAC&nbsp;secret&nbsp;for&nbsp;the&nbsp;signature.<br>
+&nbsp;<br>
+To&nbsp;read&nbsp;a&nbsp;cookie&nbsp;set&nbsp;with&nbsp;this&nbsp;method,&nbsp;use&nbsp;`<a href="#BaseHandler-get_secure_cookie">get_secure_cookie</a>()`.<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;the&nbsp;``expires_days``&nbsp;parameter&nbsp;sets&nbsp;the&nbsp;lifetime&nbsp;of&nbsp;the<br>
+cookie&nbsp;in&nbsp;the&nbsp;browser,&nbsp;but&nbsp;is&nbsp;independent&nbsp;of&nbsp;the&nbsp;``max_age_days``<br>
+parameter&nbsp;to&nbsp;`get_secure_cookie`.<br>
+&nbsp;<br>
+Secure&nbsp;cookies&nbsp;may&nbsp;contain&nbsp;arbitrary&nbsp;byte&nbsp;values,&nbsp;not&nbsp;just&nbsp;unicode<br>
+strings&nbsp;(unlike&nbsp;regular&nbsp;cookies)<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;3.2.1<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;the&nbsp;``version``&nbsp;argument.&nbsp;&nbsp;Introduced&nbsp;cookie&nbsp;version&nbsp;2<br>
+&nbsp;&nbsp;&nbsp;and&nbsp;made&nbsp;it&nbsp;the&nbsp;default.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-set_status"><strong>set_status</strong></a>(self, status_code, reason=None)</dt><dd><tt>Sets&nbsp;the&nbsp;status&nbsp;code&nbsp;for&nbsp;our&nbsp;response.<br>
+&nbsp;<br>
+:arg&nbsp;int&nbsp;status_code:&nbsp;Response&nbsp;status&nbsp;code.&nbsp;If&nbsp;``reason``&nbsp;is&nbsp;``None``,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;must&nbsp;be&nbsp;present&nbsp;in&nbsp;`httplib.responses&nbsp;&lt;http.client.responses&gt;`.<br>
+:arg&nbsp;string&nbsp;reason:&nbsp;Human-readable&nbsp;reason&nbsp;phrase&nbsp;describing&nbsp;the&nbsp;status<br>
+&nbsp;&nbsp;&nbsp;&nbsp;code.&nbsp;If&nbsp;``None``,&nbsp;it&nbsp;will&nbsp;be&nbsp;filled&nbsp;in&nbsp;from<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`httplib.responses&nbsp;&lt;http.client.responses&gt;`.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-static_url"><strong>static_url</strong></a>(self, path, include_host=None, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;static&nbsp;URL&nbsp;for&nbsp;the&nbsp;given&nbsp;relative&nbsp;static&nbsp;file&nbsp;path.<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;requires&nbsp;you&nbsp;set&nbsp;the&nbsp;``static_path``&nbsp;setting&nbsp;in&nbsp;your<br>
+application&nbsp;(which&nbsp;specifies&nbsp;the&nbsp;root&nbsp;directory&nbsp;of&nbsp;your&nbsp;static<br>
+files).<br>
+&nbsp;<br>
+This&nbsp;method&nbsp;returns&nbsp;a&nbsp;versioned&nbsp;url&nbsp;(by&nbsp;default&nbsp;appending<br>
+``?v=&lt;signature&gt;``),&nbsp;which&nbsp;allows&nbsp;the&nbsp;static&nbsp;files&nbsp;to&nbsp;be<br>
+cached&nbsp;indefinitely.&nbsp;&nbsp;This&nbsp;can&nbsp;be&nbsp;disabled&nbsp;by&nbsp;passing<br>
+``include_version=False``&nbsp;(in&nbsp;the&nbsp;default&nbsp;implementation;<br>
+other&nbsp;static&nbsp;file&nbsp;implementations&nbsp;are&nbsp;not&nbsp;required&nbsp;to&nbsp;support<br>
+this,&nbsp;but&nbsp;they&nbsp;may&nbsp;support&nbsp;other&nbsp;options).<br>
+&nbsp;<br>
+By&nbsp;default&nbsp;this&nbsp;method&nbsp;returns&nbsp;URLs&nbsp;relative&nbsp;to&nbsp;the&nbsp;current<br>
+host,&nbsp;but&nbsp;if&nbsp;``include_host``&nbsp;is&nbsp;true&nbsp;the&nbsp;URL&nbsp;returned&nbsp;will&nbsp;be<br>
+absolute.&nbsp;&nbsp;If&nbsp;this&nbsp;handler&nbsp;has&nbsp;an&nbsp;``include_host``&nbsp;attribute,<br>
+that&nbsp;value&nbsp;will&nbsp;be&nbsp;used&nbsp;as&nbsp;the&nbsp;default&nbsp;for&nbsp;all&nbsp;`static_url`<br>
+calls&nbsp;that&nbsp;do&nbsp;not&nbsp;pass&nbsp;``include_host``&nbsp;as&nbsp;a&nbsp;keyword&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-write"><strong>write</strong></a>(self, chunk)</dt><dd><tt>Writes&nbsp;the&nbsp;given&nbsp;chunk&nbsp;to&nbsp;the&nbsp;output&nbsp;buffer.<br>
+&nbsp;<br>
+To&nbsp;write&nbsp;the&nbsp;output&nbsp;to&nbsp;the&nbsp;network,&nbsp;use&nbsp;the&nbsp;<a href="#BaseHandler-flush">flush</a>()&nbsp;method&nbsp;below.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;given&nbsp;chunk&nbsp;is&nbsp;a&nbsp;dictionary,&nbsp;we&nbsp;write&nbsp;it&nbsp;as&nbsp;JSON&nbsp;and&nbsp;set<br>
+the&nbsp;Content-Type&nbsp;of&nbsp;the&nbsp;response&nbsp;to&nbsp;be&nbsp;``application/json``.<br>
+(if&nbsp;you&nbsp;want&nbsp;to&nbsp;send&nbsp;JSON&nbsp;as&nbsp;a&nbsp;different&nbsp;``Content-Type``,&nbsp;call<br>
+set_header&nbsp;*after*&nbsp;calling&nbsp;<a href="#BaseHandler-write">write</a>()).<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;lists&nbsp;are&nbsp;not&nbsp;converted&nbsp;to&nbsp;JSON&nbsp;because&nbsp;of&nbsp;a&nbsp;potential<br>
+cross-site&nbsp;security&nbsp;vulnerability.&nbsp;&nbsp;All&nbsp;JSON&nbsp;output&nbsp;should&nbsp;be<br>
+wrapped&nbsp;in&nbsp;a&nbsp;dictionary.&nbsp;&nbsp;More&nbsp;details&nbsp;at<br>
+<a href="http://haacked.com/archive/2009/06/25/json-hijacking.aspx/">http://haacked.com/archive/2009/06/25/json-hijacking.aspx/</a>&nbsp;and<br>
+https://github.com/facebook/tornado/issues/1009</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-write_error"><strong>write_error</strong></a>(self, status_code, **kwargs)</dt><dd><tt>Override&nbsp;to&nbsp;implement&nbsp;custom&nbsp;error&nbsp;pages.<br>
+&nbsp;<br>
+``write_error``&nbsp;may&nbsp;call&nbsp;`write`,&nbsp;`render`,&nbsp;`set_header`,&nbsp;etc<br>
+to&nbsp;produce&nbsp;output&nbsp;as&nbsp;usual.<br>
+&nbsp;<br>
+If&nbsp;this&nbsp;error&nbsp;was&nbsp;caused&nbsp;by&nbsp;an&nbsp;uncaught&nbsp;exception&nbsp;(including<br>
+HTTPError),&nbsp;an&nbsp;``exc_info``&nbsp;triple&nbsp;will&nbsp;be&nbsp;available&nbsp;as<br>
+``kwargs["exc_info"]``.&nbsp;&nbsp;Note&nbsp;that&nbsp;this&nbsp;exception&nbsp;may&nbsp;not&nbsp;be<br>
+the&nbsp;"current"&nbsp;exception&nbsp;for&nbsp;purposes&nbsp;of&nbsp;methods&nbsp;like<br>
+``sys.exc_info()``&nbsp;or&nbsp;``traceback.format_exc``.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-xsrf_form_html"><strong>xsrf_form_html</strong></a>(self)</dt><dd><tt>An&nbsp;HTML&nbsp;``&lt;input/&gt;``&nbsp;element&nbsp;to&nbsp;be&nbsp;included&nbsp;with&nbsp;all&nbsp;POST&nbsp;forms.<br>
+&nbsp;<br>
+It&nbsp;defines&nbsp;the&nbsp;``_xsrf``&nbsp;input&nbsp;value,&nbsp;which&nbsp;we&nbsp;check&nbsp;on&nbsp;all&nbsp;POST<br>
+requests&nbsp;to&nbsp;prevent&nbsp;cross-site&nbsp;request&nbsp;forgery.&nbsp;If&nbsp;you&nbsp;have&nbsp;set<br>
+the&nbsp;``xsrf_cookies``&nbsp;application&nbsp;setting,&nbsp;you&nbsp;must&nbsp;include&nbsp;this<br>
+HTML&nbsp;within&nbsp;all&nbsp;of&nbsp;your&nbsp;HTML&nbsp;forms.<br>
+&nbsp;<br>
+In&nbsp;a&nbsp;template,&nbsp;this&nbsp;method&nbsp;should&nbsp;be&nbsp;called&nbsp;with&nbsp;``{%&nbsp;module<br>
+<a href="#BaseHandler-xsrf_form_html">xsrf_form_html</a>()&nbsp;%}``<br>
+&nbsp;<br>
+See&nbsp;`<a href="#BaseHandler-check_xsrf_cookie">check_xsrf_cookie</a>()`&nbsp;above&nbsp;for&nbsp;more&nbsp;information.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="tornado.web.html#RequestHandler">tornado.web.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>cookies</strong></dt>
+<dd><tt>An&nbsp;alias&nbsp;for<br>
+`self.<strong>request</strong>.cookies&nbsp;&lt;.httputil.HTTPServerRequest.cookies&gt;`.</tt></dd>
+</dl>
+<dl><dt><strong>current_user</strong></dt>
+<dd><tt>The&nbsp;authenticated&nbsp;user&nbsp;for&nbsp;this&nbsp;request.<br>
+&nbsp;<br>
+This&nbsp;is&nbsp;set&nbsp;in&nbsp;one&nbsp;of&nbsp;two&nbsp;ways:<br>
+&nbsp;<br>
+*&nbsp;A&nbsp;subclass&nbsp;may&nbsp;override&nbsp;`get_current_user()`,&nbsp;which&nbsp;will&nbsp;be&nbsp;called<br>
+&nbsp;&nbsp;automatically&nbsp;the&nbsp;first&nbsp;time&nbsp;``self.<strong>current_user</strong>``&nbsp;is&nbsp;accessed.<br>
+&nbsp;&nbsp;`get_current_user()`&nbsp;will&nbsp;only&nbsp;be&nbsp;called&nbsp;once&nbsp;per&nbsp;request,<br>
+&nbsp;&nbsp;and&nbsp;is&nbsp;cached&nbsp;for&nbsp;future&nbsp;access::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_current_user(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_cookie&nbsp;=&nbsp;self.get_secure_cookie("user")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;user_cookie:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;json.loads(user_cookie)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None<br>
+&nbsp;<br>
+*&nbsp;It&nbsp;may&nbsp;be&nbsp;set&nbsp;as&nbsp;a&nbsp;normal&nbsp;variable,&nbsp;typically&nbsp;from&nbsp;an&nbsp;overridden<br>
+&nbsp;&nbsp;`prepare()`::<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@gen.coroutine<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;prepare(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_id_cookie&nbsp;=&nbsp;self.get_secure_cookie("user_id")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;user_id_cookie:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>current_user</strong>&nbsp;=&nbsp;yield&nbsp;load_user(user_id_cookie)<br>
+&nbsp;<br>
+Note&nbsp;that&nbsp;`prepare()`&nbsp;may&nbsp;be&nbsp;a&nbsp;coroutine&nbsp;while&nbsp;`get_current_user()`<br>
+may&nbsp;not,&nbsp;so&nbsp;the&nbsp;latter&nbsp;form&nbsp;is&nbsp;necessary&nbsp;if&nbsp;loading&nbsp;the&nbsp;user&nbsp;requires<br>
+asynchronous&nbsp;operations.<br>
+&nbsp;<br>
+The&nbsp;user&nbsp;object&nbsp;may&nbsp;be&nbsp;any&nbsp;type&nbsp;of&nbsp;the&nbsp;application's&nbsp;choosing.</tt></dd>
+</dl>
+<dl><dt><strong>locale</strong></dt>
+<dd><tt>The&nbsp;locale&nbsp;for&nbsp;the&nbsp;current&nbsp;session.<br>
+&nbsp;<br>
+Determined&nbsp;by&nbsp;either&nbsp;`get_user_locale`,&nbsp;which&nbsp;you&nbsp;can&nbsp;override&nbsp;to<br>
+set&nbsp;the&nbsp;locale&nbsp;based&nbsp;on,&nbsp;e.g.,&nbsp;a&nbsp;user&nbsp;preference&nbsp;stored&nbsp;in&nbsp;a<br>
+database,&nbsp;or&nbsp;`get_browser_locale`,&nbsp;which&nbsp;uses&nbsp;the&nbsp;``Accept-Language``<br>
+header.<br>
+&nbsp;<br>
+..&nbsp;versionchanged:&nbsp;4.1<br>
+&nbsp;&nbsp;&nbsp;Added&nbsp;a&nbsp;property&nbsp;setter.</tt></dd>
+</dl>
+<dl><dt><strong>settings</strong></dt>
+<dd><tt>An&nbsp;alias&nbsp;for&nbsp;`self.<strong>application</strong>.settings&nbsp;&lt;Application.settings&gt;`.</tt></dd>
+</dl>
+<dl><dt><strong>xsrf_token</strong></dt>
+<dd><tt>The&nbsp;XSRF-prevention&nbsp;token&nbsp;for&nbsp;the&nbsp;current&nbsp;user/session.<br>
+&nbsp;<br>
+To&nbsp;prevent&nbsp;cross-site&nbsp;request&nbsp;forgery,&nbsp;we&nbsp;set&nbsp;an&nbsp;'_xsrf'&nbsp;cookie<br>
+and&nbsp;include&nbsp;the&nbsp;same&nbsp;'_xsrf'&nbsp;value&nbsp;as&nbsp;an&nbsp;argument&nbsp;with&nbsp;all&nbsp;POST<br>
+requests.&nbsp;If&nbsp;the&nbsp;two&nbsp;do&nbsp;not&nbsp;match,&nbsp;we&nbsp;reject&nbsp;the&nbsp;form&nbsp;submission<br>
+as&nbsp;a&nbsp;potential&nbsp;forgery.<br>
+&nbsp;<br>
+See&nbsp;<a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">http://en.wikipedia.org/wiki/Cross-site_request_forgery</a><br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;3.2.2<br>
+&nbsp;&nbsp;&nbsp;The&nbsp;xsrf&nbsp;token&nbsp;will&nbsp;now&nbsp;be&nbsp;have&nbsp;a&nbsp;random&nbsp;mask&nbsp;applied&nbsp;in&nbsp;every<br>
+&nbsp;&nbsp;&nbsp;request,&nbsp;which&nbsp;makes&nbsp;it&nbsp;safe&nbsp;to&nbsp;include&nbsp;the&nbsp;token&nbsp;in&nbsp;pages<br>
+&nbsp;&nbsp;&nbsp;that&nbsp;are&nbsp;compressed.&nbsp;&nbsp;See&nbsp;<a href="http://breachattack.com">http://breachattack.com</a>&nbsp;for&nbsp;more<br>
+&nbsp;&nbsp;&nbsp;information&nbsp;on&nbsp;the&nbsp;issue&nbsp;fixed&nbsp;by&nbsp;this&nbsp;change.&nbsp;&nbsp;Old&nbsp;(version&nbsp;1)<br>
+&nbsp;&nbsp;&nbsp;cookies&nbsp;will&nbsp;be&nbsp;converted&nbsp;to&nbsp;version&nbsp;2&nbsp;when&nbsp;this&nbsp;method&nbsp;is&nbsp;called<br>
+&nbsp;&nbsp;&nbsp;unless&nbsp;the&nbsp;``xsrf_cookie_version``&nbsp;`Application`&nbsp;setting&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;set&nbsp;to&nbsp;1.<br>
+&nbsp;<br>
+..&nbsp;versionchanged::&nbsp;4.3<br>
+&nbsp;&nbsp;&nbsp;The&nbsp;``xsrf_cookie_kwargs``&nbsp;`Application`&nbsp;setting&nbsp;may&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;used&nbsp;to&nbsp;supply&nbsp;additional&nbsp;cookie&nbsp;options&nbsp;(which&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;&nbsp;passed&nbsp;directly&nbsp;to&nbsp;`set_cookie`).&nbsp;For&nbsp;example,<br>
+&nbsp;&nbsp;&nbsp;``xsrf_cookie_kwargs=dict(httponly=True,&nbsp;secure=True)``<br>
+&nbsp;&nbsp;&nbsp;will&nbsp;set&nbsp;the&nbsp;``secure``&nbsp;and&nbsp;``httponly``&nbsp;flags&nbsp;on&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;``_xsrf``&nbsp;cookie.</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="tornado.web.html#RequestHandler">tornado.web.RequestHandler</a>:<br>
+<dl><dt><strong>SUPPORTED_METHODS</strong> = ('GET', 'HEAD', 'POST', 'DELETE', 'PATCH', 'PUT', 'OPTIONS')</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
