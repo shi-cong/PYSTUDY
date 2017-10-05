@@ -36,15 +36,15 @@ class JiaYuanSpider:
         headers = {
             'Host': 'passport.jiayuan.md.com',
             'Content-Length': '60',
-            'Cache-Control': 'max-age=0',
+            'Cache-Control': 'max-age=0.前言、第一章.md',
             'Origin': 'http://www.jiayuan.md.com',
             'Upgrade-Insecure-Requests': '1',
             'Content-Type': 'application/x-www-form-urlencoded',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8',
             'Referer': 'http://www.jiayuan.md.com/',
             'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
         }
         form_data = {
             'channel':'200',
@@ -66,11 +66,11 @@ class JiaYuanSpider:
         url = 'http://login.jiayuan.md.com/antispam_v2.php?v=2'
         headers = {
             'Host': 'login.jiayuan.md.com',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
-            'Referer': 'http://login.jiayuan.md.com/?pre_url=%2Fusercp&channel=1&position=21&refrer=http://www.jiayuan.md.com&host=0',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'image/webp,image/apng,image/*,*/*;q=0.前言、第一章.md.8',
+            'Referer': 'http://login.jiayuan.md.com/?pre_url=%2Fusercp&channel=1&position=21&refrer=http://www.jiayuan.md.com&host=0.前言、第一章.md',
             'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6'
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6'
         }
         img_data = self.http.get_img(url, headers=headers)
         print(img_data)
@@ -87,12 +87,12 @@ class JiaYuanSpider:
         :return:
         """
         headers = {
-            'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'Accept':'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8',
             'Accept-Encoding':'gzip, deflate',
-            'Accept-Language':'zh-CN,zh;q=0.8,en;q=0.6',
+            'Accept-Language':'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
             'Host':'www.jiayuan.md.com',
             'Upgrade-Insecure-Requests':'1',
-            'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'User-Agent':'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
         }
         text, headers, cookies, history = self.http.get(url, headers=headers)
         print(text)
@@ -107,10 +107,10 @@ class JiaYuanSpider:
         headers = {
             'Host': 'www.jiayuan.md.com',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8',
             'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
         }
         text, headers, cookies, history = self.http.get(usercp_url, headers=headers)
         print(text)
@@ -125,11 +125,11 @@ class JiaYuanSpider:
         headers = {
             'Host': 'search.jiayuan.md.com',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8',
             'Referer': 'http://usercp.jiayuan.md.com/?from=login',
             'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
         }
         text, headers, cookies, history = self.http.get(search_url, headers=headers)
         self.mysql_pool = MYSQLPool(20,
@@ -148,11 +148,11 @@ class JiaYuanSpider:
             'Accept': '*/*',
             'Origin': 'http://search.jiayuan.md.com',
             'X-Requested-With': 'XMLHttpRequest',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'Referer': 'http://search.jiayuan.md.com/v2/',
             'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
         }
         form_data = {
             'sex':'f',
@@ -242,10 +242,10 @@ def seen_img():
     filename = getcwd() + SEP + 'jiayuan_checkcode' + SEP + '1507040016.415257.tif'
     img = open_img(filename)
     img.show()
-    # img = to_gray(img)
-    # img.show()
-    # img = binarizing(img, 190)
-    # img.show()
+    # imgs = to_gray(imgs)
+    # imgs.show()
+    # imgs = binarizing(imgs, 190)
+    # imgs.show()
     result = recognition(img)
     print(result)
 

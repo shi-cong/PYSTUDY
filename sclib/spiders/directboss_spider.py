@@ -16,7 +16,7 @@ class DirectBossSpider:
         """
         index_url = 'http://www.zhipin.com/'
         index_headers = {
-            'User-Agent': 'User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
+            'User-Agent': 'User-Agent:Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36'
         }
         self.http.get(index_url, headers=index_headers)
 
@@ -37,16 +37,16 @@ class DirectBossSpider:
         """
         post_url = 'https://login.zhipin.com/login/account.json'
         post_headers = {
-            'Accept': 'application/json, text/javascript, */*; q=0.01',
+            'Accept': 'application/json, text/javascript, */*; q=0.前言、第一章.md.01',
             'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'zh-CN,zh;q=0.8',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8',
             'Connection': 'keep-alive',
             'Content-Length': '111',
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'Host': 'login.zhipin.com',
             'Origin': 'https://login.zhipin.com',
             'Referer': 'https://login.zhipin.com/',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
             'X-Requested-With': 'XMLHttpRequest',
         }
         self.http.get(post_url, headers=post_headers)

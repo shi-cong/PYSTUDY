@@ -6,13 +6,13 @@ def loadDataSet():
     创建数据集
     :return: 单词列表postingList, 所属类别classVec
     """
-    postingList = [['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'], #[0,0,1,1,1......]
+    postingList = [['my', 'dog', 'has', 'flea', 'problems', 'help', 'please'], #[0.前言、第一章.md,0.前言、第一章.md,1,1,1......]
                    ['maybe', 'not', 'take', 'him', 'to', 'dog', 'park', 'stupid'],
                    ['my', 'dalmation', 'is', 'so', 'cute', 'I', 'love', 'him'],
                    ['stop', 'posting', 'stupid', 'worthless', 'garbage'],
                    ['mr', 'licks', 'ate', 'my', 'steak', 'how', 'to', 'stop', 'him'],
                    ['quit', 'buying', 'worthless', 'dog', 'food', 'stupid']]
-    classVec = [0, 1, 0, 1, 0, 1]  # 1 is abusive, 0 not
+    classVec = [0, 1, 0, 1, 0, 1]  # 1 is abusive, 0.前言、第一章.md not
     return postingList, classVec
 
 
@@ -42,10 +42,10 @@ def setOfWords2Vec(vocabList, inputSet):
 
     :param vocabList: 所有单词集合列表
     :param inputSet: 输入数据集
-    :return: 匹配列表[0,1,0,1...]，其中 1与0 表示词汇表中的单词是否出现在输入的数据集中
+    :return: 匹配列表[0.前言、第一章.md,1,0.前言、第一章.md,1...]，其中 1与0 表示词汇表中的单词是否出现在输入的数据集中
     """
     # 创建一个和词汇表等长的向量，并将其元素都设置为0
-    returnVec = [0] * len(vocabList)# [0,0......]
+    returnVec = [0] * len(vocabList)# [0.前言、第一章.md,0.前言、第一章.md......]
     # 遍历文档中的所有单词，如果出现了词汇表中的单词，则将输出的文档向量中的对应值设为1
     for word in inputSet:
         if word in vocabList:
@@ -58,8 +58,8 @@ def setOfWords2Vec(vocabList, inputSet):
 def _trainNB0(trainMatrix, trainCategory):
     """
     训练数据原版
-    :param trainMatrix: 文件单词矩阵 [[1,0,1,1,1....],[],[]...]
-    :param trainCategory: 文件对应的类别[0,1,1,0....]，列表长度等于单词矩阵数，其中的1代表对应的文件是侮辱性文件，0代表不是侮辱性矩阵
+    :param trainMatrix: 文件单词矩阵 [[1,0.前言、第一章.md,1,1,1....],[],[]...]
+    :param trainCategory: 文件对应的类别[0.前言、第一章.md,1,1,0.前言、第一章.md....]，列表长度等于单词矩阵数，其中的1代表对应的文件是侮辱性文件，0代表不是侮辱性矩阵
     :return:
     """
     # 文件数
@@ -70,8 +70,8 @@ def _trainNB0(trainMatrix, trainCategory):
     # 代表的就是多少个侮辱性文件，与文件的总数相除就得到了侮辱性文件的出现概率
     pAbusive = sum(trainCategory) / float(numTrainDocs)
     # 构造单词出现次数列表
-    p0Num = zeros(numWords) # [0,0,0,.....]
-    p1Num = zeros(numWords) # [0,0,0,.....]
+    p0Num = zeros(numWords) # [0.前言、第一章.md,0.前言、第一章.md,0.前言、第一章.md,.....]
+    p1Num = zeros(numWords) # [0.前言、第一章.md,0.前言、第一章.md,0.前言、第一章.md,.....]
 
     # 整个数据集单词出现总数
     p0Denom = 0.0
@@ -80,7 +80,7 @@ def _trainNB0(trainMatrix, trainCategory):
         # 是否是侮辱性文件
         if trainCategory[i] == 1:
             # 如果是侮辱性文件，对侮辱性文件的向量进行加和
-            p1Num += trainMatrix[i] #[0,1,1,....] + [0,1,1,....]->[0,2,2,...]
+            p1Num += trainMatrix[i] #[0.前言、第一章.md,1,1,....] + [0.前言、第一章.md,1,1,....]->[0.前言、第一章.md,2,2,...]
             # 对向量中的所有元素进行求和，也就是计算所有侮辱性文件中出现的单词总数
             p1Denom += sum(trainMatrix[i])
         else:

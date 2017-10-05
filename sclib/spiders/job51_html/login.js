@@ -24,7 +24,7 @@ $(document).ready(function(){
     //首页导航浮层
     var showguide = $("#showguide").val();
     if(showguide == '1'){
-        var html = '<style>.pop{width:100%;height:100%;background-color:#000;opacity:.5}.home_guide{position:relative;width:1002px;margin:0 auto;margin-top:45px}.home_guide .close{position:absolute;width:30px;height:30px;right:0;background:url(http://img01.51jobcdn.com/im/2016/temp/icon_close.png) center no-repeat;cursor:pointer}.home_guide .bg{width:1002px;height:400px;margin-bottom:30px;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_sxl.png) center no-repeat}.home_guide .btn{width:182px;float:none;height:60px;margin:0 auto;background:url(http://img01.51jobcdn.com/im/2016/temp/butte_ljty.png) center no-repeat;cursor:pointer}.home_guide.h2 .bg{width:1002px;height:384px;margin-bottom:0;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_dlh.png) center no-repeat}.home_guide.h2 .btn{position:absolute;width:101px;height:44px;left:505px;background:url(http://img01.51jobcdn.com/im/2016/temp/butten_zdl.png) center no-repeat;cursor:pointer}</style><div class="pop"></div><div class="home_guide"><div class="close"></div><div class="bg"></div><div class="btn" onclick="$(\'.close\').click();"></div></div>';
+        var html = '<style>.pop{width:100%;height:100%;background-color:#000;opacity:.5}.home_guide{position:relative;width:1002px;margin:0.前言、第一章.md auto;margin-top:45px}.home_guide .close{position:absolute;width:30px;height:30px;right:0.前言、第一章.md;background:url(http://img01.51jobcdn.com/im/2016/temp/icon_close.png) center no-repeat;cursor:pointer}.home_guide .bg{width:1002px;height:400px;margin-bottom:30px;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_sxl.png) center no-repeat}.home_guide .btn{width:182px;float:none;height:60px;margin:0.前言、第一章.md auto;background:url(http://img01.51jobcdn.com/im/2016/temp/butte_ljty.png) center no-repeat;cursor:pointer}.home_guide.h2 .bg{width:1002px;height:384px;margin-bottom:0.前言、第一章.md;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_dlh.png) center no-repeat}.home_guide.h2 .btn{position:absolute;width:101px;height:44px;left:505px;background:url(http://img01.51jobcdn.com/im/2016/temp/butten_zdl.png) center no-repeat;cursor:pointer}</style><div class="pop"></div><div class="home_guide"><div class="close"></div><div class="bg"></div><div class="btn" onclick="$(\'.close\').click();"></div></div>';
         var oLayerParams = {'layer_close_class': 'close'};
         oLayerSettings = jQuery.FLayer.init(oLayerParams);
         jQuery.FLayer.setContent(oLayerSettings,html);
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
     var showguide = $("#showlayer").val();
     if(showguide == '1'){
-        var html = '<style>.pop{width:100%;height:100%;background-color:#000;opacity:.5}.home_guide{position:relative;width:1002px;margin:0 auto;margin-top:45px}.home_guide .close{position:absolute;width:30px;height:30px;right:0;background:url(http://img01.51jobcdn.com/im/2016/temp/icon_close.png) center no-repeat;cursor:pointer}.home_guide .bg{width:1002px;height:400px;margin-bottom:30px;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_sxl.png) center no-repeat}.home_guide .btn{width:182px;height:60px;margin:0 auto;background:url(http://img01.51jobcdn.com/im/2016/temp/butte_ljty.png) center no-repeat;cursor:pointer}.home_guide.h2 .close{top:-160px}.home_guide.h2 .bg{width:1002px;height:384px;margin-bottom:0;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_dlh.png) center no-repeat}.home_guide.h2 .btn{position:absolute;width:101px;height:44px;top:40px;left:505px;background:url(http://img01.51jobcdn.com/im/2016/temp/butten_zdl.png) center no-repeat;cursor:pointer}</style><div class="pop"></div><div class="home_guide h2"><div class="close"></div><div class="bg"></div><div class="btn" onclick="$(\'.close\').click();"></div></div>';
+        var html = '<style>.pop{width:100%;height:100%;background-color:#000;opacity:.5}.home_guide{position:relative;width:1002px;margin:0.前言、第一章.md auto;margin-top:45px}.home_guide .close{position:absolute;width:30px;height:30px;right:0.前言、第一章.md;background:url(http://img01.51jobcdn.com/im/2016/temp/icon_close.png) center no-repeat;cursor:pointer}.home_guide .bg{width:1002px;height:400px;margin-bottom:30px;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_sxl.png) center no-repeat}.home_guide .btn{width:182px;height:60px;margin:0.前言、第一章.md auto;background:url(http://img01.51jobcdn.com/im/2016/temp/butte_ljty.png) center no-repeat;cursor:pointer}.home_guide.h2 .close{top:-160px}.home_guide.h2 .bg{width:1002px;height:384px;margin-bottom:0.前言、第一章.md;background:url(http://img01.51jobcdn.com/im/2016/temp/IMG_dlh.png) center no-repeat}.home_guide.h2 .btn{position:absolute;width:101px;height:44px;top:40px;left:505px;background:url(http://img01.51jobcdn.com/im/2016/temp/butten_zdl.png) center no-repeat;cursor:pointer}</style><div class="pop"></div><div class="home_guide h2"><div class="close"></div><div class="bg"></div><div class="btn" onclick="$(\'.close\').click();"></div></div>';
         var oLayerParams = {'layer_close_class': 'close'};
         oLayerSettings = jQuery.FLayer.init(oLayerParams);
         jQuery.FLayer.setContent(oLayerSettings,html);
@@ -87,7 +87,7 @@ function load(){
         var data = eval('('+doc+')');
         var loginname = $("#loginname").val();
         var userpassword = $("#password").val();
-        if(data.result=='0'){ //登录失败
+        if(data.result=='0.前言、第一章.md'){ //登录失败
             if(data.scode == '18'){
                 var str = langs['name_pwd_error'];
                 if(data.remainder == 1){
@@ -120,7 +120,7 @@ function load(){
                 $("#p_err").html(langs['piccode_error']).show();
                 $("#verifycode").focus().parent().addClass("focus");
             }
-            if(data.remainder == '0'){
+            if(data.remainder == '0.前言、第一章.md'){
                 $("#p_err").html(langs['login_too_many']).show();
             }
         }else{
@@ -196,7 +196,7 @@ function checkVerifyCode(){
     var flag = 0;
     $.ajaxSettings.async = false;
     $.getJSON(url,{verifycode:verifycode,type:type,from_domain:'my'},function(data){
-        if(data.result == '0'){
+        if(data.result == '0.前言、第一章.md'){
             flag = 1;
         }
     });
@@ -243,9 +243,9 @@ function chkverifycode(){
         var flag = 0;
         $.ajaxSettings.async = false;
         $.getJSON(url,{verifycode:verifycode,type:type,from_domain:'my'},function(data){
-            if(data.result == '0'){
+            if(data.result == '0.前言、第一章.md'){
                 $("#p_err").html(langs['piccode_error']).show();
-                $("#verifycodechked").val("0");
+                $("#verifycodechked").val("0.前言、第一章.md");
                 $("#verifycode_ok").hide();
                 changeVerifyCode();
             }else{
@@ -256,7 +256,7 @@ function chkverifycode(){
         });
         $.ajaxSettings.async = true;
     }else{
-        $("#verifycodechked").val("0");
+        $("#verifycodechked").val("0.前言、第一章.md");
         $("#verifycode_ok").hide();
     }
 }

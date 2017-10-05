@@ -20,12 +20,12 @@ class Job51Spider:
         url = 'http://51job.com/'
         headers = {
             'Host': '51job.com',
-            'Cache-Control': 'max-age=0',
+            'Cache-Control': 'max-age=0.前言、第一章.md',
             'Upgrade-Insecure-self.session': '1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,*/*;q=0.前言、第一章.md.8',
             'Accept-Encoding': 'ggzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6'
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6'
         }
         t, h, c, hi = self.http.get(url, headers=headers, allow_redirects=False)
         print(self.http.get_session_cookie())
@@ -42,11 +42,11 @@ class Job51Spider:
             'origin': "http://www.51job.com",
             'upgrade-insecure-requests': "1",
             'content-type': "application/x-www-form-urlencoded",
-            'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
-            'accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+            'user-agent': "Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36",
+            'accept': "text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8",
             'referer': "http://www.51job.com/",
             'accept-encoding': "gzip, deflate",
-            'accept-language': "zh-CN,zh;q=0.8,en;q=0.6",
+            'accept-language': "zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6",
             'Cookie': 'NSC_usbdf.51kjohzjoh.dpn - 5 - 228 = ffffffffc3a018a945525d5f4f58455e445a4a423660'
             }
         formData = {
@@ -63,15 +63,15 @@ class Job51Spider:
 
     def search(self, keyword, requestCookie, page=1):
         url = 'http://search.51job.com/list/040000%252C030200%252C020000%252C010000,000000,0000,00,9,99,' + keyword + ',2,' + str(
-            page) + '.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare='
+            page) + '.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0.前言、第一章.md%2C0&radius=-1&ord_field=0.前言、第一章.md&confirmdate=9&fromType=&dibiaoid=0.前言、第一章.md&address=&line=&specialarea=00&from=&welfare='
         headers = {
             'Host': 'search.51job.com',
             'Upgrade-Insecure-self.session': '1',
             'User-Agent': 'Golang',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,*/*;q=0.前言、第一章.md.8',
             'Referer': 'http://www.51job.com/',
             'Accept-Encoding': 'gzip, deflate, sdch',
-            'Accept-Language': 'zh-CN,zh;q=0.8',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8',
         }
         t, h, c, hi = self.http.get(url, headers=headers,
                              cookies=requestCookie, allow_redirects=False, encoding='gbk')
@@ -79,7 +79,7 @@ class Job51Spider:
         if page == 1:
             rp = ReParser()
             numJobsHtml = xp.xpath('//*[@id="resultList"]/div[1]/div[3]/text()').extract_first()
-            numJobs = int(rp.compute('[0-9]+', numJobsHtml))
+            numJobs = int(rp.compute('[0.前言、第一章.md-9]+', numJobsHtml))
             self.numJobs = numJobs
         jobsIdHtml = xp.xpath('//div[@class="el"]/p[@class="t1 "]')[:-1]
         companyHtml = xp.xpath('//div[@class="el"]/span[@class="t2"]')[:-1]
@@ -108,11 +108,11 @@ class Job51Spider:
         p = 'rand=' + str(random_small_number()) + '&jsoncallback=jQuery18302138634134253048_1507066246973&jobid=('+str(jobId) +'%3A0)&prd=search.51job.com&prp=01&cd=search.51job.com&cp=01&resumeid=&cvlan=&coverid=&qpostset=&elementname=delivery_jobid&deliverytype=2&deliverydomain=http%3A%2F%2Fi.51job.com&language=c&imgpath=http%3A%2F%2Fimg03.51jobcdn.com&_=1507068354931'
         headers = {
             'Host': 'i.51job.com',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
             'Accept': '*/*',
             'Accept-Encoding': 'gzip, deflate, sdch',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
             'cookies': 'guid=15070646256806980017; _ujz=MTA5MTM4MDQ1MA%3D%3D; ps=us%3DXmRQOlQ2Vn4FYwFkB3xdbwc2BjFUfFA0AjwAZF0rAzIPMloxAGVXYVA3XzYAbF1sDT0CNFRkWzhcJlJCDXIEaV4%252BUG4%253D%26%7C%26needv%3D0; slife=resumeguide%3D1%26%7C%26lowbrowser%3Dnot%26%7C%26lastlogindate%3D20171004%26%7C%26; 51job=cuid%3D109138045%26%7C%26cusername%3Dphone_15728567842%26%7C%26cpassword%3D%26%7C%26cname%3D%25CA%25A9%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%25B4%25CF%26%7C%26cemail%3Dshi_cong%2540icloud.com%26%7C%26cemailstatus%3D3%26%7C%26cnickname%3D%25D3%25C7%25D3%25F4%25B5%25C4%25C3%25AB%25C3%25AB%26%7C%26ccry%3D.0wUMWp2Zl.as%26%7C%26cconfirmkey%3DshDPI9YPQYVPQ%26%7C%26cresumeids%3D.0VPKsW.6cwzk%257C%26%7C%26cautologin%3D1%26%7C%26cenglish%3D0%26%7C%26sex%3D0%26%7C%26cnamekey%3Dsh0zZQQixMXvI%26%7C%26to%3DDjdUP1A7ATZSMF05BWAGMQM1BntWIAI%252FXTRTbwlmBlkBOFQ6D2pWYlM6CWAGZVxoBD8EMVNnBSxXYFE2DTQBOQ4wVD9QMwE%252BUjBdNQ%253D%253D%26%7C%26; search=jobarea%7E%60040000%7C%21ord_field%7E%600%7C%21recentSearch0%7E%601%A1%FB%A1%FA040000%2C00%A1%FB%A1%FA000000%A1%FB%A1%FA0000%A1%FB%A1%FA00%A1%FB%A1%FA9%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FApython%A1%FB%A1%FA2%A1%FB%A1%FA%A1%FB%A1%FA-1%A1%FB%A1%FA1507065072%A1%FB%A1%FA0%A1%FB%A1%FA%A1%FB%A1%FA%7C%21'
         }
         
@@ -134,11 +134,11 @@ class Job51Spider:
         headers = {
             'Host': 'i.51job.com',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8',
             'Referer': 'http://i.51job.com/userset/my_apply.php?lang=c',
             'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
         }
         qsp = None
         if page == 1:
@@ -155,9 +155,9 @@ class Job51Spider:
         if page == 1:
             print(t)
             rp = ReParser()
-            tmp = rp.compute(r'共[0-9]+页', t)
+            tmp = rp.compute(r'共[0.前言、第一章.md-9]+页', t)
             print(tmp)
-            self.apply_total_pages = int(rp.compute(r'[0-9]+', tmp))
+            self.apply_total_pages = int(rp.compute(r'[0.前言、第一章.md-9]+', tmp))
         sel = XpathParser(t)
         items = sel.xpath('/html/body/div[2]/div[2]/div[2]/div[1]/div')
         for i in items:
@@ -194,12 +194,12 @@ class Job51Spider:
         url = 'http://51job.com/'
         headers = {
             'Host': '51job.com',
-            'Cache-Control': 'max-age=0',
+            'Cache-Control': 'max-age=0.前言、第一章.md',
             'Upgrade-Insecure-self.session': '1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,*/*;q=0.前言、第一章.md.8',
             'Accept-Encoding': 'ggzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6'
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6'
         }
         t, h, c, hi = self.http.get(url, headers=headers, allow_redirects=False)
         print(self.http.get_session_cookie())
@@ -216,11 +216,11 @@ class Job51Spider:
             'origin': "http://www.51job.com",
             'upgrade-insecure-requests': "1",
             'content-type': "application/x-www-form-urlencoded",
-            'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
-            'accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+            'user-agent': "Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36",
+            'accept': "text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8",
             'referer': "http://www.51job.com/",
             'accept-encoding': "gzip, deflate",
-            'accept-language': "zh-CN,zh;q=0.8,en;q=0.6",
+            'accept-language': "zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6",
             'Cookie': 'NSC_usbdf.51kjohzjoh.dpn - 5 - 228 = ffffffffc3a018a945525d5f4f58455e445a4a423660'
         }
         formData = {
@@ -237,15 +237,15 @@ class Job51Spider:
 
     def search(self, keyword, requestCookie, page=1):
         url = 'http://search.51job.com/list/040000%252C030200%252C020000%252C010000,000000,0000,00,9,99,' + keyword + ',2,' + str(
-            page) + '.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare='
+            page) + '.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0.前言、第一章.md%2C0&radius=-1&ord_field=0.前言、第一章.md&confirmdate=9&fromType=&dibiaoid=0.前言、第一章.md&address=&line=&specialarea=00&from=&welfare='
         headers = {
             'Host': 'search.51job.com',
             'Upgrade-Insecure-self.session': '1',
             'User-Agent': 'Golang',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,*/*;q=0.前言、第一章.md.8',
             'Referer': 'http://www.51job.com/',
             'Accept-Encoding': 'gzip, deflate, sdch',
-            'Accept-Language': 'zh-CN,zh;q=0.8',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8',
         }
         t, h, c, hi = self.http.get(url, headers=headers,
                                     cookies=requestCookie, allow_redirects=False, encoding='gbk')
@@ -253,7 +253,7 @@ class Job51Spider:
         if page == 1:
             rp = ReParser()
             numJobsHtml = xp.xpath('//*[@id="resultList"]/div[1]/div[3]/text()').extract_first()
-            numJobs = int(rp.compute('[0-9]+', numJobsHtml))
+            numJobs = int(rp.compute('[0.前言、第一章.md-9]+', numJobsHtml))
             self.numJobs = numJobs
         jobsIdHtml = xp.xpath('//div[@class="el"]/p[@class="t1 "]')[:-1]
         companyHtml = xp.xpath('//div[@class="el"]/span[@class="t2"]')[:-1]
@@ -284,11 +284,11 @@ class Job51Spider:
             jobId) + '%3A0)&prd=search.51job.com&prp=01&cd=search.51job.com&cp=01&resumeid=&cvlan=&coverid=&qpostset=&elementname=delivery_jobid&deliverytype=2&deliverydomain=http%3A%2F%2Fi.51job.com&language=c&imgpath=http%3A%2F%2Fimg03.51jobcdn.com&_=1507068354931'
         headers = {
             'Host': 'i.51job.com',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
             'Accept': '*/*',
             'Accept-Encoding': 'gzip, deflate, sdch',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
             'cookies': 'guid=15070646256806980017; _ujz=MTA5MTM4MDQ1MA%3D%3D; ps=us%3DXmRQOlQ2Vn4FYwFkB3xdbwc2BjFUfFA0AjwAZF0rAzIPMloxAGVXYVA3XzYAbF1sDT0CNFRkWzhcJlJCDXIEaV4%252BUG4%253D%26%7C%26needv%3D0; slife=resumeguide%3D1%26%7C%26lowbrowser%3Dnot%26%7C%26lastlogindate%3D20171004%26%7C%26; 51job=cuid%3D109138045%26%7C%26cusername%3Dphone_15728567842%26%7C%26cpassword%3D%26%7C%26cname%3D%25CA%25A9%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%25B4%25CF%26%7C%26cemail%3Dshi_cong%2540icloud.com%26%7C%26cemailstatus%3D3%26%7C%26cnickname%3D%25D3%25C7%25D3%25F4%25B5%25C4%25C3%25AB%25C3%25AB%26%7C%26ccry%3D.0wUMWp2Zl.as%26%7C%26cconfirmkey%3DshDPI9YPQYVPQ%26%7C%26cresumeids%3D.0VPKsW.6cwzk%257C%26%7C%26cautologin%3D1%26%7C%26cenglish%3D0%26%7C%26sex%3D0%26%7C%26cnamekey%3Dsh0zZQQixMXvI%26%7C%26to%3DDjdUP1A7ATZSMF05BWAGMQM1BntWIAI%252FXTRTbwlmBlkBOFQ6D2pWYlM6CWAGZVxoBD8EMVNnBSxXYFE2DTQBOQ4wVD9QMwE%252BUjBdNQ%253D%253D%26%7C%26; search=jobarea%7E%60040000%7C%21ord_field%7E%600%7C%21recentSearch0%7E%601%A1%FB%A1%FA040000%2C00%A1%FB%A1%FA000000%A1%FB%A1%FA0000%A1%FB%A1%FA00%A1%FB%A1%FA9%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FA99%A1%FB%A1%FApython%A1%FB%A1%FA2%A1%FB%A1%FA%A1%FB%A1%FA-1%A1%FB%A1%FA1507065072%A1%FB%A1%FA0%A1%FB%A1%FA%A1%FB%A1%FA%7C%21'
         }
 
@@ -309,11 +309,11 @@ class Job51Spider:
         headers = {
             'Host': 'i.51job.com',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+            'User-Agent': 'Mozilla/5.0.前言、第一章.md (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.前言、第一章.md.3163.100 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.前言、第一章.md.9,image/webp,image/apng,*/*;q=0.前言、第一章.md.8',
             'Referer': 'http://i.51job.com/userset/my_apply.php?lang=c',
             'Accept-Encoding': 'gzip, deflate',
-            'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6',
+            'Accept-Language': 'zh-CN,zh;q=0.前言、第一章.md.8,en;q=0.前言、第一章.md.6',
         }
         qsp = None
         if page == 1:
@@ -330,9 +330,9 @@ class Job51Spider:
         if page == 1:
             print(t)
             rp = ReParser()
-            tmp = rp.compute(r'共[0-9]+页', t)
+            tmp = rp.compute(r'共[0.前言、第一章.md-9]+页', t)
             print(tmp)
-            self.apply_total_pages = int(rp.compute(r'[0-9]+', tmp))
+            self.apply_total_pages = int(rp.compute(r'[0.前言、第一章.md-9]+', tmp))
         sel = XpathParser(t)
         items = sel.xpath('/html/body/div[2]/div[2]/div[2]/div[1]/div')
         for i in items:
