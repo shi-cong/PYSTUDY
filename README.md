@@ -42,10 +42,10 @@ SELECT * FROM job51.my_apply where  job_name like '%爬虫%'  and company_name l
 这个分页很容易，还是要解决登陆那边的问题，也就是IP的问题。
 
 下面是抓到的一些样例数据
-![]()
+![](https://github.com/shi-cong/review/blob/master/data/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-05%20%E4%B8%8A%E5%8D%888.05.55.png)
 
 符合我的女生一共有多少个呢？看看这个数据统计。
-![]()
+![](https://github.com/shi-cong/review/blob/master/data/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-10-05%20%E4%B8%8A%E5%8D%888.06.32.png)
 
 ## 三、智联招聘爬虫
 有了前程无忧爬虫，这次当然要搞智联了。有了之前才能不断壮大自己的谋生之路。
