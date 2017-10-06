@@ -29,4 +29,3 @@ for parent,dirnames,filenames in walk(p):
 
         count += 1
     count = 0
-
