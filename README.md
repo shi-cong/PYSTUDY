@@ -1,7 +1,7 @@
 # shicong
 ===========
 
-[![Python version]][3.6.2]
+[![PyPI version]][PyPI]
 [![Build Status]][Travis CI]
 [![Coverage Status]][Coverage]
 
