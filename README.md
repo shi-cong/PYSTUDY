@@ -3,51 +3,45 @@ shicong
 
 [![PyPI version]][PyPI]
 
-A two package of code to facilitate future work efficiency and avoid repetitive open source projects.
+一个代码的二次封装，避免以后做重复的事情，并且为以后的工作大大提高效率的项目。
 
-### Features
-- Message queuing encapsulation
-- Pdf operation package
-- DDoS operation package
-- ServerCryptographic operation package
-- Table operation package
-- HTML resolution operations package
-- JSON resolution operations package
-- Mongo operation package
-- MySQL connection pool operation package### 
-- Numpy operation package
-- OS module operation package
-- Image module operation package
-- Random number operation package
-- Requests operation package
-- String operation package
-- Deep learning operation package
-- Time operation package
-- Tornado module package
-- Yaml module package
-- Jiayuan crawler
-- Direct boss crawler
+### 功能：
+- amqp 消息队列
+- pdf 操作
+- ddos 攻击
+- 加密
+- excel表格 操作
+- html xpath re 操作
+- json 操作
+- mongodb 操作
+- mysql 连接池
+- numpy 操作
+- os 模块 操作
+- image 图形操作
+- 随机数 操作
+- requests 封装
+- 字符串 封装
+- 深度学习封装
+- 时间操作 封装
+- tornado 模块封装
+- yaml 文件操作 封装
 
-### Requirements
+### 依赖：
 - Python >= 3.6
 
-### Install
+### 安装
 
 Debian / Ubuntu:
 
-    apt-get install python3-pip
     pip3 install shicong
 
 CentOS:
 
-    yum install python3-setuptools && easy_install pip
     pip3 install shadowsocks
 
 Windows:
 
     pip install shicong
-
-Usage
 
 
 License
