@@ -31,12 +31,12 @@ Server
 
 Debian / Ubuntu:
 
-    apt-get install python-pip3
+    apt-get install python3-pip
     pip3 install shicong
 
 CentOS:
 
-    yum install python3-setuptools && easy_install pip3
+    yum install python3-setuptools && easy_install pip
     pip3 install shadowsocks
 
 Windows:
