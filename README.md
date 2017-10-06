@@ -58,6 +58,6 @@ Bugs and Issues
 * [Issue Tracker]
 
 [PyPI]:              https://pypi.python.org/pypi/shicong
-[PyPI version]:      https://github.com/shi-cong/shicong/blob/master/docs/coollogo_com-325101401.png
+[LOGO]:              https://github.com/shi-cong/shicong/blob/master/docs/a50f4bfbfbedab64876212cdf136afc379311eae.jpg
 [Issue Tracker]:     https://github.com/shi-cong/shicong/issues?state=open
 [Troubleshooting]:   https://github.com/shi-cong/shicong/wiki/Troubleshooting
