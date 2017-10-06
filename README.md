@@ -1,7 +1,7 @@
 shicong
 ===========
 
-[![PyPI version]][PyPI]
+[![LOGO]][PyPI]
 
 一个代码的二次封装，避免以后做重复的事情，并且为以后的工作大大提高效率的项目。
 
@@ -26,20 +26,10 @@ shicong
 - tornado 模块封装
 - yaml 文件操作 封装
 
-### 依赖：
-- Python >= 3.6
+### 环境：
+- python版本 >= 3.6
 
 ### 安装
-
-Debian / Ubuntu:
-
-    pip3 install shicong
-
-CentOS:
-
-    pip3 install shadowsocks
-
-Windows:
 
     pip install shicong
 
