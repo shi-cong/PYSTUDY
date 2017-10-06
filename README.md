@@ -23,9 +23,11 @@ Features:
 - Time operation package
 - Tornado module package
 - Yaml module package
+- Jiayuan crawler
+- Direct boss crawler
 
-Server
-------
+### Requirement
+- Python >= 3.6
 
 ### Install
 
