@@ -1,7 +1,7 @@
 shicong
 ===========
 点击图片进入Pypi查看项目
-[![LOGO]][PyPI]
+[PyPI]
 
 一个代码的二次封装，避免以后做重复的事情，并且为以后的工作大大提高效率的项目。
 
@@ -60,6 +60,5 @@ Copyright 2017 shicong
 * [问题提交]
 
 [PyPI]:              https://pypi.python.org/pypi/shicong
-[LOGO]:              https://github.com/shi-cong/shicong/blob/master/docs/a50f4bfbfbedab64876212cdf136afc379311eae.jpg
 [问题提交]:     https://github.com/shi-cong/shicong/issues?state=open
 [错误提交]:   https://github.com/shi-cong/shicong/wiki/Troubleshooting
