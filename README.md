@@ -1,5 +1,6 @@
 shicong
 ===========
+[![PyPI version]][PyPI]
 
 A two package of code to facilitate future work efficiency and avoid repetitive open source projects.
 
@@ -64,3 +65,5 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations
 under the License.
+
+[PyPI]:              https://pypi.python.org/pypi/shicong
