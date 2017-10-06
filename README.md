@@ -74,5 +74,6 @@ Bugs and Issues
 * [Issue Tracker]
 
 [PyPI]:              https://pypi.python.org/pypi/shicong
+[PyPI version]:      https://img.shields.io/pypi/v/shadowsocks.svg?style=flat
 [Issue Tracker]:     https://github.com/shi-cong/shicong/issues?state=open
 [Troubleshooting]:   https://github.com/shi-cong/shicong/wiki/Troubleshooting
