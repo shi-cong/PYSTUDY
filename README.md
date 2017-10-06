@@ -74,5 +74,5 @@ Bugs and Issues
 * [Issue Tracker]
 
 [PyPI]:              https://pypi.python.org/pypi/shicong
-[Issue Tracker]:     https://github.com/shicong/shicong/issues?state=open
-[Troubleshooting]:   https://github.com/shicong/shicong/wiki/Troubleshooting
+[Issue Tracker]:     https://github.com/shi-cong/shicong/issues?state=open
+[Troubleshooting]:   https://github.com/shi-cong/shicong/wiki/Troubleshooting
