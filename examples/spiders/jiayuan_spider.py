@@ -27,7 +27,7 @@ class JiaYuanSpider:
     def __init__(self):
         self.http = HTTP(session=True)
 
-    def do_login(self):
+    def do_login(self, name, password):
         """
         post登陆
         :return: 登陆跳转的url
@@ -49,8 +49,8 @@ class JiaYuanSpider:
         form_data = {
             'channel':'200',
             'position':'101',
-            'name':'15800223273',
-            'password':'sc5201314',
+            'name': name,
+            'password': password,
         }
         text, headers, cookies, history = self.http.post(url, headers=headers, form_data=form_data)
         print(text)
@@ -204,9 +204,9 @@ class JiaYuanSpider:
 
 
 
-def main():
+def main(name, password):
     jys = JiaYuanSpider()
-    lj_url = jys.do_login()
+    lj_url = jys.do_login(name, password)
     jys.login_jump(lj_url)
     jys.usercp()
     jys.search_v2()

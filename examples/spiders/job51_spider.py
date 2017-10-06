@@ -195,7 +195,3 @@ def stat_my_apply(user, password):
     for p in range(2, j5s.apply_total_pages):
         j5s.my_apply(p)
         # break
-
-if __name__ == '__main__':
-    # stat_my_apply('15800223273', 'sc5201314')
-    tjl('15800223273', 'sc5201314')
