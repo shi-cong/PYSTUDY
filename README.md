@@ -1,10 +1,6 @@
 shicong
 ===========
 
-[![PyPI version]][PyPI]
-[![Build Status]][Travis CI]
-[![Coverage Status]][Coverage]
-
 A two package of code to facilitate future work efficiency and avoid repetitive open source projects.
 
 Features:
