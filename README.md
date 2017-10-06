@@ -1,6 +1,6 @@
 shicong
 ===========
-
+点击图片进入Pypi查看项目
 [![LOGO]][PyPI]
 
 一个代码的二次封装，避免以后做重复的事情，并且为以后的工作大大提高效率的项目。
@@ -34,30 +34,32 @@ shicong
     pip install shicong
 
 
-License
+### 许可证
 -------
 
 Copyright 2017 shicong
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may
-not use this file except in compliance with the License. You may obtain
-a copy of the License at
+
+根据Apache许可证2.0版（“许可证”）许可;你可以
+除了符合许可证之外，不要使用此文件。你可以获得
+许可证的副本
 
     http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-License for the specific language governing permissions and limitations
-under the License.
 
-Bugs and Issues
+除非适用法律要求或书面同意软件
+根据许可证分发的分发方式是“按原样”分配，不含
+任何明示或暗示的任何形式的保证或条件。见
+管理权限和限制的特定语言的许可
+根据许可证。
+
+### 错误和问题
 ----------------
 
-* [Troubleshooting]
-* [Issue Tracker]
+* [错误提交]
+* [问题提交]
 
 [PyPI]:              https://pypi.python.org/pypi/shicong
 [LOGO]:              https://github.com/shi-cong/shicong/blob/master/docs/a50f4bfbfbedab64876212cdf136afc379311eae.jpg
-[Issue Tracker]:     https://github.com/shi-cong/shicong/issues?state=open
-[Troubleshooting]:   https://github.com/shi-cong/shicong/wiki/Troubleshooting
+[问题提交]:     https://github.com/shi-cong/shicong/issues?state=open
+[错误提交]:   https://github.com/shi-cong/shicong/wiki/Troubleshooting
