@@ -26,10 +26,10 @@ Features:
 - Jiayuan crawler
 - Direct boss crawler
 
-### Requirement
+Requirements:
 - Python >= 3.6
 
-### Install
+Install
 
 Debian / Ubuntu:
 
@@ -45,7 +45,7 @@ Windows:
 
     pip install shicong
 
-### Usage
+Usage
 
 
 License
