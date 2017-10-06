@@ -33,16 +33,18 @@
 
 
 ## 四、许可证
--------
+
 这个项目是属于全世界的。
 
 遵循apache2.0, 但是，本人允许任何人做任何想做的事情，本项目没有任何私人想法，就是要要提高效率，不作重复的事情。
 
 ## 五、错误和问题
-----------------
 
 * [错误提交]
 * [问题提交]
+
+## 六、著名python博客
+* [planepython](http://planetpython.org/)
 
 [pypi]: https://pypi.python.org/pypi/shicong
 [问题提交]: https://github.com/shi-cong/shicong/issues?state=open
