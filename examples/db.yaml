@@ -1,0 +1,13 @@
+job51:
+  host: '192.168.80.4'
+  user: 'job51'
+  password: '123456'
+  db: 'job51'
+  charset: 'utf8mb4'
+
+ss:
+  host: '192.168.80.4'
+  user: 'ss'
+  password: '123456'
+  db: 'ss'
+  charset: 'utf8mb4'

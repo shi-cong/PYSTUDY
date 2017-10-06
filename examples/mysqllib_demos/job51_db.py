@@ -1,8 +1,9 @@
 from shicong.mysqllib import MYSQLPool
 from shicong.yamllib import Yaml
 
+
 mysql_pool = MYSQLPool(20,
-                    **Yaml('db.yaml').get('job51'))
+                    **Yaml('../db.yaml').get('job51'))
 
 def add_my_apply(*params):
     """
@@ -18,7 +19,7 @@ def add_my_apply(*params):
 
 def add_job(*params):
     """
-    增加我的投递的工作
+
     :param params:
     :return:
     """
