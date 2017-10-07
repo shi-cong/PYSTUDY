@@ -45,7 +45,7 @@ class MYSQLPool(object):
         try:
             with conn['connection'].cursor() as cursor:
                 cursor.execute(sql, args or ())
-                tmp = sql[:6]
+                tmp = sql[:6].lower()
                 if 'insert' in tmp or 'delete' in tmp or 'update' in tmp:
                     conn['connection'].commit()
                 if 'select' in tmp:
