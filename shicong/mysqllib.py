@@ -14,6 +14,10 @@ class _MySQLConnection(dict):
 
 
 class MYSQLPool(object):
+    """
+    mysql连接池类
+    需要注意的是，每条sql语句的第一个字符不能是空格
+    """
     def __init__(self, size, **kwargs):
         self._pool = []
         self.lock = Lock()
