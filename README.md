@@ -46,7 +46,7 @@
 * [图像处理牛人](http://blog.csdn.net/stdcoutzyx?viewmode=contents)
 
 ## 七、开源软件相关的文档资源
-#### 1、图像处理相关文档：
+#### 1、图像处理相关文档
 - [PIL](http://pillow-cn.readthedocs.io/zh_CN/latest/guides.html)
 - [concept-modes](http://pillow.readthedocs.io/en/3.4.x/handbook/concepts.html)
 
