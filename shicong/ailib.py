@@ -8,3 +8,4 @@ class MSIB:
     贝叶斯分类模型
     """
     def train(self):
+        pass
