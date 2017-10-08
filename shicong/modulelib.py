@@ -33,8 +33,8 @@ def is_subclass(obj, cls):
             if i is cls or isinstance(i, cls):
                 return True
         for i in obj.__bases__:
-            if ischildof(i, cls):
+            if isinstance(i, cls):
                 return True
     except AttributeError:
-        return ischildof(obj.__class__, cls)
+        return isinstance(obj.__class__, cls)
     return False
