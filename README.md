@@ -43,6 +43,7 @@
 
 ## 六、著名python博客
 * [planepython](http://planetpython.org/)
+* [图像处理牛人](http://blog.csdn.net/stdcoutzyx?viewmode=contents)
 
 ## 七、开源软件相关的文档资源
 #### 1、图像处理相关文档：
