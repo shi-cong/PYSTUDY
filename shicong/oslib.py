@@ -7,6 +7,16 @@ import shutil
 
 SEP = os.path.sep
 
+
+def parent_dir(dirname):
+    """
+    返回上级目录
+    文件名可以是文件夹或者文件
+    :param dirname: 文件名
+    :return:
+    """
+    return os.path.dirname(dirname)
+
 def getcwd():
     """
     获取当前脚本路径

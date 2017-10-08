@@ -3,7 +3,7 @@
 """
 
 __title__ = 'shicong'
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 __build__ = 0x001201
 __author__ = 'shi-cong'
 __license__ = 'Apache License'
