@@ -46,11 +46,9 @@
 * [图像处理牛人](http://blog.csdn.net/stdcoutzyx?viewmode=contents)
 
 ## 七、开源软件相关的文档资源
-#### 1、图像处理相关文档
+##### 1、图像处理
 - [PIL](http://pillow-cn.readthedocs.io/zh_CN/latest/guides.html)
 - [concept-modes](http://pillow.readthedocs.io/en/3.4.x/handbook/concepts.html)
-
-#### 2、来自搜索
 - [RGBA](https://zh.wikipedia.org/wiki/RGBA)
 - [三原色光模式](https://zh.wikipedia.org/wiki/%E4%B8%89%E5%8E%9F%E8%89%B2%E5%85%89%E6%A8%A1%E5%BC%8F)
 - [色彩空间](https://zh.wikipedia.org/wiki/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%96%93)
