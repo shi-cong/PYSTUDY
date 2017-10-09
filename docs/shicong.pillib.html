@@ -8,8 +8,12 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="shicong.html"><font color="#ffffff">shicong</font></a>.pillib</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/shicong/pillib.py">/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/shicong/pillib.py</a></font></td></tr></table>
-    <p><tt>pil模块</tt></p>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/shicong/PycharmProjects/shicong/shicong/pillib.py">/Users/shicong/PycharmProjects/shicong/shicong/pillib.py</a></font></td></tr></table>
+    <p><tt>pil模块<br>
+遗憾的是原作者早在2009年就停止了维护<br>
+感叹的是，中国无人，这些伟大的开源项目都是国外人发明的。<br>
+看看中国的人，是多么的浮躁，国家也是处于虚强。如果我有能力<br>
+我也想移民美国。毕竟在温水里，怎么可能有善终。</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#aa55cc">
@@ -18,8 +22,47 @@
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
 <td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="PIL.Image.html">PIL.Image</a><br>
+</td><td width="25%" valign=top><a href="PIL.ImageEnhance.html">PIL.ImageEnhance</a><br>
+</td><td width="25%" valign=top><a href="PIL.ImageFilter.html">PIL.ImageFilter</a><br>
 </td><td width="25%" valign=top><a href="pytesseract.html">pytesseract</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="shicong.pillib.html#GPS">GPS</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GPS">class <strong>GPS</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="GPS-get_exif_data"><strong>get_exif_data</strong></a>(self, image)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;from&nbsp;the&nbsp;exif&nbsp;data&nbsp;of&nbsp;an&nbsp;PIL&nbsp;Image&nbsp;item.&nbsp;Also&nbsp;converts&nbsp;the&nbsp;<a href="#GPS">GPS</a>&nbsp;Tags</tt></dd></dl>
+
+<dl><dt><a name="GPS-get_gps"><strong>get_gps</strong></a>(self, image)</dt><dd><tt>获取经度，纬度</tt></dd></dl>
+
+<dl><dt><a name="GPS-get_lat_lon"><strong>get_lat_lon</strong></a>(self, exif_data)</dt><dd><tt>Returns&nbsp;the&nbsp;latitude&nbsp;and&nbsp;longitude,&nbsp;if&nbsp;available,&nbsp;from&nbsp;the&nbsp;provided&nbsp;exif_data&nbsp;(obtained&nbsp;through&nbsp;get_exif_data&nbsp;above)</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
@@ -30,23 +73,103 @@
 :param&nbsp;img:<br>
 :param&nbsp;threshold:<br>
 :return:</tt></dd></dl>
- <dl><dt><a name="-convert_png"><strong>convert_png</strong></a>(filename)</dt><dd><tt>转换为png图片<br>
+ <dl><dt><a name="-convert_other_format"><strong>convert_other_format</strong></a>(filename, format)</dt><dd><tt>转换为png图片<br>
 :param&nbsp;filename:&nbsp;图片文件名<br>
 :return:</tt></dd></dl>
- <dl><dt><a name="-depoint"><strong>depoint</strong></a>(img)</dt><dd><tt>去除干扰线<br>
+ <dl><dt><a name="-create_thumbnail"><strong>create_thumbnail</strong></a>(img, width, height)</dt><dd><tt>创建缩略图<br>
+缩略图的意思就是缩小<br>
+:param&nbsp;img:&nbsp;图片对象<br>
+:param&nbsp;width:&nbsp;宽<br>
+:param&nbsp;height:&nbsp;高<br>
+:return:</tt></dd></dl>
+ <dl><dt><a name="-cut"><strong>cut</strong></a>(img, left, above, right, down)</dt><dd><tt>从图像中复制出一个矩形选区<br>
+&nbsp;<br>
+box&nbsp;=&nbsp;(100,&nbsp;100,&nbsp;400,&nbsp;400)<br>
+region&nbsp;=&nbsp;im.crop(box)<br>
+矩形选区有一个4元元组定义，分别表示左、上、右、下的坐标。这个库以左上角为坐标原点，<br>
+单位是px，所以上诉代码复制了一个&nbsp;300x300&nbsp;pixels&nbsp;的矩形选区<br>
+&nbsp;<br>
+:param&nbsp;img:&nbsp;加载到内存的图片<br>
+:param&nbsp;left:&nbsp;左<br>
+:param&nbsp;above:&nbsp;上<br>
+:param&nbsp;right:&nbsp;右<br>
+:param&nbsp;down:&nbsp;下<br>
+:return:</tt></dd></dl>
+ <dl><dt><a name="-filter"><strong>filter</strong></a>(img, filter_class)</dt><dd><tt>图像滤波<br>
+&nbsp;<br>
+TODO：由于关于滤波方面的图像处理技术，历史可以追溯到1980年左右，所以，学些这方面的算法的时间需要一定的时间，看来源码<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原作者写了很多的滤波器，所以，得研究下每种滤波器的优缺点，使用场景。<br>
 :param&nbsp;img:<br>
+:param&nbsp;filter_class:<br>
 :return:</tt></dd></dl>
  <dl><dt><a name="-get_img_from_bytes"><strong>get_img_from_bytes</strong></a>(content)</dt><dd><tt>从二进制数据中返回一张图片对象<br>
 :param&nbsp;content:&nbsp;图片二进制数据<br>
 :return:&nbsp;Image</tt></dd></dl>
+ <dl><dt><a name="-get_img_properties"><strong>get_img_properties</strong></a>(img)</dt><dd><tt>获取文件的属性<br>
+&gt;&gt;&gt;&nbsp;from&nbsp;__future__&nbsp;import&nbsp;print_function<br>
+&gt;&gt;&gt;&nbsp;print(im.format,&nbsp;im.size,&nbsp;im.mode)<br>
+PPM&nbsp;(512,&nbsp;512)&nbsp;RGB<br>
+format&nbsp;这个属性标识了图像来源。如果图像不是从文件读取它的值就是None,&nbsp;也就是这个图片是什么类型的图片，比如a.tif,&nbsp;那么就是TIFF<br>
+size属性是一个二元tuple，包含width和height（宽度和高度，单位都是px)。<br>
+mode&nbsp;属性定义了图像bands的数量和名称，以及像素类型和深度。常见的modes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有&nbsp;“L”&nbsp;(luminance)&nbsp;表示灰度图像,&nbsp;“RGB”&nbsp;表示真彩色图像,&nbsp;and&nbsp;“CMYK”&nbsp;表示出版图像。<br>
+:param&nbsp;img:&nbsp;加载过的图片对象<br>
+:return:&nbsp;(format,&nbsp;size,&nbsp;mode)</tt></dd></dl>
+ <dl><dt><a name="-merge_color_channel"><strong>merge_color_channel</strong></a>(mode, *params)</dt><dd><tt>合并颜色通道<br>
+:param&nbsp;mode:&nbsp;颜色通道<br>
+:param&nbsp;params:&nbsp;颜色通道元组参数<br>
+:return:&nbsp;合并后的图像</tt></dd></dl>
  <dl><dt><a name="-open_img"><strong>open_img</strong></a>(filename)</dt><dd><tt>从文件中打开图片<br>
+如果文件打开错误，返回&nbsp;IOError&nbsp;错误。<br>
 :param&nbsp;filename:&nbsp;图片文件名<br>
 :return:&nbsp;Image</tt></dd></dl>
+ <dl><dt><a name="-paste"><strong>paste</strong></a>(region, img, left, above, right, down)</dt><dd><tt>将扣的图粘贴到制定图片上<br>
+当你粘贴矩形选区的时候必须保证尺寸一致。此外，矩形选区不能在图像外。然而你不必保证矩形选区和原图的颜色模式一致，<br>
+因为矩形选区会被自动转换颜色，遗憾的是，只能扣矩形图。<br>
+&nbsp;<br>
+:param&nbsp;region:&nbsp;扣出的图<br>
+:param&nbsp;img:&nbsp;指定图片<br>
+:param&nbsp;left:&nbsp;左<br>
+:param&nbsp;above:&nbsp;上<br>
+:param&nbsp;right:&nbsp;右<br>
+:param&nbsp;down:&nbsp;下<br>
+:return:&nbsp;被修改过的图片对象，还在内存中，未保存。</tt></dd></dl>
  <dl><dt><a name="-recognition"><strong>recognition</strong></a>(img)</dt><dd><tt>识别图片<br>
 :param&nbsp;img:&nbsp;Image<br>
 :return:&nbsp;字符串</tt></dd></dl>
- <dl><dt><a name="-to_gray"><strong>to_gray</strong></a>(image)</dt><dd><tt>转化为灰度<br>
+ <dl><dt><a name="-remove_grayscale"><strong>remove_grayscale</strong></a>(image)</dt><dd><tt>转化为灰度<br>
 :param&nbsp;image:<br>
 :return:</tt></dd></dl>
-</td></tr></table>
+ <dl><dt><a name="-remove_interference_line"><strong>remove_interference_line</strong></a>(img)</dt><dd><tt>去除干扰线<br>
+:param&nbsp;img:<br>
+:return:</tt></dd></dl>
+ <dl><dt><a name="-remove_noise"><strong>remove_noise</strong></a>(img)</dt><dd><tt>去噪点<br>
+:param&nbsp;img:&nbsp;图片对象<br>
+:return:&nbsp;去除背景的图片</tt></dd></dl>
+ <dl><dt><a name="-resize"><strong>resize</strong></a>(img, width, height)</dt><dd><tt>更改图片大小<br>
+:param&nbsp;img:<br>
+:param&nbsp;width:<br>
+:param&nbsp;height:<br>
+:return:&nbsp;更改后的图片</tt></dd></dl>
+ <dl><dt><a name="-rotate"><strong>rotate</strong></a>(img, angle)</dt><dd><tt>旋转图片<br>
+:param&nbsp;img:&nbsp;图片<br>
+:param&nbsp;angle:&nbsp;度数<br>
+:return:&nbsp;新图片</tt></dd></dl>
+ <dl><dt><a name="-show"><strong>show</strong></a>(img)</dt><dd><tt>显示图像<br>
+注解&nbsp;标准的&nbsp;<a href="#-show">show</a>()&nbsp;效率并不高，它需要保存图像到临时文件<br>
+然后通过&nbsp;xv&nbsp;显示图像。你需要先安装&nbsp;xv&nbsp;，显示图像有助于调试和测试。<br>
+:param&nbsp;img:&nbsp;加载到内存中的图片<br>
+:return:</tt></dd></dl>
+ <dl><dt><a name="-split_color_channel"><strong>split_color_channel</strong></a>(img)</dt><dd><tt>分离颜色通道<br>
+:param&nbsp;img:&nbsp;加载到内存的图片<br>
+:return:&nbsp;颜色通道</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>GPSTAGS</strong> = {0: 'GPSVersionID', 1: 'GPSLatitudeRef', 2: 'GPSLatitude', 3: 'GPSLongitudeRef', 4: 'GPSLongitude', 5: 'GPSAltitudeRef', 6: 'GPSAltitude', 7: 'GPSTimeStamp', 8: 'GPSSatellites', 9: 'GPSStatus', ...}<br>
+<strong>TAGS</strong> = {11: 'ProcessingSoftware', 254: 'NewSubfileType', 255: 'SubfileType', 256: 'ImageWidth', 257: 'ImageLength', 258: 'BitsPerSample', 259: 'Compression', 262: 'PhotometricInterpretation', 263: 'Thresholding', 264: 'CellWidth', ...}</td></tr></table>
 </body></html>

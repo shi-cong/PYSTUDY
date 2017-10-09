@@ -1,6 +1,7 @@
 ## 零、项目说明
 本项目已上传至[pypi]
 
+这个项目一段时间后可能会闭源。
 看书，学习。努力，提高。希望结识一些软件方面的朋友，慢慢的提高自己的素养。
 
 ## 一、功能
@@ -59,6 +60,7 @@
 - [网页颜色](https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2)
 - [直方图](https://zh.wikipedia.org/wiki/%E7%9B%B4%E6%96%B9%E5%9B%BE)
 - [图像滤波](https://baike.baidu.com/item/%E5%9B%BE%E5%83%8F%E6%BB%A4%E6%B3%A2)
+- [二值图像](https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F)
 
 [pypi]: https://pypi.python.org/pypi/shicong
 [问题提交]: https://github.com/shi-cong/shicong/issues?state=open

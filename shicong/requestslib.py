@@ -67,7 +67,7 @@ class HTTP(object):
                                      verify=verify, proxies=proxies, allow_redirects=allow_redirects, params=params)
             else:
                 r = requests.get(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout, verify=verify,
-                                 proxies=proxies, llow_redirects=allow_redirects, params=params)
+                                 proxies=proxies, allow_redirects=allow_redirects, params=params)
         elif method == 'post':
             if self.session:
                 r = self.session.post(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout,

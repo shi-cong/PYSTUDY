@@ -1,7 +1,7 @@
 from shicong.pillib import (open_img, remove_noise, remove_grayscale, remove_interference_line, recognition,
                             get_img_properties, convert_other_format, create_thumbnail, cut, paste, split_color_channel,
-                            merge_color_channel, rotate, resize)
-from unittest import TestCase, main
+                            merge_color_channel, rotate, resize, GPS)
+from unittest import TestCase
 
 class PillibTestCase(TestCase):
     def test_get_img_properties(self):
@@ -57,4 +57,6 @@ class PillibTestCase(TestCase):
         img = resize(img, 100, 100)
         # img.show()
 
-main()
+    def test_gps(self):
+        img = open_img("pillib_data/IMG_20170926_142123.jpg")
+        print(GPS().get_gps(img))
