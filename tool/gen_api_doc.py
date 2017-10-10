@@ -25,7 +25,7 @@ for parent,dirnames,filenames in walk(p):
             tmp = j2([prefix, split_ext(f)[0]], '.')
             print(tmp)
             system('pydoc3 -w %s' % tmp)
-        system('mv *.html  ../docs/')
+        system('mv *.html  ../doc/')
 
         count += 1
     count = 0

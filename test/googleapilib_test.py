@@ -3,7 +3,9 @@ googleapilib 单元测试
 """
 
 from unittest import TestCase
-from shicong.googleapilib import geocode
+
+from shicong.api.googleapilib import geocode
+
 
 class GoogleapilibTestCase(TestCase):
     def test_geocode(self):

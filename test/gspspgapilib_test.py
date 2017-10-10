@@ -3,7 +3,8 @@ gpsspgapilib单元测试
 """
 
 from unittest import TestCase
-from shicong.gpsspgapilib import geo
+
+from shicong.api.gpsspgapilib import geo
 
 
 class GpsspgapilibTestCase(TestCase):
