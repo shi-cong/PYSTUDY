@@ -59,7 +59,7 @@ class HTTP(object):
         :param params: 查询请求参数
         :param form_data: 如果是post请求则需要提供有表单提交则需要有这个
         :param stream: 是否为流数据
-        :return: html, (响应头，响应cookie，访问历史) 或者 流数据
+        :return: (html, 响应头，响应cookie，访问历史) 或者 流数据
         """
         r = None
         if method == 'get':

@@ -112,6 +112,17 @@ def mv(src, dst):
     """
     shutil.move(src, dst)
 
+def copyfileobj(raw_data, filename):
+    """
+    将流式数据存储在文件中
+    :param raw_data: 流数据，比如视屏
+    :param filename: 文件名
+    :return:
+    """
+    f = open(filename, 'wb')
+    shutil.copyfileobj(raw_data, f)
+    f.close()
+
 if __name__ == '__main__':
     abc = join(['a', 'b', 'c'])
     print(abc)
