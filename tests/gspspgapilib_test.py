@@ -8,4 +8,4 @@ from shicong.gpsspgapilib import geo
 
 class GpsspgapilibTestCase(TestCase):
     def test_geo(self):
-        print(geo(*(22.616390222222222, 114.06048583333333)))
+        print(geo(*(22.616567611111112, 114.05974577777778)))

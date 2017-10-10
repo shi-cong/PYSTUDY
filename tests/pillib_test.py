@@ -58,5 +58,5 @@ class PillibTestCase(TestCase):
         # img.show()
 
     def test_gps(self):
-        img = open_img("pillib_data/IMG_20170926_142123.jpg")
+        img = open_img("pillib_data/mmexport1507584906988.jpg")
         print(GPS().get_gps(img))
