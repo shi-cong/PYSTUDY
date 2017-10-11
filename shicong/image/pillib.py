@@ -209,7 +209,7 @@ def resize(img, width, height):
     :param height:
     :return: 更改后的图片
     """
-    return img.resize((width, height))
+    return img.resize((width, height), Image.ANTIALIAS)
 
 def rotate(img, angle):
     """
@@ -302,3 +302,10 @@ class GPS:
         """获取经度，纬度"""
         exif_data = self.get_exif_data(image)
         return self.get_lat_lon(exif_data)
+
+def get_size(img):
+    """"""
+    return img.size
+
+def save(filename, img):
+    img.save(filename)

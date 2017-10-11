@@ -1,9 +1,9 @@
 from unittest import TestCase
 
 from shicong.image.pillib import (open_img, get_img_properties, convert_other_format, create_thumbnail, cut, paste,
-                                  split_color_channel,
+                                  split_color_channel, get_size, save,
                                   merge_color_channel, rotate, resize, GPS)
-
+from shicong.oslib import getsize
 
 class PillibTestCase(TestCase):
     def test_get_img_properties(self):
@@ -62,3 +62,20 @@ class PillibTestCase(TestCase):
     def test_gps(self):
         img = open_img("pillib_data/mmexport1507584906988.jpg")
         print(GPS().get_gps(img))
+
+    def test_resize(self):
+        src = "pillib_data/我.jpg"
+        dst = 'pillib_data/缩小的我.jpg'
+
+        src_size = getsize(src)
+        print('源文件的大小为：', src_size)
+
+        img = open_img(src)
+        # img.show()
+        width, height = get_size(img)
+        print(width, height)
+        img = resize(img, width // 2, height // 2)
+        save(dst, img)
+
+        dst_size = getsize(dst)
+        print('目标文件的大小：', dst_size)

@@ -2,8 +2,8 @@
 requests模块
 """
 import requests
-from collections import OrderedDict
 from requests.utils import dict_from_cookiejar
+from shicong.coolectionslib import odict
 
 
 class HTTP(object):
@@ -64,18 +64,18 @@ class HTTP(object):
         r = None
         if method == 'get':
             if self.session:
-                r = self.session.get(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout,
+                r = self.session.get(url, headers=odict(headers), cookies=cookies, timeout=timeout,
                                      verify=verify, proxies=proxies, allow_redirects=allow_redirects, params=params)
             else:
-                r = requests.get(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout, verify=verify,
+                r = requests.get(url, headers=odict(headers), cookies=cookies, timeout=timeout, verify=verify,
                                  proxies=proxies, allow_redirects=allow_redirects, params=params)
         elif method == 'post':
             if self.session:
-                r = self.session.post(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout,
+                r = self.session.post(url, headers=odict(headers), cookies=cookies, timeout=timeout,
                                       data=form_data, verify=verify, proxies=proxies, allow_redirects=allow_redirects,
                                       params=params)
             else:
-                r = requests.post(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout, data=form_data,
+                r = requests.post(url, headers=odict(headers), cookies=cookies, timeout=timeout, data=form_data,
                                   verify=verify, proxies=proxies, allow_redirects=allow_redirects, params=params)
 
         # 若http状态码如果不正常则抛出异常
@@ -102,7 +102,7 @@ class HTTP(object):
         :param stream: 是否为流数据
         :return: (html, 响应头，响应cookie，访问历史) 或者 流数据
         """
-        return self.__select('get', url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout, verify=verify,
+        return self.__select('get', url, headers=odict(headers), cookies=cookies, timeout=timeout, verify=verify,
                              proxies=proxies, allow_redirects=allow_redirects, encoding=encoding, params=params,
                              stream=stream)
 
@@ -122,7 +122,7 @@ class HTTP(object):
         :param stream: 是否为流数据
         :return: (html, 响应头，响应cookie，访问历史) 或者 流数据
         """
-        return self.__select('post', url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout,
+        return self.__select('post', url, headers=odict(headers), cookies=cookies, timeout=timeout,
                              form_data=form_data, verify=verify, proxies=proxies, allow_redirects=allow_redirects,
                              encoding=encoding, params=params, stream=stream)
 
@@ -142,10 +142,10 @@ class HTTP(object):
         :return: 二进制图片数据
         """
         if self.session:
-            r = self.session.get(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout, verify=verify,
+            r = self.session.get(url, headers=odict(headers), cookies=cookies, timeout=timeout, verify=verify,
                                  proxies=proxies, allow_redirects=allow_redirects, params=params)
         else:
-            r = requests.get(url, headers=OrderedDict(headers), cookies=cookies, timeout=timeout, verify=verify,
+            r = requests.get(url, headers=odict(headers), cookies=cookies, timeout=timeout, verify=verify,
                              proxies=proxies, allow_redirects=allow_redirects, params=params)
         r.raise_for_status()
         return r.content
