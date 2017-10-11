@@ -69,3 +69,23 @@ array([[1, 2],
        [1, 2],
        [3, 4]])
 """
+
+def argsort(arr):
+    """
+    对数组进行排序, 返回以索引的数组
+    """
+    return arr.argsort()
+
+def exponential_operation(arr, expo):
+    """
+    矩阵指数运算
+    """
+    return arr ** expo
+
+def sum(arr, axis=1):
+    """矩阵内元素求和"""
+    return arr.sum(axis=1)
+
+def len(arr):
+    """矩阵长度"""
+    return arr.shape[0]
