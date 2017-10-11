@@ -57,6 +57,12 @@ def add_watermark(pdf_file_in, pdf_file_mark, pdf_file_out):
 
 
 def compress(pdf_in, pdf_output):
+    """
+    mac下安装 brew install ghostscript
+    :param pdf_in:
+    :param pdf_output:
+    :return:
+    """
     cmd = 'gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -sOutputFile=%s %s'
     cmd = cmd % (pdf_output, pdf_in)
     os.system(cmd)

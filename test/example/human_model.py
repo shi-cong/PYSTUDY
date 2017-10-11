@@ -7,7 +7,7 @@ from shicong.randomlib import random_int, random_set, random_float
 Human = BaseData
 
 def human_classification(train_example):
-    pass
+    passn
 
 def genearte_human_data_set(size):
     """

@@ -112,20 +112,13 @@ def mv(src, dst):
     """
     shutil.move(src, dst)
 
-def copyfileobj(raw_data, filename):
+def write_image(r, filename):
     """
     将流式数据存储在文件中
-    :param raw_data: 流数据，比如视屏
+    :param r: 响应
     :param filename: 文件名
     :return:
     """
-    f = open(filename, 'wb')
-    shutil.copyfileobj(raw_data, f)
-    f.close()
-
-if __name__ == '__main__':
-    abc = join(['a', 'b', 'c'])
-    print(abc)
-
-    se = split_ext('a.png')
-    print(se)
+    with open(filename, 'wb') as fd:
+        for chunk in r.iter_content(1024):
+            fd.write(chunk)

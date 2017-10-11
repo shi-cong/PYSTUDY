@@ -42,7 +42,7 @@ class HTTP(object):
         if self.session:
             return dict_from_cookiejar(self.session.cookies)
 
-    def __select(self, method, url, headers=None, cookies=None, timeout=30, verify=False, proxies=None,
+    def __select(self, method, url, headers=None, cookies=None, timeout=60, verify=False, proxies=None,
                  allow_redirects=True, encoding='utf-8', params=None, form_data=None, stream=False):
         """
         对http动作的封装，当传递get，则模拟http get请求，
@@ -83,10 +83,10 @@ class HTTP(object):
         r.encoding = encoding  # 设置html编码
         if stream:
             # 如果为流式数据
-            return r.raw
+            return r
         return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history
 
-    def get(self, url, headers=None, cookies=None, timeout=30, verify=False, proxies=None, allow_redirects=True,
+    def get(self, url, headers=None, cookies=None, timeout=60, verify=False, proxies=None, allow_redirects=True,
             encoding='utf-8', params=None, stream=False):
         """
         模拟http get请求
@@ -106,7 +106,7 @@ class HTTP(object):
                              proxies=proxies, allow_redirects=allow_redirects, encoding=encoding, params=params,
                              stream=stream)
 
-    def post(self, url, headers=None, cookies=None, timeout=30, form_data=None, verify=False, proxies=None,
+    def post(self, url, headers=None, cookies=None, timeout=60, form_data=None, verify=False, proxies=None,
              allow_redirects=True, encoding='utf-8', params=None, stream=False):
         """
         模拟http post请求
@@ -126,7 +126,7 @@ class HTTP(object):
                              form_data=form_data, verify=verify, proxies=proxies, allow_redirects=allow_redirects,
                              encoding=encoding, params=params, stream=stream)
 
-    def get_img(self, url, headers=None, cookies=None, timeout=30, verify=False, proxies=None, allow_redirects=True,
+    def get_img(self, url, headers=None, cookies=None, timeout=60, verify=False, proxies=None, allow_redirects=True,
                 params=None):
         """
         get方式获取 img 二进制信息
