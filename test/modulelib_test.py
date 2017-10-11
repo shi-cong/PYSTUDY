@@ -1,11 +1,12 @@
-from shicong.modulelib import get_curent_module_classes, is_subclass
 from unittest import TestCase
-import shicong.rabbitmqlib
+
+import shicong.middleware.rabbitmqlib
+from shicong.modulelib import get_curent_module_classes, is_subclass
 
 
 class ModulelibTest(TestCase):
     def test_get_current_module_classes(self):
-        print(get_curent_module_classes(shicong.rabbitmqlib))
+        print(get_curent_module_classes(shicong.middleware.rabbitmqlib))
 
     def test_is_subclass(self):
-        print(is_subclass(shicong.rabbitmqlib.RabbitmqCustomer, shicong.rabbitmqlib.RabbitmqBase))
+        print(is_subclass(shicong.middleware.rabbitmqlib.RabbitmqCustomer, shicong.middleware.rabbitmqlib.RabbitmqBase))

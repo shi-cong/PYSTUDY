@@ -1,10 +1,10 @@
 """
 gpsspgapi封装
 """
-from shicong.requestslib import HTTP
-from shicong.timelib import get_current_timestamp
-from shicong.jsonlib import loads
 from shicong.html_parserlib import ReParser
+from shicong.net.requestslib import HTTP
+from shicong.timelib import get_current_timestamp
+
 
 def geo(*params):
     """

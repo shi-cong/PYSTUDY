@@ -2,10 +2,11 @@
 requestslib 单元测试
 """
 
-from shicong.requestslib import HTTP
-
 from unittest import TestCase
+
+from shicong.net.requestslib import HTTP
 from shicong.oslib import write_image
+
 
 class RequestslibTestCase(TestCase):
     def test_download_video(self):

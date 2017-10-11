@@ -1,7 +1,9 @@
-from shicong.pillib import (open_img, remove_noise, remove_grayscale, remove_interference_line, recognition,
-                            get_img_properties, convert_other_format, create_thumbnail, cut, paste, split_color_channel,
-                            merge_color_channel, rotate, resize, GPS)
 from unittest import TestCase
+
+from shicong.image.pillib import (open_img, get_img_properties, convert_other_format, create_thumbnail, cut, paste,
+                                  split_color_channel,
+                                  merge_color_channel, rotate, resize, GPS)
+
 
 class PillibTestCase(TestCase):
     def test_get_img_properties(self):

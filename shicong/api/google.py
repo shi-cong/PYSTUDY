@@ -1,7 +1,7 @@
 """
 google api 模块
 """
-from shicong.requestslib import HTTP
+from shicong.net.requestslib import HTTP
 
 def geocode(*params):
     """
