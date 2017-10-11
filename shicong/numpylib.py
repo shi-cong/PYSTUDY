@@ -82,10 +82,10 @@ def exponential_operation(arr, expo):
     """
     return arr ** expo
 
-def sum(arr, axis=1):
+def array_sum(arr, axis=1):
     """矩阵内元素求和"""
     return arr.sum(axis=1)
 
-def len(arr):
+def array_len(arr):
     """矩阵长度"""
     return arr.shape[0]
