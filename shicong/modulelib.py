@@ -38,3 +38,11 @@ def is_subclass(obj, cls):
     except AttributeError:
         return isinstance(obj.__class__, cls)
     return False
+
+def get_module_path(module_name):
+    """
+    获得一个模块的路径
+    :param module_name: pyobject
+    :return: 路径字符串
+    """
+    return module_name.__path__[0]

@@ -3,7 +3,7 @@ requests模块
 """
 import requests
 from requests.utils import dict_from_cookiejar
-from shicong.coolectionslib import odict
+from shicong.collectionslib import odict
 
 
 class HTTP(object):

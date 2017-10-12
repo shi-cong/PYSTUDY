@@ -12,7 +12,7 @@ knn近邻算法的简单编写
 最后，这个算法的精确度比较高。
 """
 from shicong.numpylib import array, tile, argsort, array_sum, array_len, exponential_operation
-from shicong.coolectionslib import odict
+from shicong.collectionslib import odict
 
 def load_data():
     groups = array([[1, 1, 1, 1],
