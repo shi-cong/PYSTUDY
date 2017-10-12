@@ -3,16 +3,11 @@
 """
 
 __title__ = 'shicong'
-__version__ = '0.0.8'
-__build__ = 0x001201
+__version__ = '0.0.10'
 __author__ = 'shi-cong'
 __license__ = 'Apache License'
 __copyright__ = 'Copyright 2017 shi-cong'
 __docformat__ = 'html'
-
-__all__ = ['ddoslib', 'encryptlib', 'excellib', 'html_parserlib', 'jsonlib', 'mongolib', 'mysqllib', 'numpylib',
-           'oslib', 'pdflib', 'pillib', 'rabbitmqlib', 'randomlib', 'requestslib', 'tensorflowlib', 'timelib',
-           'tornadolib', 'yamllib', 'modulelib']
 
 def version():
     return __version__
