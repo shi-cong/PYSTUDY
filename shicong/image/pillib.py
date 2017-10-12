@@ -303,6 +303,9 @@ class GPS:
         exif_data = self.get_exif_data(image)
         return self.get_lat_lon(exif_data)
 
+    def set_gps(self, image, lat, lon):
+        pass
+
 def get_size(img):
     """"""
     return img.size

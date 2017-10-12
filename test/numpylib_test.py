@@ -53,3 +53,26 @@ class NumpylibTestCase(TestCase):
         print(nplb.median(c))
 
         print(nplb.var(c))
+
+
+    def test_write_csv_big_data(self):
+        """
+        通过这次单元测试，得出了一个结论，numpy如果用来加载大容量的csv，时间会非常慢，
+        这个测试在我的mac上跑了有14个小时。所以，如果在遇到这种比较大的数据时，要慎用
+        这个loadtxt的函数。s
+        :return:
+        """
+        # out = '1,2,3,4,5,6,7'
+        filename = 'numpylib_data/bigdata.csv'
+        # f = open(filename, 'w')
+        # for i in range(10**10):
+        #     f.write(out + '\n')
+        # f.flush()
+        # f.close()
+
+        # print("写入数据完成")
+
+        c = loadtxt(filename, delimiter=',')
+        print(c)
+
+        print('读取数据成功')
