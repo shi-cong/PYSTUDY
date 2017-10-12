@@ -8,7 +8,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="shicong.html"><font color="#ffffff">shicong</font></a>.numpylib</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/shicong/PycharmProjects/shicong/shicong/numpylib.py">/Users/shicong/PycharmProjects/shicong/shicong/numpylib.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href="../tool">index</a><br><a href="file:/Users/shicong/PycharmProjects/shicong/shicong/numpylib.py">/Users/shicong/PycharmProjects/shicong/shicong/numpylib.py</a></font></td></tr></table>
     <p><tt>numpy模块</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -25,7 +25,64 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-array"><strong>array</strong></a>(...)</dt><dd><tt><a href="#-array">array</a>(object,&nbsp;dtype=None,&nbsp;copy=True,&nbsp;order='K',&nbsp;subok=False,&nbsp;ndmin=0)<br>
+<td width="100%"><dl><dt><a name="-arange"><strong>arange</strong></a>(...)</dt><dd><tt><a href="#-arange">arange</a>([start,]&nbsp;stop[,&nbsp;step,],&nbsp;dtype=None)<br>
+&nbsp;<br>
+Return&nbsp;evenly&nbsp;spaced&nbsp;values&nbsp;within&nbsp;a&nbsp;given&nbsp;interval.<br>
+&nbsp;<br>
+Values&nbsp;are&nbsp;generated&nbsp;within&nbsp;the&nbsp;half-open&nbsp;interval&nbsp;``[start,&nbsp;stop)``<br>
+(in&nbsp;other&nbsp;words,&nbsp;the&nbsp;interval&nbsp;including&nbsp;`start`&nbsp;but&nbsp;excluding&nbsp;`stop`).<br>
+For&nbsp;integer&nbsp;arguments&nbsp;the&nbsp;function&nbsp;is&nbsp;equivalent&nbsp;to&nbsp;the&nbsp;Python&nbsp;built-in<br>
+`range&nbsp;&lt;<a href="http://docs.python.org/lib/built-in-funcs.html&gt;`_">http://docs.python.org/lib/built-in-funcs.html&gt;`_</a>&nbsp;function,<br>
+but&nbsp;returns&nbsp;an&nbsp;ndarray&nbsp;rather&nbsp;than&nbsp;a&nbsp;list.<br>
+&nbsp;<br>
+When&nbsp;using&nbsp;a&nbsp;non-integer&nbsp;step,&nbsp;such&nbsp;as&nbsp;0.1,&nbsp;the&nbsp;results&nbsp;will&nbsp;often&nbsp;not<br>
+be&nbsp;consistent.&nbsp;&nbsp;It&nbsp;is&nbsp;better&nbsp;to&nbsp;use&nbsp;``linspace``&nbsp;for&nbsp;these&nbsp;cases.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+start&nbsp;:&nbsp;number,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Start&nbsp;of&nbsp;interval.&nbsp;&nbsp;The&nbsp;interval&nbsp;includes&nbsp;this&nbsp;value.&nbsp;&nbsp;The&nbsp;default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;value&nbsp;is&nbsp;0.<br>
+stop&nbsp;:&nbsp;number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;End&nbsp;of&nbsp;interval.&nbsp;&nbsp;The&nbsp;interval&nbsp;does&nbsp;not&nbsp;include&nbsp;this&nbsp;value,&nbsp;except<br>
+&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;some&nbsp;cases&nbsp;where&nbsp;`step`&nbsp;is&nbsp;not&nbsp;an&nbsp;integer&nbsp;and&nbsp;floating&nbsp;point<br>
+&nbsp;&nbsp;&nbsp;&nbsp;round-off&nbsp;affects&nbsp;the&nbsp;length&nbsp;of&nbsp;`out`.<br>
+step&nbsp;:&nbsp;number,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Spacing&nbsp;between&nbsp;values.&nbsp;&nbsp;For&nbsp;any&nbsp;output&nbsp;`out`,&nbsp;this&nbsp;is&nbsp;the&nbsp;distance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;between&nbsp;two&nbsp;adjacent&nbsp;values,&nbsp;``out[i+1]&nbsp;-&nbsp;out[i]``.&nbsp;&nbsp;The&nbsp;default<br>
+&nbsp;&nbsp;&nbsp;&nbsp;step&nbsp;size&nbsp;is&nbsp;1.&nbsp;&nbsp;If&nbsp;`step`&nbsp;is&nbsp;specified,&nbsp;`start`&nbsp;must&nbsp;also&nbsp;be&nbsp;given.<br>
+dtype&nbsp;:&nbsp;dtype<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;type&nbsp;of&nbsp;the&nbsp;output&nbsp;array.&nbsp;&nbsp;If&nbsp;`dtype`&nbsp;is&nbsp;not&nbsp;given,&nbsp;infer&nbsp;the&nbsp;data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;from&nbsp;the&nbsp;other&nbsp;input&nbsp;arguments.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+arange&nbsp;:&nbsp;ndarray<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Array&nbsp;of&nbsp;evenly&nbsp;spaced&nbsp;values.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;For&nbsp;floating&nbsp;point&nbsp;arguments,&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;result&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;``ceil((stop&nbsp;-&nbsp;start)/step)``.&nbsp;&nbsp;Because&nbsp;of&nbsp;floating&nbsp;point&nbsp;overflow,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this&nbsp;rule&nbsp;may&nbsp;result&nbsp;in&nbsp;the&nbsp;last&nbsp;element&nbsp;of&nbsp;`out`&nbsp;being&nbsp;greater<br>
+&nbsp;&nbsp;&nbsp;&nbsp;than&nbsp;`stop`.<br>
+&nbsp;<br>
+See&nbsp;Also<br>
+--------<br>
+linspace&nbsp;:&nbsp;Evenly&nbsp;spaced&nbsp;numbers&nbsp;with&nbsp;careful&nbsp;handling&nbsp;of&nbsp;endpoints.<br>
+ogrid:&nbsp;Arrays&nbsp;of&nbsp;evenly&nbsp;spaced&nbsp;numbers&nbsp;in&nbsp;N-dimensions.<br>
+mgrid:&nbsp;Grid-shaped&nbsp;arrays&nbsp;of&nbsp;evenly&nbsp;spaced&nbsp;numbers&nbsp;in&nbsp;N-dimensions.<br>
+&nbsp;<br>
+Examples<br>
+--------<br>
+&gt;&gt;&gt;&nbsp;np.<a href="#-arange">arange</a>(3)<br>
+<a href="#-array">array</a>([0,&nbsp;1,&nbsp;2])<br>
+&gt;&gt;&gt;&nbsp;np.<a href="#-arange">arange</a>(3.0)<br>
+<a href="#-array">array</a>([&nbsp;0.,&nbsp;&nbsp;1.,&nbsp;&nbsp;2.])<br>
+&gt;&gt;&gt;&nbsp;np.<a href="#-arange">arange</a>(3,7)<br>
+<a href="#-array">array</a>([3,&nbsp;4,&nbsp;5,&nbsp;6])<br>
+&gt;&gt;&gt;&nbsp;np.<a href="#-arange">arange</a>(3,7,2)<br>
+<a href="#-array">array</a>([3,&nbsp;5])</tt></dd></dl>
+ <dl><dt><a name="-argsort"><strong>argsort</strong></a>(arr)</dt><dd><tt>对数组进行排序,&nbsp;返回以索引的数组</tt></dd></dl>
+ <dl><dt><a name="-array"><strong>array</strong></a>(...)</dt><dd><tt><a href="#-array">array</a>(object,&nbsp;dtype=None,&nbsp;copy=True,&nbsp;order='K',&nbsp;subok=False,&nbsp;ndmin=0)<br>
 &nbsp;<br>
 Create&nbsp;an&nbsp;array.<br>
 &nbsp;<br>
@@ -126,6 +183,10 @@ Creating&nbsp;an&nbsp;array&nbsp;from&nbsp;sub-classes:<br>
 &gt;&gt;&gt;&nbsp;np.<a href="#-array">array</a>(np.mat('1&nbsp;2;&nbsp;3&nbsp;4'),&nbsp;subok=True)<br>
 matrix([[1,&nbsp;2],<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3,&nbsp;4]])</tt></dd></dl>
+ <dl><dt><a name="-array_len"><strong>array_len</strong></a>(arr)</dt><dd><tt>矩阵长度</tt></dd></dl>
+ <dl><dt><a name="-array_sum"><strong>array_sum</strong></a>(arr, axis=1)</dt><dd><tt>矩阵内元素求和</tt></dd></dl>
+ <dl><dt><a name="-dsplit"><strong>dsplit</strong></a>(arr)</dt><dd><tt>按深度方向进行分割</tt></dd></dl>
+ <dl><dt><a name="-dstack"><strong>dstack</strong></a>(*params)</dt></dl>
  <dl><dt><a name="-empty"><strong>empty</strong></a>(...)</dt><dd><tt><a href="#-empty">empty</a>(shape,&nbsp;dtype=float,&nbsp;order='C')<br>
 &nbsp;<br>
 Return&nbsp;a&nbsp;new&nbsp;array&nbsp;of&nbsp;given&nbsp;shape&nbsp;and&nbsp;type,&nbsp;without&nbsp;initializing&nbsp;entries.<br>
@@ -222,6 +283,29 @@ Examples<br>
 &gt;&gt;&gt;&nbsp;np.<a href="#-empty_like">empty_like</a>(a)<br>
 <a href="#-array">array</a>([[&nbsp;-2.00000715e+000,&nbsp;&nbsp;&nbsp;1.48219694e-323,&nbsp;&nbsp;-2.00000572e+000],#random<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;&nbsp;4.38791518e-305,&nbsp;&nbsp;-2.00000715e+000,&nbsp;&nbsp;&nbsp;4.17269252e-309]])</tt></dd></dl>
+ <dl><dt><a name="-equals"><strong>equals</strong></a>(arr1, arr2)</dt><dd><tt>计算两个数组中的每一个元素是否相等</tt></dd></dl>
+ <dl><dt><a name="-exponential_operation"><strong>exponential_operation</strong></a>(arr, expo)</dt><dd><tt>矩阵指数运算</tt></dd></dl>
+ <dl><dt><a name="-get_array_all_itemsize"><strong>get_array_all_itemsize</strong></a>(arr)</dt></dl>
+ <dl><dt><a name="-get_array_dtype"><strong>get_array_dtype</strong></a>(arr)</dt><dd><tt>数组数据类型</tt></dd></dl>
+ <dl><dt><a name="-get_array_one_itemsize"><strong>get_array_one_itemsize</strong></a>(arr)</dt><dd><tt>计算单个数组元素在内存中占用的字节数</tt></dd></dl>
+ <dl><dt><a name="-hsplit"><strong>hsplit</strong></a>(arr)</dt><dd><tt>水平分割</tt></dd></dl>
+ <dl><dt><a name="-hstack"><strong>hstack</strong></a>(*params)</dt></dl>
+ <dl><dt><a name="-median"><strong>median</strong></a>(c)</dt><dd><tt>计算中位数<br>
+:param&nbsp;c:&nbsp;数组<br>
+:return:</tt></dd></dl>
+ <dl><dt><a name="-ravel"><strong>ravel</strong></a>(arr, new_memory=False)</dt><dd><tt>将数组展平</tt></dd></dl>
+ <dl><dt><a name="-reseize"><strong>reseize</strong></a>(arr, *param)</dt><dd><tt>改变数组纬度</tt></dd></dl>
+ <dl><dt><a name="-savetxt"><strong>savetxt</strong></a>(filename, arr)</dt><dd><tt>########################################################################################################################<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;久&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;化<br>
+########################################################################################################################</tt></dd></dl>
+ <dl><dt><a name="-to_list"><strong>to_list</strong></a>(arr)</dt><dd><tt>转换为列表</tt></dd></dl>
+ <dl><dt><a name="-transpose"><strong>transpose</strong></a>(arr)</dt><dd><tt>线性代数中的转置矩阵</tt></dd></dl>
+ <dl><dt><a name="-twap"><strong>twap</strong></a>(c, weights)</dt><dd><tt>时间加权平均价格(twap)是另一种"平均"价格的指标，是一种变种的成交量平均价格(vwap)，基本思想就是最近的价格重要性大一些，所以我们<br>
+应该对近期的价格给以较高的权重。</tt></dd></dl>
+ <dl><dt><a name="-var"><strong>var</strong></a>(c)</dt><dd><tt>计算方差</tt></dd></dl>
+ <dl><dt><a name="-vsplit"><strong>vsplit</strong></a>(arr)</dt><dd><tt>垂直分割</tt></dd></dl>
+ <dl><dt><a name="-vstack"><strong>vstack</strong></a>(*params)</dt></dl>
+ <dl><dt><a name="-weight"><strong>weight</strong></a>(c)</dt><dd><tt>求权重</tt></dd></dl>
  <dl><dt><a name="-zeros"><strong>zeros</strong></a>(...)</dt><dd><tt><a href="#-zeros">zeros</a>(shape,&nbsp;dtype=float,&nbsp;order='C')<br>
 &nbsp;<br>
 Return&nbsp;a&nbsp;new&nbsp;array&nbsp;of&nbsp;given&nbsp;shape&nbsp;and&nbsp;type,&nbsp;filled&nbsp;with&nbsp;zeros.<br>

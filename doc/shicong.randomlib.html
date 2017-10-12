@@ -8,7 +8,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="shicong.html"><font color="#ffffff">shicong</font></a>.randomlib</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/shicong/PycharmProjects/shicong/shicong/randomlib.py">/Users/shicong/PycharmProjects/shicong/shicong/randomlib.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href="../tool">index</a><br><a href="file:/Users/shicong/PycharmProjects/shicong/shicong/randomlib.py">/Users/shicong/PycharmProjects/shicong/shicong/randomlib.py</a></font></td></tr></table>
     <p><tt>random随机数封装</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
@@ -26,10 +26,23 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-random_small_number"><strong>random_small_number</strong></a>()</dt><dd><tt>随机生成一个小数<br>
+<td width="100%"><dl><dt><a name="-random_float"><strong>random_float</strong></a>(left=0, right=1)</dt><dd><tt>随机从闭区间[left,&nbsp;right]中返回一个实数<br>
+:param&nbsp;left:&nbsp;区间的左边半径<br>
+:param&nbsp;right:&nbsp;区间的右边半径<br>
+:return:&nbsp;随机的实数</tt></dd></dl>
+ <dl><dt><a name="-random_int"><strong>random_int</strong></a>(left=0, right=1)</dt><dd><tt>随机从闭区间[left,&nbsp;right]中返回一个整数<br>
+:param&nbsp;left:&nbsp;区间的左边半径<br>
+:param&nbsp;right:&nbsp;区间的右边半径<br>
+:return:&nbsp;随机的整数</tt></dd></dl>
+ <dl><dt><a name="-random_set"><strong>random_set</strong></a>(n=1, elements=[])</dt><dd><tt>假定集合strs，从中随机取n个元素作为输出<br>
+:param&nbsp;n:<br>
+:param&nbsp;elements:<br>
+:return:&nbsp;取出随机的集合</tt></dd></dl>
+ <dl><dt><a name="-random_small_number"><strong>random_small_number</strong></a>()</dt><dd><tt>随机生成一个小数<br>
 :return:&nbsp;返回小数</tt></dd></dl>
  <dl><dt><a name="-random_str"><strong>random_str</strong></a>(n=20)</dt><dd><tt>随机生成一串密码<br>
 :param&nbsp;n:&nbsp;密码的长度，默认为20<br>
 :return:&nbsp;长度为n的随机字符串</tt></dd></dl>
+ <dl><dt><a name="-random_user_agent"><strong>random_user_agent</strong></a>()</dt></dl>
 </td></tr></table>
 </body></html>
