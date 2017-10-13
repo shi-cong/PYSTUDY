@@ -10,4 +10,9 @@ __copyright__ = 'Copyright 2017 shi-cong'
 __docformat__ = 'html'
 
 def version():
-    return __version__
+    return __version
+
+
+__al__ = ['collectionslib', 'ddoslib', 'debuglib', 'encodelib', 'encryptlib', 'html_parserlib', 'jsonlib', 'modulelib',
+          'numpylib', 'oslib', 'randomlib', 'stringlib', 'timelib', 'yamllib', 'api', 'image', 'middleware', 'ml',
+          'net', 'office']
