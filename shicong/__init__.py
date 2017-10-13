@@ -3,16 +3,16 @@
 """
 
 __title__ = 'shicong'
-__version__ = '0.0.10'
+__version__ = '0.0.16'
 __author__ = 'shi-cong'
 __license__ = 'Apache License'
 __copyright__ = 'Copyright 2017 shi-cong'
 __docformat__ = 'html'
 
 def version():
-    return __version
+    return __version__
 
 
-__al__ = ['collectionslib', 'ddoslib', 'debuglib', 'encodelib', 'encryptlib', 'html_parserlib', 'jsonlib', 'modulelib',
+__all__ = ['collectionslib', 'ddoslib', 'debuglib', 'encodelib', 'encryptlib', 'html_parserlib', 'jsonlib', 'modulelib',
           'numpylib', 'oslib', 'randomlib', 'stringlib', 'timelib', 'yamllib', 'api', 'image', 'middleware', 'ml',
           'net', 'office']

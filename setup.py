@@ -35,7 +35,13 @@ if sys.argv[-1] == 'test':
     sys.exit(bool(errors))
 
 packages = [
-    'shicong'
+    'shicong',
+    'shicong.api',
+    'shicong.image',
+    'shicong.middleware',
+    'shicong.ml',
+    'shicong.net',
+    'shicong.office',
 ]
 
 install = [

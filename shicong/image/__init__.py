@@ -11,3 +11,6 @@ def what(pic_filename):
     :return:
     """
     return imghdr.what(pic_filename)
+
+
+__all__ = ['opencvlib', 'pillib']
