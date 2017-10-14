@@ -66,4 +66,3 @@ def compress(pdf_in, pdf_output):
     cmd = 'gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -sOutputFile=%s %s'
     cmd = cmd % (pdf_output, pdf_in)
     os.system(cmd)
-
