@@ -1,53 +1,18 @@
 ## 零、项目说明
-本项目已上传至[pypi]
 
-这个项目一段时间后可能会闭源。
-看书，学习。努力，提高。希望结识一些软件方面的朋友，慢慢的提高自己的素养。
-
-## 一、功能
-- amqp 消息队列
-- pdf 操作
-- ddos 攻击
-- 加密
-- excel表格 操作
-- html xpath re 操作
-- json 操作
-- mongodb 操作
-- mysql 连接池
-- numpy 操作
-- os 模块 操作
-- image 图形操作
-- 随机数 操作
-- requests 封装
-- 字符串 封装
-- 深度学习封装
-- 时间操作 封装
-- tornado 模块封装
-- yaml 文件操作 封装
-
-## 二、环境
-- python版本 >= 3.6
-
-## 三、安装
-
-    pip install shicong
+看书，学习。将平时遇到的一些经常要查资料的才能解决的代码全都封装在这里，以便日后能够大大提升开发的效率。
 
 
-## 四、许可证
+## 一、错误和问题
 
-遵循apache2.0.
+* [问题提交](https://github.com/shi-cong/shicong/issues?state=open)
 
-## 五、错误和问题
-
-* [错误提交]
-* [问题提交]
-
-## 六、著名python博客
+## 二、著名python博客
 * [planepython](http://planetpython.org/)
 * [图像处理牛人](http://blog.csdn.net/stdcoutzyx?viewmode=contents)
 
-## 七、开源软件相关的文档资源
-##### 1、图像处理
+## 三、开源软件相关的文档资源
+### 三一、图像处理
 - [PIL](http://pillow-cn.readthedocs.io/zh_CN/latest/guides.html)
 - [concept-modes](http://pillow.readthedocs.io/en/3.4.x/handbook/concepts.html)
 - [RGBA](https://zh.wikipedia.org/wiki/RGBA)
@@ -61,7 +26,3 @@
 - [直方图](https://zh.wikipedia.org/wiki/%E7%9B%B4%E6%96%B9%E5%9B%BE)
 - [图像滤波](https://baike.baidu.com/item/%E5%9B%BE%E5%83%8F%E6%BB%A4%E6%B3%A2)
 - [二值图像](https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%80%BC%E5%9B%BE%E5%83%8F)
-
-[pypi]: https://pypi.python.org/pypi/shicong
-[问题提交]: https://github.com/shi-cong/shicong/issues?state=open
-[错误提交]: https://github.com/shi-cong/shicong/wiki/Troubleshooting

@@ -1,3 +1,10 @@
+##
+# @file numpylib.py
+# @brief
+# @author shi-cong
+# @version
+# @date 2017-10-14
+
 """
 numpy模块
 """
@@ -101,13 +108,13 @@ zeros_like = numpy.zeros_like
 返回和输入大小相同，类型相同，用0填满的数组
 """
 
-    
+
 ones_like = numpy.ones_like
 """
 返回和输入大小相同，数据类型相同，用1填满的数组
 """
-    
-    
+
+
 empty_like = numpy.empty_like
 """
 返回和输入大小相同，数据类型相同，但是是未初始化的数组(数据随机)
@@ -118,7 +125,7 @@ ones = numpy.ones
 """
 返回一个和输入大小相同，数据类型相同，初始化为1的数组
 """
-    
+
 empty = numpy.empty
 """
 返回一个新的未初始化的数组
@@ -127,8 +134,8 @@ empty = numpy.empty
 tile = numpy.tile
 """
 numpy.tile()是个什么函数呢，说白了，就是把数组沿各个方向复制
-比如 a = np.array([1,2]),    
-np.tile(a,(2,1))就是把a先沿x轴（就这样称呼吧）复制1倍，即没有复制，仍然是 [1,2]。 
+比如 a = np.array([1,2]),
+np.tile(a,(2,1))就是把a先沿x轴（就这样称呼吧）复制1倍，即没有复制，仍然是 [1,2]。
 再把结果沿y方向复制2倍，即最终得到
  array([[1,2],
         [1,2]])
