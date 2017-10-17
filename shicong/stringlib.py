@@ -48,3 +48,30 @@ def rsplit(text, keyword, c):
     :return: 分割的数组
     """
     return text.rsplit(keyword, c)
+
+
+def to_bytes(s):
+    """
+    将字符串转换成字节数组
+    :param s: 要转换成字节数组的字符串
+    :return: 转换成字节数组的字符串
+    """
+    if bytes != str:
+        if type(s) == str:
+            return s.encode('utf-8')
+    return s
+
+
+def to_str(s):
+    """
+    将字节数组转成成字符串
+    :param s: 字节数组
+    :return: 字符串
+    """
+    if bytes != str:
+        """
+        这里的比较在python2中是True，在Python3中是False
+        """
+        if type(s) == bytes:
+            return s.decode('utf-8')
+    return s
