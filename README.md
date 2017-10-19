@@ -1,18 +1,23 @@
-## 零、项目说明
-
+## PYSTUDY
 看书，学习。将平时遇到的一些经常要查资料的才能解决的代码全都封装在这里，以便日后能够大大提升开发的效率。
+太多次重复的学习，重复的解决以前解决过的问题，那么，我现在累了，我以前解决过的问题，我不想再次继续。那
+好，本项目，就是自己在学习的过程中，对学习的一些总结。在学习的过程中，本身就会写很多很多的测试代码，这
+些代码在构建的过程中，如果你不保存，意味着，一段时间过后，你得重复学习。
+
+重复学习这些毫无价值，但又很需要时间去学习的东西？这样太不划算了。
+所以，这个项目，就是体现了本人对重复学习的急切不满。计算机知识大爆炸。一些技术，一段时间不用，完全忘记
+，慢慢积累就是好的。
+
+每隔一段时间，我就会对自己的代码很有嫌弃的感觉。每次都是改改改。不过每次都会进步。
 
 
-## 一、错误和问题
+[问题提交](https://github.com/shi-cong/PYSTUDY/issues?state=open)
 
-* [问题提交](https://github.com/shi-cong/PYSTUDY/issues?state=open)
-
-## 二、著名python博客
+博客：
 * [planepython](http://planetpython.org/)
 * [图像处理牛人](http://blog.csdn.net/stdcoutzyx?viewmode=contents)
 
-## 三、开源软件相关的文档资源
-### 三一、图像处理
+图像处理：
 - [PIL](http://pillow-cn.readthedocs.io/zh_CN/latest/guides.html)
 - [concept-modes](http://pillow.readthedocs.io/en/3.4.x/handbook/concepts.html)
 - [RGBA](https://zh.wikipedia.org/wiki/RGBA)
