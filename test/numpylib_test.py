@@ -1,6 +1,6 @@
 from unittest import TestCase
-from shicong.numpylib import tile, arange, array, array_len, eye, savetxt, loadtxt, vwap, mean, twap, weight, median
-import shicong.numpylib as nplb
+from PYSTUDY.numpylib import tile, arange, array, array_len, eye, savetxt, loadtxt, vwap, mean, twap, weight, median
+import PYSTUDY.numpylib as nplb
 
 class NumpylibTestCase(TestCase):
     def test_1(self):

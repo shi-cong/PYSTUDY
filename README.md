@@ -5,7 +5,7 @@
 
 ## 一、错误和问题
 
-* [问题提交](https://github.com/shi-cong/shicong/issues?state=open)
+* [问题提交](https://github.com/shi-cong/PYSTUDY/issues?state=open)
 
 ## 二、著名python博客
 * [planepython](http://planetpython.org/)

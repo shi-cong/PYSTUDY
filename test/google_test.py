@@ -4,7 +4,7 @@ googleapilib 单元测试
 
 from unittest import TestCase, main
 
-from shicong.api.google import geocode
+from PYSTUDY.api.google import geocode
 
 
 class GoogleTestCase(TestCase):

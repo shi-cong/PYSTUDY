@@ -1,5 +1,5 @@
 from unittest import TestCase
-from shicong.encodelib import encode_unicode_url, decode_unicode_url
+from PYSTUDY.encodelib import encode_unicode_url, decode_unicode_url
 
 
 class EncodelibTestCase(TestCase):

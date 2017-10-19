@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from shicong.api.lagou import get_job_by_keyword
+from PYSTUDY.api.lagou import get_job_by_keyword
 
 class LagouTestCase(TestCase):
     def test_tjl(self):

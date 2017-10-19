@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from shicong.image.pillib import (open_img, get_img_properties, convert_other_format, create_thumbnail, cut, paste,
+from PYSTUDY.image.pillib import (open_img, get_img_properties, convert_other_format, create_thumbnail, cut, paste,
                                   split_color_channel, get_size, save,
                                   merge_color_channel, rotate, resize, GPS)
-from shicong.oslib import getsize
+from PYSTUDY.oslib import getsize
 
 class PillibTestCase(TestCase):
     def test_get_img_properties(self):

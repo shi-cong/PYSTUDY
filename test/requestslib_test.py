@@ -4,8 +4,8 @@ requestslib 单元测试
 
 from unittest import TestCase
 
-from shicong.net.requestslib import HTTP
-from shicong.oslib import write_image
+from PYSTUDY.net.requestslib import HTTP
+from PYSTUDY.oslib import write_image
 
 
 class RequestslibTestCase(TestCase):

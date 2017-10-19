@@ -1,5 +1,5 @@
 from unittest import TestCase
-from shicong.oslib import parent_dir
+from PYSTUDY.oslib import parent_dir
 
 
 class OSlibTestCase(TestCase):
@@ -7,5 +7,5 @@ class OSlibTestCase(TestCase):
         cwd = __file__
         print('cwd:', cwd)
         print(parent_dir(cwd))
-        prd = parent_dir("/shicong/a")
+        prd = parent_dir("/PYSTUDY/a")
         print('prd:', prd)

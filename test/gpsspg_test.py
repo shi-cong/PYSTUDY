@@ -4,7 +4,7 @@ gpsspgapilib单元测试
 
 from unittest import TestCase, main
 
-from shicong.api.gpsspg import geo
+from PYSTUDY.api.gpsspg import geo
 
 
 class GpsspgTestCase(TestCase):

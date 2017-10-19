@@ -12,6 +12,7 @@ except ImportError:
 
 if sys.argv[-1] == 'publish':
     os.system("python setup.py sdist upload")
+    os.system('twine upload dist/*')
     sys.exit()
 
 if sys.argv[-1] == 'speedups':
@@ -31,17 +32,17 @@ if sys.argv[-1] == 'test':
         print('py.test required.')
         sys.exit(1)
 
-    errors = os.system('py.test test_shicong.py')
+    errors = os.system('py.test test_PYSTUDY.py')
     sys.exit(bool(errors))
 
 packages = [
-    'shicong',
-    'shicong.api',
-    'shicong.image',
-    'shicong.middleware',
-    'shicong.ml',
-    'shicong.net',
-    'shicong.office',
+    'PYSTUDY',
+    'PYSTUDY.api',
+    'PYSTUDY.image',
+    'PYSTUDY.middleware',
+    'PYSTUDY.ml',
+    'PYSTUDY.net',
+    'PYSTUDY.office',
 ]
 
 install = [
@@ -63,17 +64,17 @@ install = [
 ]
 
 
-with open('shicong/__init__.py', 'r') as fd:
+with open('PYSTUDY/__init__.py', 'r') as fd:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         fd.read(), re.MULTILINE).group(1)
 
 setup(
-    name='shicong',
+    name='PYSTUDY',
     version=version,
-    description='A two package of code to facilitate future work efficiency and avoid repetitive open source projects.',
+    description='learning python',
     author='shi-cong',
     author_email='shi_cong@icloud.com',
-    url='https://github.com/shi-cong/shicong',
+    url='https://github.com/shi-cong/PYSTUDY',
     packages=packages,
     license='Apache License',
     classifiers=[
@@ -81,10 +82,6 @@ setup(
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
     tests_require=['pytest'],
