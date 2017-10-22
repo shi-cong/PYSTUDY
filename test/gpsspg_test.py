@@ -1,7 +1,7 @@
 """
-gpsspgapilib单元测试
+gpsspglib单元测试
 """
-
+import import_module
 from unittest import TestCase, main
 
 from PYSTUDY.api.gpsspg import geo

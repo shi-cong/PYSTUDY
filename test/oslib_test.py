@@ -1,5 +1,6 @@
-from unittest import TestCase
-from PYSTUDY.oslib import parent_dir
+from unittest import TestCase, main
+import import_module
+from PYSTUDY.oslib import parent_dir, listdir
 
 
 class OSlibTestCase(TestCase):
@@ -9,3 +10,9 @@ class OSlibTestCase(TestCase):
         print(parent_dir(cwd))
         prd = parent_dir("/PYSTUDY/a")
         print('prd:', prd)
+
+    def test_listdir(self):
+        print(listdir('.'))
+
+if __name__ == '__main__':
+    main()

@@ -1,4 +1,5 @@
 from unittest import TestCase
+import import_module
 
 from PYSTUDY.image.pillib import (open_img, get_img_properties, convert_other_format, create_thumbnail, cut, paste,
                                   split_color_channel, get_size, save,

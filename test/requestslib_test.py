@@ -2,6 +2,7 @@
 requestslib 单元测试
 """
 
+import import_module
 from unittest import TestCase
 
 from PYSTUDY.net.requestslib import HTTP

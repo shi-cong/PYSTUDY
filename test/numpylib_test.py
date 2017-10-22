@@ -1,4 +1,5 @@
-from unittest import TestCase
+from unittest import TestCase, main
+import import_module
 from PYSTUDY.numpylib import tile, arange, array, array_len, eye, savetxt, loadtxt, vwap, mean, twap, weight, median
 import PYSTUDY.numpylib as nplb
 
@@ -76,3 +77,6 @@ class NumpylibTestCase(TestCase):
         print(c)
 
         print('读取数据成功')
+
+if __name__ == '__main__':
+    main()

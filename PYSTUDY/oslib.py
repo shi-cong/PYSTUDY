@@ -122,3 +122,14 @@ def write_image(r, filename):
     with open(filename, 'wb') as fd:
         for chunk in r.iter_content(1024):
             fd.write(chunk)
+
+def listdir(directory):
+    """
+    列出文件夹中的内容
+    :param directory: 文件夹名
+    :return: 文件名数组
+    """
+    tmp = []
+    for f in os.listdir(directory):
+            tmp.append(f)
+    return tmp

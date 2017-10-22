@@ -1,4 +1,5 @@
-from unittest import TestCase
+from unittest import TestCase, main
+import import_module
 from PYSTUDY.encodelib import encode_unicode_url, decode_unicode_url
 
 
@@ -9,3 +10,6 @@ class EncodelibTestCase(TestCase):
 
         duu = decode_unicode_url('%E6%B7%B1%E5%9C%B3')
         print(duu)
+
+if __name__ == '__main__':
+    main()

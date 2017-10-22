@@ -4,6 +4,7 @@
 import os
 import re
 import sys
+from PYSTUDY.oslib import listdir, split_ext
 
 try:
     from setuptools import setup
@@ -26,14 +27,12 @@ if sys.argv[-1] == 'speedups':
     sys.exit()
 
 if sys.argv[-1] == 'test':
-    try:
-        __import__('py')
-    except ImportError:
-        print('py.test required.')
-        sys.exit(1)
-
-    errors = os.system('py.test test_PYSTUDY.py')
-    sys.exit(bool(errors))
+    for f in listdir('test'):
+        if '.py' == split_ext(f)[1] and '__' not in f:
+            error = os.system('python3 test/%s' % f)
+            if error != 0:
+                sys.exit(error)
+    sys.exit(0)
 
 packages = [
     'PYSTUDY',
