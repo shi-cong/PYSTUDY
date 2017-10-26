@@ -13,6 +13,7 @@ def version():
     return __version__
 
 
-__all__ = ['collectionslib', 'ddoslib', 'debuglib', 'encodelib', 'encryptlib', 'html_parserlib', 'jsonlib', 'modulelib',
-          'numpylib', 'oslib', 'randomlib', 'stringlib', 'timelib', 'yamllib', 'api', 'image', 'middleware', 'ml',
-          'net', 'office']
+__all__ = ['collectionslib', 'ddoslib', 'debuglib', 'encodelib', 'encryptlib', 
+           'html_parserlib', 'jsonlib', 'modulelib', 'numpylib', 'oslib', 
+           'randomlib', 'stringlib', 'timelib', 'yamllib', 'api', 'image', 
+           'middleware', 'ml', 'net', 'office', 'living']

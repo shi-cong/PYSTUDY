@@ -1,1 +1,1 @@
-__all__ = ['requestslib', 'tornadolib']
+__all__ = ['fingerlib', 'requestslib', 'tornadolib']
