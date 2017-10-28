@@ -104,12 +104,48 @@ Session = tf.Session
 """
 float32 = tf.float32
 
+# 跨维度的计算各张量的值
+# 根据给出的axis在input_tensor上求平均值。除非keep_dims为真，
+# axis中的每个的张量秩会减少1。如果keep_dims为真，求平均值的维度的长度都会保持为1.
+# 如果不设置axis，所有维度上的元素都会被求平均值，并且只会返回一个只有一个元素的张量。
 """
+import tensorflow as tf;
+import numpy as np;
+
+A = np.array([[1,2], [3,4]])
+
+with tf.Session() as sess:
+    # 整体求平均值
+    print(sess.run(tf.reduce_mean(A)))
+    # [2]
+    # 按列求平均值
+    print(sess.run(tf.reduce_mean(A, axis=0)))
+    # [2, 3]
+    # 按行求平均值
+    print(sess.run(tf.reduce_mean(A, axis=1)))
+    # [1, 3]
 """
 reduce_mean = tf.reduce_mean
 
+
 log = tf.log
 
+"""
+tf.clip_by_value(A, min, max)：输入一个张量A，
+把A中的每一个元素的值都压缩在min和max之间。小于min
+的让它等于min，大于max的元素的值等于max。
+import tensorflow as tf;
+import numpy as np;
+
+A = np.array([[1,1,2,4], [3,4,8,5]])
+
+with tf.Session() as sess:
+    print sess.run(tf.clip_by_value(A, 2, 5))
+
+输出:
+[[2 2 2 4]
+ [3 4 5 5]]
+"""
 clip_by_value = tf.clip_by_value
 
 train = tf.train
@@ -117,6 +153,7 @@ train = tf.train
 
 # 初始化所有变量
 global_variables_initializer = tf.global_variables_initializer
+
 
 
 class NeuralNetworks(object):
@@ -178,14 +215,18 @@ class NeuralNetworks(object):
         """
         定义损失函数来刻画预测值与真实值的差距
         """
+        """
         crossEntry = - reduce_mean(y * log(clip_by_value(y, 1e-10 1.0)))
         # 定义学习率
         learningRate = 0.001
         # 定义反向传播算法来优化神经网络中的参数
         trainStep = train.AdamOptimizer(learningRate).minimize(crossEntry)
+        """
+        pass
 
 
 if __name__ == '__main__':
+    """
     nn = NeuralNetworks()
     nn.example_load_data()
     nn.example_compute()
@@ -193,3 +234,5 @@ if __name__ == '__main__':
     nn1 = NeuralNetworks()
     nn1.example_2_load_data()
     nn1.example_2_compute()
+    """
+    pass
