@@ -1,5 +1,8 @@
 import os
-print(os.getcwd())
 import sys
 
-sys.path.append(os.getcwd())
+print(sys.argv)
+if sys.argv[0].startswith('test'):
+    sys.path.insert(0, os.getcwd())
+else:
+    sys.path.insert(0, '../')
