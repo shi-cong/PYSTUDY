@@ -25,6 +25,7 @@ class ChromeBrowser(object):
         """
         初始化一个driver
         :params headless: 是否启动无头浏览器，默认为不启动无头浏览器
+        :params proxy: 是否使用代理，如果不使用代理请不要改动，如果要用就用下面注释的代理差不多的。
         """
         options = webdriver.ChromeOptions()
         options.add_argument('--user-agent=' + random_user_agent())
