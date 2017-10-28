@@ -4,6 +4,7 @@
 import os
 import os.path
 import shutil
+import platform
 
 SEP = os.path.sep
 
@@ -133,3 +134,18 @@ def listdir(directory):
     for f in os.listdir(directory):
             tmp.append(f)
     return tmp
+
+
+def get_os_version():
+    """
+    获取操作系统版本号
+    """
+    return platform.platform()
+
+def set_env(envName, envValue):
+    """
+    设置环境变量
+    :params envName: env名字
+    :params envValue: 值
+    """
+    os.environ[envName] = os.environ[envName] + ':' + envValue

@@ -60,6 +60,7 @@ install = [
     'tensorflow',
     'tornado',
     'pyyaml',
+    'selenium',
 ]
 
 

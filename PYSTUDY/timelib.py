@@ -19,9 +19,9 @@ def func_runtime(callback):
 
 def timestamp_to_time(timestamp):
     """
-    时间戳转时间
+    时间戳转时间字符串
     :param timestamp: 时间戳
-    :return: 时间
+    :return: 时间字符串
     """
     x = time.localtime(timestamp)
     return time.strftime('%Y-%m-%d %H:%M:%S', x)
@@ -43,3 +43,6 @@ def get_current_timestamp():
     :return: 时间戳
     """
     return time.time()
+
+def sleep(t):
+    time.sleep(t)
