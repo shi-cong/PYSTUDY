@@ -1,7 +1,6 @@
 """
 拉钩职位职位获取api
 """
-
 from PYSTUDY.net.requestslib import HTTP
 from PYSTUDY.jsonlib import loads
 from PYSTUDY.randomlib import random_user_agent
