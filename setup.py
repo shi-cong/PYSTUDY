@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import os
 import re
 import sys
@@ -12,7 +9,7 @@ except ImportError:
     from distutils.core import setup
 
 if sys.argv[-1] == 'publish':
-    os.system("python setup.py sdist upload")
+    os.system("python3 setup.py sdist upload")
     os.system('twine upload dist/*')
     sys.exit()
 
