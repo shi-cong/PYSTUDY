@@ -2,6 +2,7 @@
 google api 模块
 """
 from PYSTUDY.net.requestslib import HTTP
+from PYSTUDY.randomlib import random_user_agent
 
 def geocode(*params):
     """
@@ -17,7 +18,7 @@ def geocode(*params):
         'Accept-Language':'zh-CN,zh;q=0.8,en;q=0.6',
         'Cache-Control':'max-age=0',
         'Upgrade-Insecure-Requests':'1',
-        'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
+        'User-Agent': random_user_agent()
     }
     print(','.join(params))
     query_params = {

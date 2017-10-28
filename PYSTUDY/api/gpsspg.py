@@ -4,6 +4,7 @@ gpsspgapi封装
 from PYSTUDY.html_parserlib import ReParser
 from PYSTUDY.net.requestslib import HTTP
 from PYSTUDY.timelib import get_current_timestamp
+from PYSTUDY.randomlib import random_user_agent
 
 
 def geo(*params):
@@ -20,7 +21,7 @@ def geo(*params):
         'Cookie':'ARRAffinity=7996acd7385beb55da51ad553ab9df60d6b742a8d0840faa612d0bd27f840017; Hm_lvt_15b1a40a8d25f43208adae1c1e12a514=1507564728; Hm_lpvt_15b1a40a8d25f43208adae1c1e12a514=1507564728; AJSTAT_ok_pages=1; AJSTAT_ok_times=1',
         'Host':'www.gpsspg.com',
         'Referer':'http://www.gpsspg.com/iframe/maps/qq_161128.htm?mapi=2',
-        'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+        'User-Agent': random_user_agent(),
         'X-Requested-With':'XMLHttpRequest',
     }
     query_params = {
