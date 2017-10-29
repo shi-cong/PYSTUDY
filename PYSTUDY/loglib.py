@@ -18,7 +18,7 @@ class Logger(object):
         打印或写日志
         :params message: 要打印或要写的日志
         """
-        theLog = '[日志名:%s] [时间:%s] \n[内容:%s]\n\n' % (
+        theLog = '[日志名:%s] [时间:%s] \n[内容:\n%s]\n\n' % (
                 self.startName, timestamp_to_time(get_current_timestamp()),  message)
         if not self.fileName:
             print(theLog)
