@@ -12,9 +12,9 @@ Vitaly 发文表示，Chrome 59 将支持 headless 模式，用户最终会转�
 """
 
 from selenium import webdriver
-from randomlib import random_user_agent
-from oslib import get_os_version, set_env
-from timelib import sleep
+from PYSTUDY.randomlib import random_user_agent
+from PYSTUDY.oslib import get_os_version, set_env
+from PYSTUDY.timelib import sleep
 
 
 class ChromeBrowser(object):
