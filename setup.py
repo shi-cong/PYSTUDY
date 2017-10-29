@@ -11,6 +11,8 @@ except ImportError:
 if sys.argv[-1] == 'publish':
     os.system("python3 setup.py sdist upload")
     os.system('twine upload dist/*')
+    os.system('rm -rf dist')
+    os.system('rm -rf PYSTUDY.egg-info')
     sys.exit()
 
 if sys.argv[-1] == 'speedups':
