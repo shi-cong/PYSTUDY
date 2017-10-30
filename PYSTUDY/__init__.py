@@ -3,7 +3,7 @@
 """
 
 __title__ = 'PYSTUDY'
-__version__ = '0.1.9'
+__version__ = '0.2.0'
 __author__ = 'shi-cong'
 __license__ = 'Apache License'
 __copyright__ = 'Copyright 2017 shi-cong'
