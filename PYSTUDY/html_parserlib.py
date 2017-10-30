@@ -47,7 +47,8 @@ class ReParser(object):
     '''
     def compute(self, re_text, text):
         match = re.compile(re_text)
-        m = match.search(text) return m.group() if m else None
+        m = match.search(text) 
+        return m.group() if m else None
 
     def replace(self, re_text, replace_str, text):
         """
