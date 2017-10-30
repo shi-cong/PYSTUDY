@@ -11,10 +11,11 @@ class HTTP(object):
     requests深度封装
     """
 
-    def __init__(self, session=False):
+    def __init__(self, session=False, filterDuplicate=False):
         """
         初始化HTTP
         :param session: 决定是否使用SESSION会话
+        :param filterDuplicate: 决定是否使用去重
         """
         if session:
             self.session = requests.Session()
@@ -26,6 +27,12 @@ class HTTP(object):
         else:
             self.session = None
 
+        self.filterDuplicate = filterDuplicate
+        if self.filterDuplicate:
+            self.historys = set()
+        else:
+            self.historys = None
+
     def close(self):
         """
         关闭session，减轻服务器的压力
@@ -33,6 +40,20 @@ class HTTP(object):
         """
         if self.session:
             self.session.close()
+        else:
+            pass
+
+    def filter_duplicate(self, url):
+        """
+        url去重
+        """
+        if self.filter_duplicate:
+            if url in self.historys: 
+                raise Exception('duplicate excepiton: %s is duplicate' % url)
+            else:
+                self.historys.add(url)
+        else:
+            pass
 
     def get_session_cookie(self):
         """
@@ -41,6 +62,8 @@ class HTTP(object):
         """
         if self.session:
             return dict_from_cookiejar(self.session.cookies)
+        else:
+            return None
 
     def __select(self, method, url, headers=None, cookies=None, timeout=60, verify=False, proxies=None,
                  allow_redirects=True, encoding='utf-8', params=None, form_data=None, stream=False):
@@ -61,6 +84,9 @@ class HTTP(object):
         :param stream: 是否为流数据
         :return: (html, 响应头，响应cookie，访问历史) 或者 流数据
         """
+        # 增加去重功能，开启后，如若不在history中则，则允许访问，并记住访问过此url
+        # 下次重复访问时则抛出异常
+        self.filter_duplicate(url) 
         r = None
         if method == 'get':
             if self.session:
@@ -77,6 +103,8 @@ class HTTP(object):
             else:
                 r = requests.post(url, headers=odict(headers), cookies=cookies, timeout=timeout, data=form_data,
                                   verify=verify, proxies=proxies, allow_redirects=allow_redirects, params=params)
+        else:
+            raise Exception('unsupported http method')
 
         # 若http状态码如果不正常则抛出异常
         r.raise_for_status()
