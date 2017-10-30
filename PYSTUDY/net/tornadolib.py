@@ -19,6 +19,17 @@ class BaseHandler(tornado.web.RequestHandler):
         """
         return self.get_argument(name, default)
 
+    def get_client_ip(self):
+        """
+        获取客户端ip
+        """
+        return self.request.headers['X-Real-Ip']
+
+    def get_client_headers(self):
+        """
+        获取请求头
+        """
+        return self.request.headers
 
 class Application:
     def __init__(self):
