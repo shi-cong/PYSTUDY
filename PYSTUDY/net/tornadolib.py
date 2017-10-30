@@ -23,7 +23,7 @@ class BaseHandler(tornado.web.RequestHandler):
         """
         获取客户端ip
         """
-        return self.request.headers['X-Real-Ip']
+        return self.request.remote_ip
 
     def get_client_headers(self):
         """
