@@ -3,7 +3,7 @@
 """
 
 __title__ = 'PYSTUDY'
-__version__ = '0.1.5'
+__version__ = '0.1.6'
 __author__ = 'shi-cong'
 __license__ = 'Apache License'
 __copyright__ = 'Copyright 2017 shi-cong'
@@ -16,4 +16,4 @@ def version():
 __all__ = ['collectionslib', 'ddoslib', 'debuglib', 'encodelib', 'encryptlib', 
            'html_parserlib', 'jsonlib', 'modulelib', 'numpylib', 'oslib', 
            'randomlib', 'stringlib', 'timelib', 'yamllib', 'api', 'image', 
-           'middleware', 'ml', 'net', 'office', 'living', 'selenium']
+           'middleware', 'ml', 'net', 'office', 'living', 'selenium', 'loglib']
