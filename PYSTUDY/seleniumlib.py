@@ -21,11 +21,12 @@ class ChromeBrowser(object):
     """
     浏览器
     """
-    def __init__(self, headless=False, proxy=None):
+    def __init__(self, headless=False, proxy=None, timeout=10):
         """
         初始化一个driver
-        :params headless: 是否启动无头浏览器，默认为不启动无头浏览器
-        :params proxy: 是否使用代理，如果不使用代理请不要改动，如果要用就用下面注释的代理差不多的。
+        :param headless: 是否启动无头浏览器，默认为不启动无头浏览器
+        :param proxy: 是否使用代理，如果不使用代理请不要改动，如果要用就用下面注释的代理差不多的。
+        :param timeout: 设置页面加载时间
         """
         options = webdriver.ChromeOptions()
         options.add_argument('--user-agent=' + random_user_agent())
@@ -51,6 +52,8 @@ class ChromeBrowser(object):
                 self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=desired_capabilities)
             else:
                 self.driver = webdriver.Chrome(chrome_options=options)
+        # 设置页面加载时间
+        self.driver.set_page_load_timeout(timeout)
 
     def close(self):
         self.driver.quit()
