@@ -1,7 +1,7 @@
 """
 日志模块
 """
-from timelib import get_current_timestamp, timestamp_to_time
+from PYSTUDY.timelib import get_current_timestamp, timestamp_to_time
 
 class Logger(object):
     def __init__(self, startName, fileName=None):
