@@ -103,8 +103,11 @@ class ChromeBrowser(object):
         sleep(t)
 
     def get_cookie(self):
-        return self.driver.get_cookies()
-        
+        cookies = {}
+        for ele in self.driver.get_cookies():
+            cookies[ele['name']] = ele['value']
+        return cookies
+                        
 
 if __name__ == '__main__':
     b = ChromeBrowser(False)
