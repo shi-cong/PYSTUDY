@@ -47,7 +47,7 @@ class HTTP(object):
         """
         url去重
         """
-        if self.filter_duplicate:
+        if self.filterDuplicate:
             if url in self.historys: 
                 raise Exception('duplicate excepiton: %s is duplicate' % url)
             else:
