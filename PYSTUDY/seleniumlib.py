@@ -84,6 +84,19 @@ class ChromeBrowser(object):
         elif sth == 'tag_name':
             return self.driver.find_element_by_tag_name_name(v)
 
+    def find_elements_by_sth(self, sth, v):
+        if sth == 'id':
+            return self.driver.find_elements_by_id(v)
+        elif sth == 'name':
+            return self.driver.find_elements_by_name(v)
+        elif sth == 'xpath':
+            return self.driver.find_elements_by_xpath(v)
+        elif sth == 'link_text':
+            return self.driver.find_elements_by_link_text(v)
+        elif sth == 'tag_name':
+            return self.driver.find_elements_by_tag_name_name(v)
+
+
     def input_send_keys(self, element, keys):
         element.send_keys(keys)
 
