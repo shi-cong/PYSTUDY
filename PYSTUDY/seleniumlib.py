@@ -34,26 +34,32 @@ class ChromeBrowser(object):
             options.add_argument('headless')
             options.add_argument('disable-gpu')
         else:
-            if proxy:
-                # PROXY = "localhost:8080"
-                PROXY = proxy
-                # Create a copy of desired capabilities object.
-                desired_capabilities = webdriver.DesiredCapabilities.INTERNETEXPLORER.copy()
-                # Change the proxy properties of that copy.
-                desired_capabilities['proxy'] = {
-                    "httpProxy":PROXY,
-                    "ftpProxy":PROXY,
-                    "sslProxy":PROXY,
-                    "noProxy":None,
-                    "proxyType":"MANUAL",
-                    "class":"org.openqa.selenium.Proxy",
-                    "autodetect":False
-                }
-                self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=desired_capabilities)
-            else:
-                self.driver = webdriver.Chrome(chrome_options=options)
+            pass
+
+        self.driver = None
+        if proxy:
+            # PROXY = "localhost:8080"
+            PROXY = proxy
+            # Create a copy of desired capabilities object.
+            desired_capabilities = webdriver.DesiredCapabilities.INTERNETEXPLORER.copy()
+            # Change the proxy properties of that copy.
+            desired_capabilities['proxy'] = {
+                "httpProxy":PROXY,
+                "ftpProxy":PROXY,
+                "sslProxy":PROXY,
+                "noProxy":None,
+                "proxyType":"MANUAL",
+                "class":"org.openqa.selenium.Proxy",
+                "autodetect":False
+            }
+            self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=desired_capabilities)
+        else:
+            self.driver = webdriver.Chrome(chrome_options=options)
         # 设置页面加载时间
-        self.driver.set_page_load_timeout(timeout)
+        if self.driver:
+            self.driver.set_page_load_timeout(timeout)
+        else:
+            raise Exception('chrome browser init failed.')
 
     def close(self):
         self.driver.quit()
