@@ -94,7 +94,7 @@ class ChromeBrowser(object):
         element.submit()
 
     def click(self, element):
-        ActionChains(self.driver).click_and_hold(element).perform()
+        ActionChains(self.driver).double_click(element).perform()
 
     def get_html(self):
         return self.driver.page_source
