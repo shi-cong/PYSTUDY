@@ -19,6 +19,12 @@ class BaseHandler(tornado.web.RequestHandler):
         """
         return self.get_argument(name, default)
 
+    def get_body(self):
+        """如果是json数据post，则用这个方法获取
+        :return: 返回到数据是bytes类型
+        """
+        return self.request.body
+
     def get_client_ip(self):
         """
         获取客户端ip
@@ -33,6 +39,7 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def raise_403_error(self):
         raise tornado.web.HTTPError(403)
+
 
 class Application:
     def __init__(self):
