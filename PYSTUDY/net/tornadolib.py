@@ -38,7 +38,12 @@ class BaseHandler(tornado.web.RequestHandler):
         return self.request.headers
 
     def raise_403_error(self):
+        """阻止访问"""
         raise tornado.web.HTTPError(403)
+
+    def raise_406_error(self):
+        """请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体"""
+        raise tornado.web.HTTPError(406)
 
 
 class Application:
