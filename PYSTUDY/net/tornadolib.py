@@ -46,7 +46,7 @@ class Application:
         if is_subclass(handler, BaseHandler):
             self.views.append((view_name, handler))
 
-    def add_template_path(self, path):
+    def set_template_path(self, path):
         """
         增加模版文件路径
         :param path: 路径 
@@ -54,13 +54,13 @@ class Application:
         """
         self.templatePath = path
 
-    def add_static_path(self, path):
+    def set_static_path(self, path):
         """
         增加静态文件路径
         :param path: 路径 
         :return:
         """
-        self.staticPath= path
+        self.staticPath = path
 
     def start(self, port):
         """
