@@ -180,9 +180,6 @@ class RabbitmqCustomerCus(RabbitmqBase):
         if self.task_queue:
             self.ch.queue_declare(
                 queue=self.task_queue, durable=self.durable)
-        if self.store_queue:
-            self.ch.queue_declare(
-                queue=self.store_queue, durable=self.durable)
 
         def callback(ch, method, properties, body):
             """
