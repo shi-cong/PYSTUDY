@@ -31,6 +31,9 @@ class BaseHandler(tornado.web.RequestHandler):
         """
         return self.request.headers
 
+    def raise_403_error(self):
+        raise tornado.web.HTTPError(403)
+
 class Application:
     def __init__(self):
         self.views = [] # 路由列表
