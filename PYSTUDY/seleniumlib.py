@@ -22,7 +22,7 @@ class ChromeBrowser(object):
     """
     浏览器
     """
-    def __init__(self, headless=False, proxy=None, timeout=10):
+    def __init__(self, headless=False, proxy=None):
         """
         初始化一个driver
         :param headless: 是否启动无头浏览器，默认为不启动无头浏览器
@@ -56,11 +56,13 @@ class ChromeBrowser(object):
             self.driver = webdriver.Chrome(chrome_options=options, desired_capabilities=desired_capabilities)
         else:
             self.driver = webdriver.Chrome(chrome_options=options)
+        """
         # 设置页面加载时间
         if self.driver:
             self.driver.set_page_load_timeout(timeout)
         else:
             raise Exception('chrome browser init failed.')
+        """
 
     def close(self):
         self.driver.quit()
