@@ -112,7 +112,7 @@ class HTTP(object):
         if stream:
             # 如果为流式数据
             return r
-        return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history, r.elapsed / 1000000
+        return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history, r.elapsed.microseconds / 1000000
 
     def get(self, url, headers=None, cookies=None, timeout=60, verify=False, proxies=None, allow_redirects=True,
             encoding='utf-8', params=None, stream=False):
