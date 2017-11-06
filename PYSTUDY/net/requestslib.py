@@ -82,7 +82,7 @@ class HTTP(object):
         :param params: 查询请求参数
         :param form_data: 如果是post请求则需要提供有表单提交则需要有这个
         :param stream: 是否为流数据
-        :return: (html, 响应头，响应cookie，访问历史) 或者 流数据
+        :return: (html, 响应头，响应cookie，访问历史，响应时间（秒）) 或者 流数据
         """
         # 增加去重功能，开启后，如若不在history中则，则允许访问，并记住访问过此url
         # 下次重复访问时则抛出异常
@@ -112,7 +112,7 @@ class HTTP(object):
         if stream:
             # 如果为流式数据
             return r
-        return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history
+        return r.text, r.headers, dict_from_cookiejar(r.cookies), r.history, r.elapsed / 1000000
 
     def get(self, url, headers=None, cookies=None, timeout=60, verify=False, proxies=None, allow_redirects=True,
             encoding='utf-8', params=None, stream=False):
@@ -128,7 +128,7 @@ class HTTP(object):
         :param encoding: 返回的html编码
         :param params: 查询请求参数
         :param stream: 是否为流数据
-        :return: (html, 响应头，响应cookie，访问历史) 或者 流数据
+        :return: (html, 响应头，响应cookie，访问历史，响应时间（秒）) 或者 流数据
         """
         return self.__select('get', url, headers=odict(headers), cookies=cookies, timeout=timeout, verify=verify,
                              proxies=proxies, allow_redirects=allow_redirects, encoding=encoding, params=params,
@@ -148,7 +148,7 @@ class HTTP(object):
         :param encoding: 返回的html编码
         :param params: 查询请求参数
         :param stream: 是否为流数据
-        :return: (html, 响应头，响应cookie，访问历史) 或者 流数据
+        :return: (html, 响应头，响应cookie，访问历史，响应时间（秒）) 或者 流数据
         """
         return self.__select('post', url, headers=odict(headers), cookies=cookies, timeout=timeout,
                              form_data=form_data, verify=verify, proxies=proxies, allow_redirects=allow_redirects,
