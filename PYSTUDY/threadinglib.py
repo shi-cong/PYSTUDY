@@ -1,4 +1,18 @@
-from threading import Thread
+from threading import Thread, active_count, Lock
+
+active_count = active_count
+Lock = Lock
+
+
+def synchronized_func(lock, callback, *callbackParams):
+    """同步运行某方法, 同一时刻只允许一个线程访问某方法
+    :param lock: 锁
+    :param callback: 回调函数
+    :param callback: 回调函数参数
+    """
+    with lock:
+        callback(*callbackParams)
+
 
 def create_thread(daemon, callback, *callbackParams):
     """创建一个线程
