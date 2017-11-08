@@ -19,6 +19,6 @@ def run_one_test(testCase, testMethod):
     :param testCase: 测试类
     :param testMethod: 测试方法
     """
-    unit = TestSuite()
-    unit.addTest(testCase(testMethod))
-    unit.run(unit)
+    suite = TestSuite()
+    suite.addTest(testCase(testMethod))
+    TextTestRunner(verbosity=2).run(suite)
