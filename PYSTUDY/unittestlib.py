@@ -1,7 +1,7 @@
 """
 单元测试封装
 """
-from unittest import TestCase, TextTestRunner, TestLoader, TestSuite
+from unittest import TestCase, TextTestRunner, TestLoader, TestSuite, main
 
 TestCase = TestCase # 测试单元类
 run_all = main # 运行所有的测试单元
