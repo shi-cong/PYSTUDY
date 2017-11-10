@@ -44,22 +44,24 @@ packages = [
 ]
 
 install = [
-    'bcrypt',
-    'scrapy',
-    'xlwt',
+    'bcrypt', # 
+    'scrapy', # 该框架，我仅仅用了对html解析对模块
+    'xlwt', 
     'pymongo',
     'pymysql',
-    'numpy',
-    'pypdf2',
+    'numpy', # 线性代数计算库, 常用概率统计
+    'pypdf2', 
     'reportlab',
-    'pytesseract',
+    'pytesseract', # 可识别简单的验证码
     'pillow',
-    'pika',
-    'requests',
-    'tensorflow',
-    'tornado',
-    'pyyaml',
-    'selenium',
+    'pika', # amqp操作库
+    'requests', # http模拟库
+    'tensorflow', # google深度学习库
+    'tornado', # python异步非柱塞http库
+    'pyyaml', # yaml文件解析库
+    'selenium', # 自动化浏览器测试库
+    'imghdr',  # 获取图片的真实类型
+    'cv2'
 ]
 
 

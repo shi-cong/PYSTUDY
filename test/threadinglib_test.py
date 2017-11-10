@@ -37,6 +37,19 @@ class ThreadinglibTest(TestCase):
     def test_udp(self):
         conn('udp', self.host, 27019)
 
+    def test_udp_raw_sock(self):
+        import socket
+        import logging
+        logging.basicConfig(level=logging.DEBUG)
+        
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.settimeout(10)
+        s.sendto(b'', ('localhost', 8000))
+        LOG.log(s.recv(1024))
+        LOG.log('等待主机返回信息')
+        s.close()
+
 
 if __name__ == '__main__':
-    run_one_test(ThreadinglibTest, 'test_udp')
+    # run_one_test(ThreadinglibTest, 'test_thread')
+    run_one_test(ThreadinglibTest, 'test_udp_raw_sock')
