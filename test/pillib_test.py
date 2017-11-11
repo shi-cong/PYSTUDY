@@ -5,6 +5,7 @@ from PYSTUDY.image.pillib import (open_img, get_img_properties, convert_other_fo
                                   split_color_channel, get_size, save,
                                   merge_color_channel, rotate, resize, GPS)
 from PYSTUDY.oslib import getsize
+from PYSTUDY.unittestlib import run_one_test
 
 class PillibTestCase(TestCase):
     def test_get_img_properties(self):
@@ -25,8 +26,8 @@ class PillibTestCase(TestCase):
         img_dst = open_img('pillib_data/a50f4bfbfbedab64876212cdf136afc379311eae.jpg')
         region = cut(img_src, 100, 100, 400, 400)
         paste(region, img_dst, 200, 200, 500, 500)
-        # img_src.show()
-        # img_dst.show()
+        img_src.show()
+        img_dst.show()
 
     def test_split_color_channel(self):
         img = open_img('pillib_data/a50f4bfbfbedab64876212cdf136afc379311eae.jpg')
@@ -72,11 +73,17 @@ class PillibTestCase(TestCase):
         print('源文件的大小为：', src_size)
 
         img = open_img(src)
+        img.show()
         # img.show()
         width, height = get_size(img)
         print(width, height)
         img = resize(img, width // 2, height // 2)
         save(dst, img)
 
+        dimg = open_img(dst)
+        dimg.show()
         dst_size = getsize(dst)
         print('目标文件的大小：', dst_size)
+
+if __name__ == '__main__':
+    run_one_test(PillibTestCase, 'test_resize')
