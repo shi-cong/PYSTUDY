@@ -203,7 +203,7 @@ def merge_color_channel(mode, *params):
 
 def resize(img, width, height):
     """
-    更改图片大小
+    更改图片大小，只能更改磁盘空间的大小。
     :param img:
     :param width:
     :param height:

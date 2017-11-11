@@ -15,16 +15,6 @@ if sys.argv[-1] == 'publish':
     os.system('rm -rf PYSTUDY.egg-info')
     sys.exit()
 
-if sys.argv[-1] == 'speedups':
-    try:
-        __import__('pip')
-    except ImportError:
-        print('Pip required.')
-        sys.exit(1)
-
-    os.system('pip install ujson')
-    sys.exit()
-
 if sys.argv[-1] == 'test':
     for f in listdir('test'):
         if '.py' == split_ext(f)[1] and '__' not in f:
