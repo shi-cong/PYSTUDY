@@ -50,6 +50,7 @@ install = [
     'tornado', # python异步非柱塞http库
     'pyyaml', # yaml文件解析库
     'selenium', # 自动化浏览器测试库
+    'redislib'
 ]
 
 
