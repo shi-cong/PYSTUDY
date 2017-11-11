@@ -39,7 +39,7 @@ class RedisPool(object):
         return self.client.incr(name, amount=amount)
         
     def decr(self, name, amount=1):
-        """自增key的对应的值，当key不存在时则为默认值，否则在基础上递减整数amount
+        """递减key的对应的值，当key不存在时则为默认值，否则在基础上递减整数amount
         :param name: key
         :param amount: 默认值
         :return: 返回递减后的值
