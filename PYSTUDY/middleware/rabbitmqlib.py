@@ -21,7 +21,7 @@ class RabbitmqBase(object):
                 host=host, credentials=credentials))
         self.ch = self.conn.channel()
 
-    def __del__(self):
+    def close(self):
         try:
             self.ch.close()
             self.conn.close()
