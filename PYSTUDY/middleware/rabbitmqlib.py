@@ -22,8 +22,17 @@ class RabbitmqBase(object):
         self.ch = self.conn.channel()
 
     def __del__(self):
-        self.ch.close()
-        self.conn.close()
+        try:
+            self.ch.close()
+            self.conn.close()
+        except Exception as e:
+            """
+            这里是python的bug？还是什么原因，子类在删除的时候， 调用父类的方法时，
+            居然找不到自己的属性，这和java不一样啊，越来越多的因素，感觉python非常
+            不适合长期学习，你说是人不靠谱，这tmd子类清除的时候，父类没有这个属性。
+            这里，我还遇到一个问题
+            """
+            print(e)
 
 
 class _RabbitmqTask(Thread):
