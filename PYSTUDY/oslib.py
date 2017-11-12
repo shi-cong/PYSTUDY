@@ -8,6 +8,13 @@ import platform
 
 SEP = os.path.sep
 
+def rename(src, dst):
+    """改名文件
+    :param src: 被改名的文件名
+    :param dst: 改名后的文件名
+    """
+    os.rename(src, dst)
+
 
 def parent_dir(dirname):
     """
