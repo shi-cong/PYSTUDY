@@ -15,7 +15,7 @@ class Logger(object):
         """
         self.startName = startName
         self.fileName = fileName
-        if self.filenName:
+        if self.fileName:
             self.__f = open(self.fileName, 'a')
 
     lock = Lock()
