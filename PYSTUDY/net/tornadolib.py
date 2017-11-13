@@ -4,7 +4,13 @@ https://github.com/tornadoweb/tornado
 """
 import tornado.ioloop
 import tornado.web
+from tornado.web import asynchronous
 from PYSTUDY.modulelib import is_subclass
+
+# 异步装饰
+# 使用此装饰的ge／post方法，最后一步必须self.finsh()
+# 否则将导致，连接一直处于pending状态，也就是一个长连接。
+asynchronous = asynchronous
 
 class BaseHandler(tornado.web.RequestHandler):
     """
