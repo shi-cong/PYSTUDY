@@ -50,11 +50,3 @@ class Logger(object):
             # 由于这里有很多的线程都要经过这道线程锁的控制，所以不会出现问题
             self.check_log_file_size()
             self.__f.write(theLog)
-
-
-if __name__ == '__main__':
-    l = Logger('app1')
-    l.log('执行这个')
-    l.log('执行这个')
-    l.log('执行这个')
-    l.log('执行这个')
