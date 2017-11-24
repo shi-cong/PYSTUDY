@@ -23,6 +23,7 @@ if sys.argv[-1] == 'test':
                 sys.exit(error)
     sys.exit(0)
 
+
 packages = [
     'PYSTUDY',
     'PYSTUDY.api',
@@ -50,7 +51,7 @@ install = [
     'tornado', # python异步非柱塞http库
     'pyyaml', # yaml文件解析库
     'selenium', # 自动化浏览器测试库
-    'redis', # redi操作模块
+    'redis', # redis操作模块
 ]
 
 

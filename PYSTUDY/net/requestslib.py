@@ -1,7 +1,12 @@
 """
 requests模块
 """
+
 import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+# 禁用安全请求警告
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 from requests.utils import dict_from_cookiejar
 from PYSTUDY.collectionslib import odict
 
