@@ -122,17 +122,3 @@ class ChromeBrowser(object):
         for ele in self.driver.get_cookies():
             cookies[ele['name']] = ele['value']
         return cookies
-                        
-
-if __name__ == '__main__':
-    b = ChromeBrowser(False)
-    b.get('http://localhost:5000') 
-    '''
-    inputElement = b.find_element_by_sth('id', 'kw')
-    b.input_clear(inputElement)
-    b.input_send_keys(inputElement, 'python')
-    submitButton = b.find_element_by_sth('id', 'su')
-    b.click(submitButton)
-    b.wait(10)
-    '''
-    print(b.get_html())
