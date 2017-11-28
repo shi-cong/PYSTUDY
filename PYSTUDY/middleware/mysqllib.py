@@ -17,6 +17,7 @@ class MYSQLPool(object):
     """
     mysql连接池类
     需要注意的是，每条sql语句的第一个字符不能是空格
+    当连接池中没有可用的连接时，将创建新的mysql连接
     """
     def __init__(self, size, **kwargs):
         self._pool = []
@@ -40,6 +41,12 @@ class MYSQLPool(object):
                         conn['is_used'] = True
                         return conn
 
+                if len(self._pool) == 100:
+                    continue
+                newConn = _MySQLConnection(
+                        is_used=False, connection=pymysql.Connection(**kwargs))
+                self._pool.append(newConn)
+                return newConn
                 logging.debug(('%r - waitting for other thread to release the'
                                'connection' % current_thread()))
 
