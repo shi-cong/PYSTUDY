@@ -1,7 +1,6 @@
 """
 mysql模块
 """
-import logging
 import traceback
 from threading import Lock, current_thread
 
@@ -40,15 +39,16 @@ class MYSQLPool(object):
                     if not conn['is_used']:
                         conn['is_used'] = True
                         return conn
+                    else:
+                        continue
 
                 if len(self._pool) == 100:
                     continue
-                newConn = _MySQLConnection(
-                        is_used=False, connection=pymysql.Connection(**kwargs))
-                self._pool.append(newConn)
-                return newConn
-                logging.debug(('%r - waitting for other thread to release the'
-                               'connection' % current_thread()))
+                else:
+                    newConn = _MySQLConnection(
+                            is_used=False, connection=pymysql.Connection(**kwargs))
+                    self._pool.append(newConn)
+                    return newConn
 
     def execute(self, sql, args=None):
         conn = self._get_connection()
