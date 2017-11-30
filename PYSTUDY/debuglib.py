@@ -3,6 +3,7 @@
 """
 
 import traceback
+import warnings
 
 def trace_info():
     """
@@ -10,3 +11,9 @@ def trace_info():
     :return:
     """
     return traceback.format_exc()
+
+def ignore_warnings():
+    """
+    忽略warning
+    """
+    warnings.filterwarnings('ignore')
