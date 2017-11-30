@@ -16,17 +16,20 @@ class HTTP(object):
     requests深度封装
     """
 
-    def __init__(self, session=False, filterDuplicate=False):
+    def __init__(self, session=False, filterDuplicate=False, 
+                poolConnections=100, poolMaxsize=100):
         """
         初始化HTTP
         :param session: 决定是否使用SESSION会话
         :param filterDuplicate: 决定是否使用去重
+        :param poolConnections: 连接池大小
+        :param poolMaxsize: 最大的连接池大小
         """
         if session:
             self.session = requests.Session()
             # 设置连接池为100
             adapter = requests.adapters.HTTPAdapter(
-                pool_connections=100, pool_maxsize=100)
+                pool_connections=poolConnections, pool_maxsize=poolMaxsize)
             self.session.mount('http://', adapter)
             self.session.mount('https://', adapter)
         else:
