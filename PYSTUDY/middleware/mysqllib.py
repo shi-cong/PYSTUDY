@@ -19,13 +19,21 @@ class _MySQLConnection(dict):
 
 class MYSQLPool(object):
     """
-    mysql连接池类
+    同步mysql连接池类
     需要注意的是，每条sql语句的第一个字符不能是空格
     当连接池中没有可用的连接时，将创建新的mysql连接
     """
-    def __init__(self, size, **kwargs):
+    def __init__(self, host=None, user=None, password=None, db=None, charset='utf8mb4', 
+            size=None, **kwargs):
         self._pool = []
         self.lock = Lock()
+        kwargs = {
+            'host': host,
+            'user': user,
+            'password': password,
+            'db': db,
+            'charset': charset,
+        }
         self.kwargs = kwargs
         kwargs['cursorclass'] = pymysql.cursors.DictCursor
         for i in range(size):
@@ -89,23 +97,26 @@ class MYSQLPool(object):
 class AsyncMySQLPool(object):
     """异步mysql连接池"""
 
-    def __init__(self, host, user, passwd, db, charset='utf8', 
-            max_connections=20, idle_seconds=7200, wait_connection_timeout=3):
+    def __init__(self, host=None, user=None, password=None, db=None, charset='utf8', 
+            size=None, **kwargs):
         """初始化连接池
         :param host: 主机地址
         :param user: 用户名
-        :param passwd: 密码
+        :param password: 密码
         :param db: 数据库名
         :param charset: 编码
-        :param max_connections: 最大连接数
+        :param size: 最大连接数
         :param idle_seconds: 
         :param wait_connection_timeout:
+
+        >>> kwargs = dict(host='xx', password='xx', db='xx', charset='xx', size=20)     
+        >>> amsp = AsyncMySQLPool(**kwargs)
         """
         self._pool = tormysql.ConnectionPool(
-            max_connections=max_connections,
-            idle_seconds=idle_seconds,
-            wait_connection_timeout=wait_connection_timeout,
-            host=host, user=user, passwd=passwd, db=db, charset=charset)
+            max_connections=size,
+            idle_seconds=7200,
+            wait_connection_timeout=3,
+            host=host, user=user, passwd=password, db=db, charset=charset)
         self.ioloop = IOLoop.instance()
 
     def close(self):
@@ -137,3 +148,25 @@ class AsyncMySQLPool(object):
             else:
                 if tmp in ['insert', 'update']:
                     yield conn.commit()
+
+
+def mysql_pool_factory(isSync=True):
+    """mysql连接池工厂
+    :param isSync: 是否异步
+    """
+    factory = MYSQLPool if not isSync else AsyncMySQLPool
+    return factory
+
+def get_mysql_pool(host=None, user=None, password=None, charset='utf8', 
+        db=None, size=None, isSync=True):
+    """使用工厂方法返回一个连接池"""
+    factory = mysql_pool_factory(isSync)
+    kwargs = {
+        'host': host,
+        'user': user,
+        'password': password,
+        'charset': charset,
+        'db': db,
+        'size': size,
+    }
+    return factory(**kwargs)
