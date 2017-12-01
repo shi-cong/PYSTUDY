@@ -1,5 +1,9 @@
 """
 mysql模块
+一个同步的连接池和一个异步的连接池
+
+同步的连接池返回的数据是字典类型
+异步的连接池返回的数据是数组类型
 """
 from functools import partial
 import traceback
@@ -148,6 +152,12 @@ class AsyncMySQLPool(object):
             else:
                 if tmp in ['insert', 'update']:
                     yield conn.commit()
+                # TODO
+                """
+                这里需要写入插入后返回的主键值
+                with conn.cursor() as cursor:
+                    return cursor.
+                """
 
 
 def mysql_pool_factory(isSync=True):
