@@ -10,7 +10,7 @@ class MySQLLIBTest(TestCase):
         user = 'root'
         passwd = 'xx'
         db = 'xx'
-        sql = 'select * from xx where catId=%s limit 10'
+        sql = 'select * from video where catId=%s limit 10'
         args = (319,)
         amsp = AsyncMySQLPool(host, user, passwd, db, size=20)
         datas = amsp.execute(sql, args)

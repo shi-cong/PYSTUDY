@@ -101,7 +101,7 @@ class AsyncMySQLPool(object):
     """异步mysql连接池"""
 
     def __init__(self, host=None, user=None, password=None, db=None, 
-            charset='utf8', size=None):
+            charset='utf8', size=None, ioloop=None):
         """初始化连接池
         :param host: 主机地址
         :param user: 用户名
@@ -111,6 +111,7 @@ class AsyncMySQLPool(object):
         :param size: 最大连接数
         :param idle_seconds: 
         :param wait_connection_timeout:
+        :param ioloop:
 
         >>> kwargs = dict(host='xx', password='xx', db='xx', charset='xx', size=20)     
         >>> amsp = AsyncMySQLPool(**kwargs)
@@ -121,7 +122,7 @@ class AsyncMySQLPool(object):
             wait_connection_timeout=3,
             host=host, user=user, passwd=password, db=db, charset=charset,
             cursorclass=pymysql.cursors.DictCursor)
-        self.ioloop = IOLoop.instance()
+        self.ioloop = ioloop or IOLoop.instance()
 
     def close(self):
         self._pool.close()
@@ -170,7 +171,7 @@ def mysql_pool_factory(isSync=True):
     return factory
 
 def get_mysql_pool(host=None, user=None, password=None, charset='utf8', 
-        db=None, size=None, isSync=True):
+        db=None, size=None, isSync=True, ioloop=None):
     """使用工厂方法返回一个连接池"""
     factory = mysql_pool_factory(isSync)
     kwargs = {
@@ -180,5 +181,6 @@ def get_mysql_pool(host=None, user=None, password=None, charset='utf8',
         'charset': charset,
         'db': db,
         'size': size,
+        'ioloop': ioloop,
     }
     return factory(**kwargs)
