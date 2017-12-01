@@ -21,6 +21,7 @@ class BaseHandler(tornado.web.RequestHandler):
     """
     对requesthandler进行封装
     """
+
     def get_param(self, name, default):
         """
         获取get或者post表单参数
@@ -60,6 +61,7 @@ class BaseHandler(tornado.web.RequestHandler):
 class Application:
     def __init__(self):
         self.views = [] # 路由列表
+        self.ioloop = tornado.ioloop.Instance()
 
     def add_view(self, view_name, handler):
         """
@@ -98,7 +100,6 @@ class Application:
                 template_path=self.templatePath, 
                 static_path=self.staticPath)
         self.application.listen(port)
-        self.ioloop = tornado.ioloop.IOLoop.instance()
         self.ioloop.start()
 
     def get_ioloop(self):
