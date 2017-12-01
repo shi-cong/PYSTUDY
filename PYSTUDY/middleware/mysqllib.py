@@ -69,22 +69,23 @@ class MYSQLPool(object):
 
     def execute(self, sql, args=None):
         conn = self._get_connection()
+        conn_m = conn['connection'] 
         tmp = ''
         try:
-            with conn['connection'].cursor() as cursor:
+            with conn_m.cursor() as cursor:
                 cursor.execute(sql, args or ())
                 tmp = sql[:6].lower()
                 if 'insert' in tmp or 'delete' in tmp or 'update' in tmp:
-                    conn['connection'].commit()
+                    insertId = conn_m.insert_id()
+                    conn_m.commit()
+                    # 返回插入的主键id
+                    return insertId
                 if 'select' in tmp:
                     rows = cursor.fetchall()
                     result = []
                     for row in rows:
                         result.append(row)
                     return result
-                else:
-                    affected = cursor.rowcount
-                    return affected
         except:
             err = traceback.format_exc()
             print(err)
@@ -151,13 +152,10 @@ class AsyncMySQLPool(object):
                 raise e
             else:
                 if tmp in ['insert', 'update']:
+                    insertId = conn.insert_id()
                     yield conn.commit()
-                # TODO
-                """
-                这里需要写入插入后返回的主键值
-                with conn.cursor() as cursor:
-                    return cursor.
-                """
+                    # 返回插入的主键id
+                    return insertId
 
 
 def mysql_pool_factory(isSync=True):

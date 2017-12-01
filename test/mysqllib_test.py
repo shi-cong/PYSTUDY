@@ -54,9 +54,25 @@ class MySQLLIBTest(TestCase):
             'isSync': True,
         }
         sql = 'select * from xx where catId=319 limit 10'
-        mp= get_mysql_pool(**kwargs)
+        mp = get_mysql_pool(**kwargs)
         datas = mp.execute(sql)
         print(datas)
+        mp.close()
+
+    def test_insert_id(self):
+        kwargs = {
+            'user': 'root',
+            'host': '192.168.80.4',
+            'password': 'xx',
+            'db': 'xx',
+            'size': 20,
+            'isSync': False,
+        }
+        sql = ('insert into category(name, url, totalPages, updatedTime, responseTime)'
+               ' values("test", "www.test.com", 1, 0, 0)')
+        mp = get_mysql_pool(**kwargs)
+        insertId = mp.execute(sql)
+        print(insertId)
         mp.close()
 
 
@@ -64,4 +80,5 @@ if __name__ == '__main__':
     # run_one_test(MySQLLIBTest, 'test_async')
     # run_one_test(MySQLLIBTest, 'test_async_kwargs')
     # run_one_test(MySQLLIBTest, 'test_kwargs')
-    run_one_test(MySQLLIBTest, 'test_factory_method')
+    # run_one_test(MySQLLIBTest, 'test_factory_method')
+    run_one_test(MySQLLIBTest, 'test_insert_id')
