@@ -1,9 +1,6 @@
 """
 mysql模块
 一个同步的连接池和一个异步的连接池
-
-同步的连接池返回的数据是字典类型
-异步的连接池返回的数据是数组类型
 """
 from functools import partial
 import traceback
@@ -27,8 +24,8 @@ class MYSQLPool(object):
     需要注意的是，每条sql语句的第一个字符不能是空格
     当连接池中没有可用的连接时，将创建新的mysql连接
     """
-    def __init__(self, host=None, user=None, password=None, db=None, charset='utf8mb4', 
-            size=None, **kwargs):
+    def __init__(self, host=None, user=None, password=None, db=None, 
+            charset='utf8mb4', size=None):
         self._pool = []
         self.lock = Lock()
         kwargs = {
@@ -70,17 +67,18 @@ class MYSQLPool(object):
     def execute(self, sql, args=None):
         conn = self._get_connection()
         conn_m = conn['connection'] 
-        tmp = ''
+        tmp = sql[:6].lower()
         try:
             with conn_m.cursor() as cursor:
                 cursor.execute(sql, args or ())
-                tmp = sql[:6].lower()
-                if 'insert' in tmp or 'delete' in tmp or 'update' in tmp:
+                if tmp == 'insert' :
                     insertId = conn_m.insert_id()
                     conn_m.commit()
                     # 返回插入的主键id
                     return insertId
-                if 'select' in tmp:
+                elif tmp in ['delete', 'update']:
+                    conn_m.commit()
+                elif tmp == 'select':
                     rows = cursor.fetchall()
                     result = []
                     for row in rows:
@@ -89,7 +87,7 @@ class MYSQLPool(object):
         except:
             err = traceback.format_exc()
             print(err)
-            if 'insert' in tmp or 'delete' in tmp or 'update' in tmp:
+            if tmp in ['insert', 'update', 'delete']:
                 conn['connection'].rollback()
             if 'MySQL Connection not available' in err:
                 conn['connection'] = _MySQLConnection(
@@ -102,8 +100,8 @@ class MYSQLPool(object):
 class AsyncMySQLPool(object):
     """异步mysql连接池"""
 
-    def __init__(self, host=None, user=None, password=None, db=None, charset='utf8', 
-            size=None, **kwargs):
+    def __init__(self, host=None, user=None, password=None, db=None, 
+            charset='utf8', size=None):
         """初始化连接池
         :param host: 主机地址
         :param user: 用户名
@@ -121,23 +119,26 @@ class AsyncMySQLPool(object):
             max_connections=size,
             idle_seconds=7200,
             wait_connection_timeout=3,
-            host=host, user=user, passwd=password, db=db, charset=charset)
+            host=host, user=user, passwd=password, db=db, charset=charset,
+            cursorclass=pymysql.cursors.DictCursor)
         self.ioloop = IOLoop.instance()
 
     def close(self):
         self._pool.close()
 
-    def execute(self, sql):
-        func = partial(self._execute, sql=sql)
+    def execute(self, sql, args):
+        func = partial(self._execute, sql=sql, args=args)
         return self.ioloop.run_sync(func)
 
     @gen.coroutine
-    def _execute(self, sql):
+    def _execute(self, sql, args):
         """执行sql语句
         :param sql: sql语句
+        :param args: 参数
         :return: 返回的都是数组对象
         """
         sql = sql.lower().strip()
+        args = args or ()
         tmp = sql[:6]
         with (yield self._pool.Connection()) as conn:
             try:
@@ -147,15 +148,18 @@ class AsyncMySQLPool(object):
                         datas = cursor.fetchall()   
                         return datas
             except Exception as e:
-                if tmp in ['insert', 'update']:
+                err = traceback.format_exc()
+                print(err)
+                if tmp in ['insert', 'update', 'delete']:
                     yield conn.rollback()
-                raise e
             else:
-                if tmp in ['insert', 'update']:
+                if tmp == 'insert':
                     insertId = conn.insert_id()
                     yield conn.commit()
                     # 返回插入的主键id
                     return insertId
+                elif tmp in ['update', 'delete']:
+                    yield conn.commit()
 
 
 def mysql_pool_factory(isSync=True):
