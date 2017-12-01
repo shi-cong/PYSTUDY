@@ -7,12 +7,13 @@ from PYSTUDY.middleware.mysqllib import AsyncMySQLPool, MYSQLPool, get_mysql_poo
 class MySQLLIBTest(TestCase):
     def test_async(self):
         host = '192.168.80.4'
-        user = 'xxx'
-        passwd = 'xxx'
-        db = 'xxx'
-        sql = 'select * from xxx where catId=319 limit 10'
-        amsp = AsyncMySQLPool(host, user, passwd, db)
-        datas = amsp.execute(sql)
+        user = 'root'
+        passwd = 'xx'
+        db = 'xx'
+        sql = 'select * from xx where catId=%s limit 10'
+        args = (319,)
+        amsp = AsyncMySQLPool(host, user, passwd, db, size=20)
+        datas = amsp.execute(sql, args)
         print(datas)
         amsp.close()
 
@@ -77,8 +78,8 @@ class MySQLLIBTest(TestCase):
 
 
 if __name__ == '__main__':
-    # run_one_test(MySQLLIBTest, 'test_async')
+    run_one_test(MySQLLIBTest, 'test_async')
     # run_one_test(MySQLLIBTest, 'test_async_kwargs')
     # run_one_test(MySQLLIBTest, 'test_kwargs')
     # run_one_test(MySQLLIBTest, 'test_factory_method')
-    run_one_test(MySQLLIBTest, 'test_insert_id')
+    # run_one_test(MySQLLIBTest, 'test_insert_id')

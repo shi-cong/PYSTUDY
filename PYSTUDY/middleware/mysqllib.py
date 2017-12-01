@@ -143,7 +143,7 @@ class AsyncMySQLPool(object):
         with (yield self._pool.Connection()) as conn:
             try:
                 with conn.cursor() as cursor:
-                    yield cursor.execute(sql)
+                    yield cursor.execute(sql, args=args)
                     if tmp == 'select':
                         datas = cursor.fetchall()   
                         return datas
