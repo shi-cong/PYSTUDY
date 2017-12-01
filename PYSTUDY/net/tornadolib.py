@@ -61,7 +61,7 @@ class BaseHandler(tornado.web.RequestHandler):
 class Application:
     def __init__(self):
         self.views = [] # 路由列表
-        self.ioloop = tornado.ioloop.Instance()
+        self.ioloop = tornado.ioloop.IOLoop.instance()
 
     def add_view(self, view_name, handler):
         """
