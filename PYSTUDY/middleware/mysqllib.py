@@ -1,10 +1,15 @@
 """
 mysql模块
 """
+from functools import partial
 import traceback
 from threading import Lock, current_thread
 
 import pymysql
+import tormysql
+
+from tornado.ioloop import IOLoop
+from tornado import gen
 
 
 class _MySQLConnection(dict):
@@ -79,3 +84,56 @@ class MYSQLPool(object):
         finally:
             cursor.close()
             conn['is_used'] = False
+
+
+class AsyncMySQLPool(object):
+    """异步mysql连接池"""
+
+    def __init__(self, host, user, passwd, db, charset='utf8', 
+            max_connections=20, idle_seconds=7200, wait_connection_timeout=3):
+        """初始化连接池
+        :param host: 主机地址
+        :param user: 用户名
+        :param passwd: 密码
+        :param db: 数据库名
+        :param charset: 编码
+        :param max_connections: 最大连接数
+        :param idle_seconds: 
+        :param wait_connection_timeout:
+        """
+        self._pool = tormysql.ConnectionPool(
+            max_connections=max_connections,
+            idle_seconds=idle_seconds,
+            wait_connection_timeout=wait_connection_timeout,
+            host=host, user=user, passwd=passwd, db=db, charset=charset)
+        self.ioloop = IOLoop.instance()
+
+    def close(self):
+        self._pool.close()
+
+    def execute(self, sql):
+        func = partial(self._execute, sql=sql)
+        return self.ioloop.run_sync(func)
+
+    @gen.coroutine
+    def _execute(self, sql):
+        """执行sql语句
+        :param sql: sql语句
+        :return: 返回的都是数组对象
+        """
+        sql = sql.lower().strip()
+        tmp = sql[:6]
+        with (yield self._pool.Connection()) as conn:
+            try:
+                with conn.cursor() as cursor:
+                    yield cursor.execute(sql)
+                    if tmp == 'select':
+                        datas = cursor.fetchall()   
+                        return datas
+            except Exception as e:
+                if tmp in ['insert', 'update']:
+                    yield conn.rollback()
+                raise e
+            else:
+                if tmp in ['insert', 'update']:
+                    yield conn.commit()

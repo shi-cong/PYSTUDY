@@ -52,6 +52,7 @@ install = [
     'pyyaml', # yaml文件解析库
     'selenium', # 自动化浏览器测试库
     'redis', # redis操作模块
+    'tormysql', # mysql异步操作库
 ]
 
 
