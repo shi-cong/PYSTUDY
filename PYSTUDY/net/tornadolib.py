@@ -98,7 +98,11 @@ class Application:
                 template_path=self.templatePath, 
                 static_path=self.staticPath)
         self.application.listen(port)
-        tornado.ioloop.IOLoop.instance().start()
+        self.ioloop = tornado.ioloop.IOLoop.instance()
+        self.ioloop.start()
+
+    def get_ioloop(self):
+        return self.ioloop
 
     def close(self):
         """
