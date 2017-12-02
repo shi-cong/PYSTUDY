@@ -88,7 +88,10 @@ class MYSQLPool(object):
 
 
 class AsyncMySQLPool(object):
-    """异步mysql连接池"""
+    """异步mysql连接池
+    注意：
+    * mac 下和 tornado集成会报错“ioloop is already running”
+    """
 
     def __init__(self, host=None, user=None, password=None, db=None, 
             charset='utf8', size=None):
