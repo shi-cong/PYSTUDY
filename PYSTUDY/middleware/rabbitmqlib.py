@@ -2,8 +2,9 @@
 pika深度封装模块
 """
 import pika
-import traceback
 from threading import Thread
+
+from PYSTUDY.debuglib import trace_info
 
 class RabbitmqBase(object):
     """
@@ -63,7 +64,7 @@ class _RabbitmqTask(Thread):
         try:
             super().run()
         except Exception as e:
-            print(e)
+            print(trace_info())
         finally:
             if not self.no_ack:
                 # 如果为True，任务结束后需要确认
