@@ -60,10 +60,14 @@ class _RabbitmqTask(Thread):
         线程启动
         :return:
         """
-        super().run()
-        if not self.no_ack:
-            # 如果为True，任务结束后需要确认
-            self.ch.basic_ack(delivery_tag=self.method.delivery_tag)
+        try:
+            super().run()
+        except Exception as e:
+            print(e)
+        finally:
+            if not self.no_ack:
+                # 如果为True，任务结束后需要确认
+                self.ch.basic_ack(delivery_tag=self.method.delivery_tag)
         
 class RabbitmqCustomerMS(RabbitmqBase):
     """
