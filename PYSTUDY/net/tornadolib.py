@@ -57,6 +57,16 @@ class BaseHandler(tornado.web.RequestHandler):
         """请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体"""
         raise tornado.web.HTTPError(406)
 
+    def set_response_header(self, k, v):
+        """设置响应头
+        :param k: 响应头名    
+        :param v: 响应头值
+
+        常见响应头 k , v
+        Content-Type, application/json
+        """
+        self.set_header(k, v)
+
 
 class Application:
     def __init__(self):

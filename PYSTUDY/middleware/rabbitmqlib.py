@@ -175,6 +175,15 @@ class RabbitmqCustomerCus(RabbitmqBase):
         self.durable = durable
         self.no_ack = no_ack
 
+    def send_task(self, body):
+        """
+        发送任务到任务队列
+        :param body: 消息
+        :return:
+        """
+        self.ch.basic_publish(exchange='', routing_key=self.task_queue,
+            properties=pika.BasicProperties(delivery_mode=2), body=body)
+
     def store_data(self, body, callback):
         """
         存储数据
