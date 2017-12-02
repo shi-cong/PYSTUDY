@@ -21,8 +21,6 @@ class _MySQLConnection(dict):
 class MYSQLPool(object):
     """
     同步mysql连接池类
-    需要注意的是，每条sql语句的第一个字符不能是空格
-    当连接池中没有可用的连接时，将创建新的mysql连接
     """
     def __init__(self, host=None, user=None, password=None, db=None, 
             charset='utf8mb4', size=None):
@@ -55,14 +53,6 @@ class MYSQLPool(object):
                         return conn
                     else:
                         continue
-
-                if len(self._pool) == 100:
-                    continue
-                else:
-                    newConn = _MySQLConnection(
-                            is_used=False, connection=pymysql.Connection(**kwargs))
-                    self._pool.append(newConn)
-                    return newConn
 
     def execute(self, sql, args=None):
         conn = self._get_connection()
@@ -101,20 +91,8 @@ class AsyncMySQLPool(object):
     """异步mysql连接池"""
 
     def __init__(self, host=None, user=None, password=None, db=None, 
-            charset='utf8', size=None, ioloop=None):
+            charset='utf8', size=None):
         """初始化连接池
-        :param host: 主机地址
-        :param user: 用户名
-        :param password: 密码
-        :param db: 数据库名
-        :param charset: 编码
-        :param size: 最大连接数
-        :param idle_seconds: 
-        :param wait_connection_timeout:
-        :param ioloop:
-
-        >>> kwargs = dict(host='xx', password='xx', db='xx', charset='xx', size=20)     
-        >>> amsp = AsyncMySQLPool(**kwargs)
         """
         self._pool = tormysql.ConnectionPool(
             max_connections=size,
@@ -122,7 +100,7 @@ class AsyncMySQLPool(object):
             wait_connection_timeout=3,
             host=host, user=user, passwd=password, db=db, charset=charset,
             cursorclass=pymysql.cursors.DictCursor)
-        self.ioloop = ioloop or IOLoop.instance()
+        self.ioloop = IOLoop.instance()
 
     def close(self):
         self._pool.close()
@@ -181,6 +159,5 @@ def get_mysql_pool(host=None, user=None, password=None, charset='utf8',
         'charset': charset,
         'db': db,
         'size': size,
-        'ioloop': ioloop,
     }
     return factory(**kwargs)
